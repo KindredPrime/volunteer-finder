@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageTitle Component renders the UI as expected 1`] = `
+<div
+  className="PageTitle"
+>
+  <h1>
+    title
+  </h1>
+</div>
+`;

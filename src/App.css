@@ -1,0 +1,13 @@
+.App {
+  margin-top: 75px;
+  text-align: center;
+}
+
+section {
+  padding: 10px;
+  background-color: #D7D7D7;
+}
+
+section:nth-child(even) {
+  background-color: #A2A2A2;
+}
