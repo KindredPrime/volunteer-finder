@@ -38,6 +38,8 @@ fieldset {
 
 legend {
   font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 form button {
