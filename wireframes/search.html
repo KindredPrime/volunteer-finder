@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VolunteerUp - Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Search for volunteer organizations and events">
+    <link href="main.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav>
+      Navbar
+    </nav>
+
+    <header>
+      <h1>Search for Organizations and Events</h1>
+    </header>
+
+    <main>
+      <section>
+        <form>
+          <div>
+            <label for="search-term">Search Term</label>
+            <input type="text" id="search-term" name="search-term" />
+          </div>
+
+          <br />
+
+          <fieldset>
+            <legend>Search type</legend>
+            <div>
+              <label for="name">Name</label>
+              <input type="checkbox" id="name" name="search-type" value="name" />
+            </div>
+
+            <div>
+              <label for="cause">Cause</label>
+              <input type="checkbox" id="cause" name="search-type" value="cause" />
+            </div>
+          </fieldset>
+
+          <br />
+
+          <fieldset>
+            <legend>Result type</legend>
+            <div>
+              <label for="org">Organizations</label>
+              <input type="checkbox" id="org" name="result-type" value="org" />
+            </div>
+
+            <div>
+              <label for="events">Events</label>
+              <input type="checkbox" id="events" name="result-type" value="events" />
+            </div>
+          </fieldset>
+
+          <button type="submit">Search</button>
+        </form>
+      </section>
+
+      <section class="search-results">
+        <header>
+          <h2>Results</h2>
+        </header>
+
+        <ul>
+          <li>Result 1</li>
+          <li>Result 2</li>
+          <li>Result 3</li>
+          <li>Result 4</li>
+          <li>Result 5</li>
+          <li>Result 6</li>
+          <li>Result 7</li>
+          <li>Result 8</li>
+          <li>Result 9</li>
+          <li>Result 10</li>
+        </ul>
+
+        <button type="button" disabled>Previous</button>
+        <button type="button">Next</button>
+      </section>
+    </main>
+  </body>
+</html>

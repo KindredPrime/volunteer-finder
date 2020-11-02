@@ -1,0 +1,54 @@
+body {
+  margin-top: 85px;
+  text-align: center;
+}
+
+nav {
+  text-align: center;
+  font-size: x-large;
+  font-weight: bold;
+  background-color: grey;
+  padding: 15px 0px 15px 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+section {
+  padding: 10px;
+  background-color: #D7D7D7;
+}
+
+section:nth-child(even) {
+  background-color: #A2A2A2;
+}
+
+form {
+  padding: 10px;
+}
+
+fieldset {
+  border: none;
+}
+
+legend {
+  font-weight: bold;
+}
+
+form button {
+  margin-top: 10px;
+}
+
+.search-results ul, .organizations-added ul, .events-added ul {
+  list-style: none;
+  padding: 0;
+}
+
+.search-results li {
+  margin-bottom: 10px;
+}

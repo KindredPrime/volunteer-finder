@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VolunteerUp - Add Event</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Add a volunteer event for other users to see">
+    <link href="main.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav>
+      Navbar
+    </nav>
+
+    <header>
+      <h1>Add an Event</h1>
+    </header>
+
+    <main>
+      <section>
+        <form>
+          <div>
+            <label for="event-name">Name</label>
+            <input type="text" id="event-name" name="event-name" required />
+          </div>
+
+          <br />
+
+          <div>
+            <label for="organization">Organization</label>
+            <select id="organization" name="organization" required>
+              <option value="">--Select an organization--</option>
+              <option value="aspca">ASPCA</option>
+              <option value="ymca">YMCA</option>
+              <option value="animal shelter">Animal Shelter</option>
+              <option value="homeless shelter">Homeless Shelter</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <br />
+
+          <div>
+            <label for="location">Location</label>
+            <input id="location" type="text" name="location" required />
+          </div>
+
+          <br />
+
+          <div>
+            <label for="event-date">Date</label>
+            <input id="event-date" type="date" name="event-date" required />
+          </div>
+
+          <br />
+
+          <fieldset>
+            <legend>Causes</legend>
+            <div>
+              <label for="cause1">Cause</label>
+              <select name="cause1" id="cause1" required>
+                <option value="">--Select a cause--</option>
+                <option value="agriculture">Agriculture</option>
+                <option value="children and youth">Children and Youth</option>
+                <option value="community development">Community Development</option>
+                <option value="education">Education</option>
+                <option value="environment">Environment</option>
+                <option value="health">Health</option>
+                <option value="wildlife">Wildlife</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <button type="button">Add Another Cause</button>
+          </fieldset>
+
+          <br />
+
+          <fieldset>
+            <legend>Tags</legend>
+            <div>
+              <label for="tag1">Tag</label>
+              <input type="text" id="tag1" name="tag1" />
+            </div>
+
+            <button type="button">Add Another Tag</button>
+          </fieldset>
+
+          <br />
+
+          <button type="submit">Add Event</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
