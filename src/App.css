@@ -11,3 +11,15 @@ section {
 section:nth-child(even) {
   background-color: #A2A2A2;
 }
+
+form {
+  padding: 10px;
+}
+
+label {
+  margin-right: 10px;
+}
+
+form button {
+  margin-top: 10px;
+}

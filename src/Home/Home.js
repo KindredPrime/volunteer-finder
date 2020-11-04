@@ -1,12 +1,14 @@
 import React from 'react';
 import Nav from '../Nav/Nav';
-import PageTitle from '../PageTitle/PageTitle';
 
 function Home() {
   return (
     <div className="Home">
       <Nav />
-      <PageTitle title="VolunteerUp" />
+      <header className="page-title">
+        <h1>VolunteerUp</h1>
+      </header>
+
       <section>
         <h2>Find Volunteer Opportunites</h2>
         <p>Users can search for events or organizations by name and cause(s).  The search functions will search for names/causes and tags that match the search terms.</p>
