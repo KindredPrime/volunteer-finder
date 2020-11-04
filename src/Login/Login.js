@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import VolunteerContext from '../VolunteerContext';
 import Nav from '../Nav/Nav';
+import { updateField } from '../util';
 import "./Login.css";
 
 class Login extends Component {
@@ -34,12 +35,6 @@ class Login extends Component {
     }
   }
 
-  updateField = (fieldName, fieldValue) => {
-    this.setState({
-      [fieldName]: fieldValue
-    });
-  }
-
   render() {
     const { error } = this.state;
 
@@ -59,7 +54,7 @@ class Login extends Component {
                 <input
                   type="text"
                   id="username"
-                  onChange={(e) => this.updateField("username", e.target.value)}
+                  onChange={(e) => updateField("username", e.target.value, this)}
                   required
                 />
               </div>
@@ -71,7 +66,7 @@ class Login extends Component {
                 <input
                   type="password"
                   id="password"
-                  onChange={(e) => this.updateField("password", e.target.value)}
+                  onChange={(e) => updateField("password", e.target.value, this)}
                   required
                 />
               </div>
