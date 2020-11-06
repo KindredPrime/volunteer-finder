@@ -10,6 +10,7 @@ import App from "../App";
 // Taken from React Router example on testing library website
 // I don't understand the parameter syntax
 function renderWithRouter(ui, { route = "/" } = {}) {
+  window.history.pushState({}, "Start page", '/');
   window.history.pushState({}, "Test page", route);
 
   return render(ui, { wrapper: BrowserRouter });

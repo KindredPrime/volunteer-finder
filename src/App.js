@@ -4,7 +4,8 @@ import { dummyUsers } from './dummyData';
 import VolunteerContext from './VolunteerContext';
 import Home from './Home/Home';
 import Login from './Login/Login';
-import "./App.css";
+import SignUp from './SignUp/SignUp';
+import './App.css';
 
 class App extends Component {
   static contextType = VolunteerContext;
@@ -27,7 +28,7 @@ class App extends Component {
       });
     }
     else {
-      return "Invalid username and password combination";
+      return 'Invalid username and password combination';
     }
   }
 
@@ -37,13 +38,34 @@ class App extends Component {
     });
   }
 
+  signUpUser = (email, username, password) => {
+    const { users } = this.state;
+
+    const id = users.length;
+    users.push({
+      id,
+      email,
+      username,
+      password
+    });
+
+    this.setState({
+      users
+    });
+
+    this.loginUser(username, password);
+
+    return id;
+  }
+
   render() {
     const { currentUser, users } = this.state;
     const contextValue = {
       user: currentUser,
       users,
       loginUser: this.loginUser,
-      logoutUser: this.logoutUser
+      logoutUser: this.logoutUser,
+      signUpUser: this.signUpUser
     };
 
     return (
@@ -51,6 +73,7 @@ class App extends Component {
         <div className="App">
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
+          <Route path="/signup" component={SignUp} />
         </div>
       </VolunteerContext.Provider>
     );

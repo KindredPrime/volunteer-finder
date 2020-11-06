@@ -4,7 +4,8 @@ const VolunteerContext = React.createContext({
   user: {},
   users: [],
   loginUser: () => {},
-  logoutUser: () => {}
+  logoutUser: () => {},
+  signUpUser: () => {}
 });
 
 export default VolunteerContext;
