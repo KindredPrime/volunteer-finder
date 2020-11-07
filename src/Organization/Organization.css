@@ -1,0 +1,12 @@
+.Organization ul {
+  list-style: none;
+  padding: 0;
+}
+
+.Organization a {
+  color: black;
+}
+
+.Organization__event.passed {
+  text-decoration: line-through;
+}

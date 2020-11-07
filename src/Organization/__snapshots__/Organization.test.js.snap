@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Organization Component renders the UI as expected 1`] = `
+<body>
+  <div>
+    <div
+      class="Organization"
+    >
+      <nav
+        class="Nav"
+      >
+        <a
+          aria-current="page"
+          class="active"
+          href="/"
+        >
+          Home
+        </a>
+        <a
+          href="/login"
+        >
+          Login
+        </a>
+        <a
+          href="/signup"
+        >
+          Sign Up
+        </a>
+      </nav>
+      <header>
+        <h1>
+          YMCA
+        </h1>
+      </header>
+      <section>
+        <header>
+          <h2>
+            Contact Info
+          </h2>
+        </header>
+        <p>
+          Website: 
+          <a
+            href="https://www.ymca.com"
+            target="_blank"
+          >
+            https://www.ymca.com
+          </a>
+        </p>
+        <p>
+          Phone: 
+          1-800-555-7777
+        </p>
+        <p>
+          Email: 
+          contact@ymca.com
+        </p>
+        <p>
+          Address: 
+          1 YMCA Street Real City, Real State
+        </p>
+      </section>
+      <section>
+        <header>
+          <h2>
+            Causes
+          </h2>
+        </header>
+        <ul
+          class="Organization__causes"
+        >
+          <li>
+            Youth
+          </li>
+          <li>
+            Community
+          </li>
+          <li>
+            Health
+          </li>
+        </ul>
+      </section>
+      <section>
+        <header>
+          <h2>
+            Tags
+          </h2>
+        </header>
+        <p
+          class="Organization__tags"
+        >
+          in-person, weekends, weekdays, group
+        </p>
+      </section>
+      <section>
+        <header>
+          <h2>
+            Events
+          </h2>
+        </header>
+        <ul
+          class="Organization__events"
+        >
+          <li>
+            <a
+              class="Organization__event passed"
+              href="/event/1"
+            >
+              Member Appreciation
+            </a>
+          </li>
+          <li>
+            <a
+              class="Organization__event passed"
+              href="/event/1"
+            >
+              Triathlon Assistance
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</body>
+`;

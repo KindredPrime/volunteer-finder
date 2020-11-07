@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { dummyUsers, dummyOrgs, dummyEvents } from './dummyData';
+import { dummyUsers, dummyOrgs, dummyEvents, dummyCauses, dummyTags } from './dummyData';
 import VolunteerContext from './VolunteerContext';
 import Home from './Home/Home';
 import Login from './Login/Login';
 import SignUp from './SignUp/SignUp';
 import User from './User/User';
+import Organization from './Organization/Organization';
 import './App.css';
 
 class App extends Component {
@@ -15,7 +16,9 @@ class App extends Component {
     user: null,
     users: dummyUsers,
     orgs: dummyOrgs,
-    events: dummyEvents
+    events: dummyEvents,
+    causes: dummyCauses,
+    tags: dummyTags
   };
 
   loginUser = (username, password) => {
@@ -75,12 +78,14 @@ class App extends Component {
   }
 
   render() {
-    const { user, users, orgs, events } = this.state;
+    const { user, users, orgs, events, causes, tags } = this.state;
     const contextValue = {
       user,
       users,
       orgs,
       events,
+      causes,
+      tags,
       loginUser: this.loginUser,
       logoutUser: this.logoutUser,
       signUpUser: this.signUpUser
@@ -95,6 +100,7 @@ class App extends Component {
           )} />
           <Route path="/signup" component={SignUp} />
           <Route path="/user" render={() => user ? <User /> : <Redirect to="/login" />} />
+          <Route path="/org/:id" component={Organization} />
         </div>
       </VolunteerContext.Provider>
     );

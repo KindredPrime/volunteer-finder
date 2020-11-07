@@ -90,7 +90,7 @@ const dummyEvents = [
     name: 'Member Appreciation',
     organization: 1,
     location: 'Reston YMCA Center',
-    date: 'February 20th, 2020',
+    date: 'February 20, 2020 00:00:00',
     causes: [2, 3],
     tags: [2, 4, 12]
   },
@@ -99,7 +99,7 @@ const dummyEvents = [
     name: 'Triathlon Assistance',
     organization: 1,
     location: 'Reston YMCA Center',
-    date: 'January 27th, 2020',
+    date: 'January 27, 2020 00:00:00',
     causes: [2, 3],
     tags: [2, 3, 9]
   },
@@ -108,7 +108,7 @@ const dummyEvents = [
     name: 'Adoption Day',
     organization: 2,
     location: 'Times Square, New York City, New York',
-    date: 'December 13th, 2020',
+    date: 'December 13, 2020 00:00:00',
     causes: [5],
     tags: [2, 3, 9, 12]
   },
@@ -117,7 +117,7 @@ const dummyEvents = [
     name: 'Docent Training Class',
     organization: 4,
     location: '14390 Air and Space Museum Pkwy Chantilly, VA 20151',
-    date: 'January 30th, 2021',
+    date: 'January 30, 2021 00:00:00',
     causes: [6, 7],
     tags: [2, 3, 13]
   }
@@ -181,39 +181,39 @@ const dummyTags = [
 const dummyCauses = [
   {
     id: 1,
-    name: 'youth'
+    name: 'Youth'
   },
   {
     id: 2,
-    name: 'community'
+    name: 'Community'
   },
   {
     id: 3,
-    name: 'health'
+    name: 'Health'
   },
   {
     id: 4,
-    name: 'disaster response'
+    name: 'Disaster Response'
   },
   {
     id: 5,
-    name: 'animals'
+    name: 'Animals'
   },
   {
     id: 6,
-    name: 'museums'
+    name: 'Museums'
   },
   {
     id: 7,
-    name: 'education'
+    name: 'Education'
   },
   {
     id: 8,
-    name: 'human rights'
+    name: 'Human Rights'
   },
   {
     id: 9,
-    name: 'arts'
+    name: 'Arts'
   }
 ];
 
