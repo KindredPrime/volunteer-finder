@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom";
-import { BrowserRouter, Router } from "react-router-dom";
+import { BrowserRouter, Router, MemoryRouter } from "react-router-dom";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { createMemoryHistory } from "history";
@@ -55,40 +55,18 @@ describe("Login Component", () => {
   });
 
   it("redirects on correct login", () => {
-    const { container } = renderWithRouter(<App />, { route: "/login" });
+    render(
+      <MemoryRouter initialEntries={['/login']}>
+        <App />
+      </MemoryRouter>
+    );
 
     const user = dummyUsers[0];
     userEvent.type(screen.getByLabelText("Username"), user.username);
     userEvent.type(screen.getByLabelText("Password"), user.password);
-    // Why isn't this redirecting the page?
     userEvent.click(screen.getByRole("button", { name: "Login" }));
 
-    //expect(screen).toMatchSnapshot();
-
-    // Just test the nav bar for now
-    expect(container.querySelector("nav")).toMatchInlineSnapshot(`
-      <nav
-        class="Nav"
-      >
-        <a
-          href="/"
-        >
-          Home
-        </a>
-        <a
-          aria-current="page"
-          class="active"
-          href="/user"
-        >
-          Account
-        </a>
-        <a
-          href="/"
-        >
-          Logout
-        </a>
-      </nav>
-    `);
+    expect(document.body).toMatchSnapshot();
   });
 
   it("displays an error when incorrect username or password", () => {
