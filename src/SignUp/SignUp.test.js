@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Router } from 'react-router-dom';
+import { BrowserRouter, MemoryRouter } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 import userEvent from '@testing-library/user-event';
@@ -37,23 +37,20 @@ describe('SignUp Component', () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  // Finish after the User component is created
-  it.skip('creates a new user and redirects to its page', () => {
-    const history = createMemoryHistory();
-    history.push('/signup');
+  it('creates a new user and redirects to its page', () => {
     render(
-      <Router history={history}>
+      <MemoryRouter initialEntries={['/signup']}>
         <App />
-      </Router>
+      </MemoryRouter>
     );
 
     userEvent.type(screen.getByLabelText('Email'), 'email@email.com');
     userEvent.type(screen.getByLabelText('Username'), 'username');
     userEvent.type(screen.getByLabelText('Password'), 'password');
     userEvent.type(screen.getByLabelText('Confirm Password'), 'password');
-    userEvent.click(screen.getByRole('button'));
+    userEvent.click(screen.getByRole('button', { name: 'Sign Up' }));
 
-    // expect user page with new account details
+    expect(document.body).toMatchSnapshot();
   });
 
   it(`displays error when passwords don't match`, () => {

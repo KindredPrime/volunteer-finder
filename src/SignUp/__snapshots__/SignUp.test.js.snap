@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUp Component creates a new user and redirects to its page 1`] = `
+<body>
+  <div>
+    <div
+      class="App"
+    >
+      <div
+        class="User"
+      >
+        <nav
+          class="Nav"
+        >
+          <a
+            href="/"
+          >
+            Home
+          </a>
+          <a
+            aria-current="page"
+            class="active"
+            href="/user"
+          >
+            Account
+          </a>
+          <a
+            href="/"
+          >
+            Logout
+          </a>
+        </nav>
+        <header>
+          <h1>
+            Account
+          </h1>
+        </header>
+        <section>
+          <header>
+            <h2>
+              Account Info
+            </h2>
+          </header>
+          <p>
+            Username: 
+            username
+          </p>
+          <p>
+            Email: 
+            email@email.com
+          </p>
+        </section>
+        <section>
+          <header>
+            <h2>
+              Organizations Added
+            </h2>
+            <ul
+              class="User__orgs"
+            />
+          </header>
+        </section>
+        <section>
+          <header>
+            <h2>
+              Events Added
+            </h2>
+            <ul
+              class="User__events"
+            />
+          </header>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+`;
