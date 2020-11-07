@@ -18,11 +18,11 @@ function renderWithRouter(ui, { route = "/" } = {}) {
 }
 
 describe("Login Component", () => {
-  const origStoredId = window.localStorage.getItem('userId');
+  const origStoredId = window.localStorage.getItem("userId");
 
   beforeAll(() => {
     if (origStoredId) {
-      window.localStorage.removeItem('userId');
+      window.localStorage.removeItem("userId");
     }
   });
 
@@ -32,14 +32,14 @@ describe("Login Component", () => {
   });
 
   afterEach(() => {
-    if (window.localStorage.getItem('userId')) {
-      window.localStorage.removeItem('userId');
+    if (window.localStorage.getItem("userId")) {
+      window.localStorage.removeItem("userId");
     }
   });
 
   afterAll(() => {
     if (origStoredId) {
-      window.localStorage.setItem('userId', origStoredId);
+      window.localStorage.setItem("userId", origStoredId);
     }
   });
 
@@ -67,7 +67,9 @@ describe("Login Component", () => {
 
     // Just test the nav bar for now
     expect(container.querySelector("nav")).toMatchInlineSnapshot(`
-      <nav>
+      <nav
+        class="Nav"
+      >
         <a
           href="/"
         >

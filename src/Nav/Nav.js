@@ -17,20 +17,18 @@ class Nav extends Component {
     const { user } = this.context;
 
     return (
-      <div className="Nav">
-        <nav>
-          <NavLink exact to="/">Home</NavLink>
-          {user
-            ? <>
-              <NavLink to="/user">Account</NavLink>
-              <Link to="" onClick={this.handleLogout}>Logout</Link>
-            </>
-            : <>
-              <NavLink to="/login">Login</NavLink>
-              <NavLink to="/signup">Sign Up</NavLink>
-            </>}
-        </nav>
-      </div>
+      <nav className="Nav">
+        <NavLink exact to="/">Home</NavLink>
+        {user
+          ? <>
+            <NavLink to="/user">Account</NavLink>
+            <Link to="" onClick={this.handleLogout}>Logout</Link>
+          </>
+          : <>
+            <NavLink to="/login">Login</NavLink>
+            <NavLink to="/signup">Sign Up</NavLink>
+          </>}
+      </nav>
     );
   }
 }

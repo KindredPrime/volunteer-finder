@@ -9,29 +9,27 @@ exports[`User Component renders the UI as expected 1`] = `
       <div
         class="User"
       >
-        <div
+        <nav
           class="Nav"
         >
-          <nav>
-            <a
-              href="/"
-            >
-              Home
-            </a>
-            <a
-              aria-current="page"
-              class="active"
-              href="/user"
-            >
-              Account
-            </a>
-            <a
-              href="/"
-            >
-              Logout
-            </a>
-          </nav>
-        </div>
+          <a
+            href="/"
+          >
+            Home
+          </a>
+          <a
+            aria-current="page"
+            class="active"
+            href="/user"
+          >
+            Account
+          </a>
+          <a
+            href="/"
+          >
+            Logout
+          </a>
+        </nav>
         <header>
           <h1>
             Account
