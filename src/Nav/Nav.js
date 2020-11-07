@@ -21,7 +21,10 @@ class Nav extends Component {
         <nav>
           <NavLink exact to="/">Home</NavLink>
           {user
-            ? <Link to="" onClick={this.handleLogout}>Logout</Link>
+            ? <>
+              <NavLink to="/user">Account</NavLink>
+              <Link to="" onClick={this.handleLogout}>Logout</Link>
+            </>
             : <>
               <NavLink to="/login">Login</NavLink>
               <NavLink to="/signup">Sign Up</NavLink>

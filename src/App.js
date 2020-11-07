@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-import { dummyUsers } from './dummyData';
+import { Route, Redirect } from 'react-router-dom';
+import { dummyUsers, dummyOrgs, dummyEvents } from './dummyData';
 import VolunteerContext from './VolunteerContext';
 import Home from './Home/Home';
 import Login from './Login/Login';
 import SignUp from './SignUp/SignUp';
+import User from './User/User';
 import './App.css';
 
 class App extends Component {
   static contextType = VolunteerContext;
 
   state = {
-    currentUser: null,
-    users: dummyUsers
+    user: null,
+    users: dummyUsers,
+    orgs: dummyOrgs,
+    events: dummyEvents
   };
 
   loginUser = (username, password) => {
@@ -23,8 +26,9 @@ class App extends Component {
     ));
 
     if (user) {
+      window.localStorage.setItem('userId', user.id);
       this.setState({
-        currentUser: user
+        user
       });
     }
     else {
@@ -33,8 +37,9 @@ class App extends Component {
   }
 
   logoutUser = () => {
+    window.localStorage.removeItem('userId');
     this.setState({
-      currentUser: null
+      user: null
     });
   }
 
@@ -58,11 +63,24 @@ class App extends Component {
     return id;
   }
 
+  componentDidMount() {
+    const storedId = window.localStorage.getItem('userId');
+    if (storedId) {
+      const { users } = this.state;
+      const user = users.find((elem) => elem.id === parseInt(storedId));
+      this.setState({
+        user
+      });
+    }
+  }
+
   render() {
-    const { currentUser, users } = this.state;
+    const { user, users, orgs, events } = this.state;
     const contextValue = {
-      user: currentUser,
+      user,
       users,
+      orgs,
+      events,
       loginUser: this.loginUser,
       logoutUser: this.logoutUser,
       signUpUser: this.signUpUser
@@ -72,8 +90,11 @@ class App extends Component {
       <VolunteerContext.Provider value={contextValue}>
         <div className="App">
           <Route exact path="/" component={Home} />
-          <Route path="/login" component={Login} />
+          <Route path="/login" render={({ history }) => (
+            !user ? <Login history={history} /> : <Redirect to="/user" />
+          )} />
           <Route path="/signup" component={SignUp} />
+          <Route path="/user" render={() => user ? <User /> : <Redirect to="/login" />} />
         </div>
       </VolunteerContext.Provider>
     );

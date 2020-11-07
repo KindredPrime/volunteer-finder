@@ -27,7 +27,7 @@ class Login extends Component {
       });
     }
     else {
-      this.props.history.goBack();
+      this.props.history.push('/user');
 
       this.setState({
         error: null
@@ -71,7 +71,7 @@ class Login extends Component {
                 />
               </div>
 
-              <button type="submit">Submit</button>
+              <button type="submit">Login</button>
             </form>
           </section>
         </main>
