@@ -27,7 +27,7 @@ class Login extends Component {
       });
     }
     else {
-      this.props.history.push('/user');
+      this.props.history.push('/account');
 
       this.setState({
         error: null

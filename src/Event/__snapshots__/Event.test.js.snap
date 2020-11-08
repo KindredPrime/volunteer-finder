@@ -17,7 +17,7 @@ exports[`Event Component renders a blank page when no event 1`] = `
           Home
         </a>
         <a
-          href="/user"
+          href="/account"
         >
           Account
         </a>

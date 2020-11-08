@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Login Component redirects to user page on correct login 1`] = `
+exports[`Login Component redirects to account page on correct login 1`] = `
 <body>
   <div>
     <div
       class="App"
     >
       <div
-        class="User"
+        class="Account"
       >
         <nav
           class="Nav"
@@ -20,7 +20,7 @@ exports[`Login Component redirects to user page on correct login 1`] = `
           <a
             aria-current="page"
             class="active"
-            href="/user"
+            href="/account"
           >
             Account
           </a>
@@ -55,19 +55,19 @@ exports[`Login Component redirects to user page on correct login 1`] = `
             <h2>
               Organizations Added
             </h2>
-            <ul
-              class="User__orgs"
+            <div
+              class="OrganizationsList"
             >
-              <li
-                class="User__org"
-              >
-                <a
-                  href="/org/1"
-                >
-                  YMCA
-                </a>
-              </li>
-            </ul>
+              <ul>
+                <li>
+                  <a
+                    href="/org/1"
+                  >
+                    YMCA
+                  </a>
+                </li>
+              </ul>
+            </div>
           </header>
         </section>
         <section>

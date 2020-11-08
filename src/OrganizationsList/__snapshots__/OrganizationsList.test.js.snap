@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrganizationsList Component renders the UI as expected 1`] = `
+<body>
+  <div>
+    <div
+      class="OrganizationsList"
+    >
+      <ul>
+        <li>
+          <a
+            href="/org/1"
+          >
+            YMCA
+          </a>
+        </li>
+        <li>
+          <a
+            href="/org/2"
+          >
+            ASPCA
+          </a>
+        </li>
+        <li>
+          <a
+            href="/org/3"
+          >
+            National VOAD
+          </a>
+        </li>
+        <li>
+          <a
+            href="/org/4"
+          >
+            National Air and Space Museum
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+`;

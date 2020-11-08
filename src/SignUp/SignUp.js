@@ -77,8 +77,8 @@ class SignUp extends Component {
       return;
     }
     
-    const newUserId = signUpUser(userEmail.value, username.value, password.value);
-    this.props.history.push(`/user/${newUserId}`);
+    signUpUser(userEmail.value, username.value, password.value);
+    this.props.history.push(`/account`);
   };
 
   render() {

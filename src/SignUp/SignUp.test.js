@@ -5,6 +5,7 @@ import { createMemoryHistory } from 'history';
 import userEvent from '@testing-library/user-event';
 import SignUp from './SignUp';
 import App from '../App';
+import { dummyUsers, dummyOrgs, dummyEvents } from '../dummyData';
 import VolunteerContext from '../VolunteerContext';
 
 describe('SignUp Component', () => {
@@ -38,10 +39,17 @@ describe('SignUp Component', () => {
   });
 
   it('creates a new user and redirects to its page', () => {
+    const contextValue = {
+      users: dummyUsers,
+      orgs: dummyOrgs,
+      events: dummyEvents
+    };
     render(
-      <MemoryRouter initialEntries={['/signup']}>
-        <App />
-      </MemoryRouter>
+      <VolunteerContext.Provider value={contextValue}>
+        <MemoryRouter initialEntries={['/signup']}>
+          <App />
+        </MemoryRouter>
+      </VolunteerContext.Provider>
     );
 
     userEvent.type(screen.getByLabelText('Email'), 'email@email.com');

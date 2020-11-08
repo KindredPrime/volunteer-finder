@@ -7,7 +7,7 @@ exports[`SignUp Component creates a new user and redirects to its page 1`] = `
       class="App"
     >
       <div
-        class="User"
+        class="Account"
       >
         <nav
           class="Nav"
@@ -20,7 +20,7 @@ exports[`SignUp Component creates a new user and redirects to its page 1`] = `
           <a
             aria-current="page"
             class="active"
-            href="/user"
+            href="/account"
           >
             Account
           </a>
@@ -55,9 +55,11 @@ exports[`SignUp Component creates a new user and redirects to its page 1`] = `
             <h2>
               Organizations Added
             </h2>
-            <ul
-              class="User__orgs"
-            />
+            <div
+              class="OrganizationsList"
+            >
+              <ul />
+            </div>
           </header>
         </section>
         <section>

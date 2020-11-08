@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`User Component renders the UI as expected 1`] = `
+exports[`PublicUser Component renders the UI as expected 1`] = `
 <body>
   <div>
     <div
       class="App"
     >
       <div
-        class="User"
+        class="PublicUser"
       >
         <nav
           class="Nav"
@@ -18,56 +18,39 @@ exports[`User Component renders the UI as expected 1`] = `
             Home
           </a>
           <a
-            aria-current="page"
-            class="active"
-            href="/user"
+            href="/login"
           >
-            Account
+            Login
           </a>
           <a
-            href="/"
+            href="/signup"
           >
-            Logout
+            Sign Up
           </a>
         </nav>
         <header>
           <h1>
-            Account
+            user1
           </h1>
         </header>
         <section>
           <header>
             <h2>
-              Account Info
-            </h2>
-          </header>
-          <p>
-            Username: 
-            user1
-          </p>
-          <p>
-            Email: 
-            email1@email.com
-          </p>
-        </section>
-        <section>
-          <header>
-            <h2>
               Organizations Added
             </h2>
-            <ul
-              class="User__orgs"
+            <div
+              class="OrganizationsList"
             >
-              <li
-                class="User__org"
-              >
-                <a
-                  href="/org/1"
-                >
-                  YMCA
-                </a>
-              </li>
-            </ul>
+              <ul>
+                <li>
+                  <a
+                    href="/org/1"
+                  >
+                    YMCA
+                  </a>
+                </li>
+              </ul>
+            </div>
           </header>
         </section>
         <section>

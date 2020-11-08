@@ -5,9 +5,10 @@ import VolunteerContext from './VolunteerContext';
 import Home from './Home/Home';
 import Login from './Login/Login';
 import SignUp from './SignUp/SignUp';
-import User from './User/User';
+import Account from './Account/Account';
 import Organization from './Organization/Organization';
 import Event from './Event/Event';
+import PublicUser from './PublicUser/PublicUser';
 import './App.css';
 
 class App extends Component {
@@ -55,7 +56,9 @@ class App extends Component {
       id,
       email,
       username,
-      password
+      password,
+      orgsAdded: [],
+      eventsAdded: []
     });
 
     this.setState({
@@ -97,12 +100,13 @@ class App extends Component {
         <div className="App">
           <Route exact path="/" component={Home} />
           <Route path="/login" render={({ history }) => (
-            !user ? <Login history={history} /> : <Redirect to="/user" />
+            !user ? <Login history={history} /> : <Redirect to="/account" />
           )} />
           <Route path="/signup" component={SignUp} />
-          <Route path="/user" render={() => user ? <User /> : <Redirect to="/login" />} />
+          <Route path="/account" render={() => user ? <Account /> : <Redirect to="/login" />} />
           <Route path="/org/:id" component={Organization} />
           <Route path="/event/:id" component={Event} />
+          <Route path="/user/:id" component={PublicUser} />
         </div>
       </VolunteerContext.Provider>
     );

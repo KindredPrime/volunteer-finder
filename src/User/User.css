@@ -1,8 +1,0 @@
-.User__orgs, .User__events {
-  list-style: none;
-  padding: 0;
-}
-
-.User__orgs a, .User__events a {
-  color: black;
-}
