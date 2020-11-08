@@ -39,7 +39,7 @@ function Organization(props) {
                 <h2>Contact Info</h2>
               </header>
 
-              <p>Website: <a href={website} target="_blank">{website}</a></p>
+              <p>Website: <a href={website} target="_blank" rel="noreferrer">{website}</a></p>
               <p>Phone: {phone}</p>
               <p>Email: {email}</p>
               <p>Address: {address}</p>

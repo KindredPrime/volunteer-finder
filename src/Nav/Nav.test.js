@@ -2,9 +2,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
 import { render, screen } from "@testing-library/react";
-import { dummyUsers } from "../dummyData";
 import Nav from "./Nav";
-import VolunteerContext from "../VolunteerContext";
 import App from "../App";
 
 describe("Nav Component", () => {

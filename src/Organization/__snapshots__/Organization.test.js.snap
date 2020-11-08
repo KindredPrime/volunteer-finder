@@ -42,6 +42,7 @@ exports[`Organization Component renders the UI as expected 1`] = `
           Website: 
           <a
             href="https://www.ymca.com"
+            rel="noreferrer"
             target="_blank"
           >
             https://www.ymca.com
