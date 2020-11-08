@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CauseList Component renders the UI as expected 1`] = `
+<body>
+  <div>
+    <div
+      class="CauseList"
+    >
+      <ul>
+        <li>
+          Youth
+        </li>
+        <li>
+          Community
+        </li>
+        <li>
+          Health
+        </li>
+        <li>
+          Disaster Response
+        </li>
+        <li>
+          Animals
+        </li>
+        <li>
+          Museums
+        </li>
+        <li>
+          Education
+        </li>
+        <li>
+          Human Rights
+        </li>
+        <li>
+          Arts
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+`;
