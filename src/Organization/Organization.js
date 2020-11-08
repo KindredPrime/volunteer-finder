@@ -1,30 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import VolunteerContext from '../VolunteerContext';
 import Nav from '../Nav/Nav';
 import CauseList from '../CauseList/CauseList';
 import EventList from '../EventList/EventList';
 
 function Organization(props) {
-  const id = props.match.params.id;
+  const orgId = props.match.params.id;
 
   return (
     <VolunteerContext.Consumer>
       {(value) => {
-        const { orgs, events } = value;
+        const { users, orgs, events } = value;
         const allCauses = value.causes;
         const allTags = value.tags;
-        const org = orgs.find((elem) => elem.id === parseInt(id));
+        const org = orgs.find((elem) => elem.id === parseInt(orgId));
 
         if (org) {
-          const { name, website, phone, email, address } = org;
+          const { name, website, phone, email, address, description } = org;
           const orgCauseIds = org.causes;
           const orgTagIds = org.tags;
 
-          const fullOrgCauses = orgCauseIds.map((id) => allCauses.find((cause) => cause.id === id));
-          const fullOrgTags = orgTagIds.map((id) => allTags.find((tag) => tag.id === id));
+          const fullOrgCauses = orgCauseIds.map((orgCauseId) => allCauses.find((cause) => cause.id === orgCauseId));
+          const fullOrgTags = orgTagIds.map((orgTagId) => allTags.find((tag) => tag.id === orgTagId));
 
-          const orgEvents = events.filter((event) => event.organization === parseInt(id));
+          const orgEvents = events.filter((event) => event.organization === parseInt(orgId));
+
+          const creator = users.find((user) => user.orgsAdded.includes(parseInt(orgId)));
 
           return (
             <div className="Organization">
@@ -43,6 +46,7 @@ function Organization(props) {
               <p>Phone: {phone}</p>
               <p>Email: {email}</p>
               <p>Address: {address}</p>
+              <p>{description}</p>
             </section>
 
             <section>
@@ -67,6 +71,8 @@ function Organization(props) {
 
               <EventList events={orgEvents} />
             </section>
+            
+            <p>Created By: <Link to={`/user/${creator.id}`}>{creator.username}</Link></p>
           </div>
           );
         }

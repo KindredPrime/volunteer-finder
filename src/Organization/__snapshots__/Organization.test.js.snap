@@ -60,6 +60,9 @@ exports[`Organization Component renders the UI as expected 1`] = `
           Address: 
           1 YMCA Street Real City, Real State
         </p>
+        <p>
+          It's fun to stay at the Y-M-C-A!
+        </p>
       </section>
       <section>
         <header>
@@ -124,6 +127,14 @@ exports[`Organization Component renders the UI as expected 1`] = `
           </ul>
         </div>
       </section>
+      <p>
+        Created By: 
+        <a
+          href="/user/1"
+        >
+          user1
+        </a>
+      </p>
     </div>
   </div>
 </body>

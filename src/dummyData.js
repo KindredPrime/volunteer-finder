@@ -49,6 +49,7 @@ const dummyOrgs = [
     phone: '1-800-555-7777',
     email: 'contact@ymca.com',
     address: '1 YMCA Street Real City, Real State',
+    description: `It's fun to stay at the Y-M-C-A!`,
     causes: [1, 2, 3],
     tags: [2, 3, 4, 6]
   },
@@ -59,6 +60,11 @@ const dummyOrgs = [
     phone: '1-800-123-4567',
     email: 'contact@aspca.com',
     address: '1 ASPCA Street Real City, Real State',
+    description: `The American Society for the Prevention of Cruelty to Animals® (ASPCA®) was the first humane society to be established in North America and is, today, one of the largest in the world.
+
+    Our organization was founded on the belief that animals are entitled to kind and respectful treatment at the hands of humans and must be protected under the law. Headquartered in New York City, the ASPCA maintains a strong local presence, and with programs that extend our anti-cruelty mission across the country, we are recognized as a national animal welfare organization. We are a privately funded 501(c)(3) not-for-profit corporation, and are proud to boast more than 2 million supporters across the country.
+    
+    The ASPCA’s mission, as stated by founder Henry Bergh in 1866, is “to provide effective means for the prevention of cruelty to animals throughout the United States.”`,
     causes: [5, 2],
     tags: [2, 3, 4, 10]
   },
@@ -69,6 +75,9 @@ const dummyOrgs = [
     phone: '1-800-456-7890',
     email: 'contact@nvoad.com',
     address: '1 NVOAD Street Rivendell, Middle Earth',
+    description: `National VOAD is a coalition of 70+ of the nation’s most reputable national organizations (faith-based, community-based and other non-profit organizations) and 56 State/Territory VOADs, which represent Local/Regional VOADs and hundreds of other member organizations throughout the country.
+
+    Recognizing that all sectors of society must work together to foster more resilient, self-reliant communities nationwide, we facilitate partnerships with federal, state and local emergency management and other governmental agencies, as well as for-profit corporations, foundations, and educational and research institutions. National VOAD Members represent a powerful force of goodwill in America. They are the leaders who do the work to make our communities stronger and more resilient. In times of need they deliver hope for a more positive future.`,
     causes: [4, 2],
     tags: [2, 3, 4, 5, 7, 11]
   },
@@ -79,6 +88,7 @@ const dummyOrgs = [
     phone: '1-800-987-6543',
     email: 'contact@airandspace.com',
     address: '1 Space Street Air City, Outer Space',
+    description: `The Smithsonian's National Air and Space Museum maintains the world's largest and most significant collection of aviation and space artifacts, encompassing all aspects of human flight, as well as related works of art and archival materials. It operates two landmark facilities that, together, welcome more than eight million visitors a year, making it the most visited museum in the country. It also is home to the Center for Earth and Planetary Studies.`,
     causes: [6, 7],
     tags: [1, 2, 3, 4, 6, 12]
   }

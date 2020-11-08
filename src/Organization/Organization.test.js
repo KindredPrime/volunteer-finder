@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { render } from '@testing-library/react';
 import Organization from './Organization';
-import { dummyOrgs, dummyEvents, dummyCauses, dummyTags } from '../dummyData';
+import { dummyUsers, dummyOrgs, dummyEvents, dummyCauses, dummyTags } from '../dummyData';
 import VolunteerContext from '../VolunteerContext';
 
 describe('Organization Component', () => {
@@ -23,6 +23,7 @@ describe('Organization Component', () => {
 
   it('renders the UI as expected', () => {
     const contextValue = {
+      users: dummyUsers,
       orgs: dummyOrgs,
       events: dummyEvents,
       causes: dummyCauses,
