@@ -7,6 +7,7 @@ import Login from './Login/Login';
 import SignUp from './SignUp/SignUp';
 import User from './User/User';
 import Organization from './Organization/Organization';
+import Event from './Event/Event';
 import './App.css';
 
 class App extends Component {
@@ -101,6 +102,7 @@ class App extends Component {
           <Route path="/signup" component={SignUp} />
           <Route path="/user" render={() => user ? <User /> : <Redirect to="/login" />} />
           <Route path="/org/:id" component={Organization} />
+          <Route path="/event/:id" component={Event} />
         </div>
       </VolunteerContext.Provider>
     );

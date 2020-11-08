@@ -110,7 +110,7 @@ exports[`Organization Component renders the UI as expected 1`] = `
                 class="EventList__event passed"
                 href="/event/1"
               >
-                Member Appreciation
+                Member Appreciation Day
               </a>
             </li>
             <li>

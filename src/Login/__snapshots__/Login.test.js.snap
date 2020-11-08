@@ -85,7 +85,7 @@ exports[`Login Component redirects to user page on correct login 1`] = `
                   class="EventList__event passed"
                   href="/event/1"
                 >
-                  Member Appreciation
+                  Member Appreciation Day
                 </a>
               </li>
               <li>

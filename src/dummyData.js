@@ -87,10 +87,12 @@ const dummyOrgs = [
 const dummyEvents = [
   {
     id: 1,
-    name: 'Member Appreciation',
+    name: 'Member Appreciation Day',
     organization: 1,
     location: 'Reston YMCA Center',
     date: 'February 20, 2020 00:00:00',
+    duration: '4 hours',
+    description: 'Greet YMCA members as they enter the facility and offer them snacks.  See https://www.website.com for more details.',
     causes: [2, 3],
     tags: [2, 4, 12]
   },
@@ -100,6 +102,8 @@ const dummyEvents = [
     organization: 1,
     location: 'Reston YMCA Center',
     date: 'January 27, 2020 00:00:00',
+    duration: '4 hours',
+    description: 'Help YMCA staff host their annual indoor triathlon: sign in triathlon participants, direct the participants to the different stages of the triathlon, and record times. See https://www.triathlon.com for more details.',
     causes: [2, 3],
     tags: [2, 3, 9]
   },
@@ -109,6 +113,8 @@ const dummyEvents = [
     organization: 2,
     location: 'Times Square, New York City, New York',
     date: 'December 13, 2020 00:00:00',
+    duration: '8 hours',
+    description: 'Help the ASPCA run their annual adoption day for their local pet shelter.',
     causes: [5],
     tags: [2, 3, 9, 12]
   },
@@ -118,6 +124,8 @@ const dummyEvents = [
     organization: 4,
     location: '14390 Air and Space Museum Pkwy Chantilly, VA 20151',
     date: 'January 30, 2021 00:00:00',
+    duration: '2 hours',
+    description: 'This is a required class for anyone who wants to be a docent (tour guide) at the National Air and Space Museum.',
     causes: [6, 7],
     tags: [2, 3, 13]
   }

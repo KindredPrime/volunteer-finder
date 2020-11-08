@@ -1,0 +1,7 @@
+.Event a {
+  color: black;
+}
+
+.Event__passed {
+  font-weight: bold;
+}

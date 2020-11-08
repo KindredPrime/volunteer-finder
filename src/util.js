@@ -10,7 +10,14 @@ function todayDate() {
   return new Date(todayString);
 }
 
+function formatDate(date) {
+  const dateComponents = date.split(' ');
+  const excludingTimestamp = dateComponents.filter((component) => !component.match(/[0-9]{2}:[0-9]{2}:[0-9]{2}/))
+  return excludingTimestamp.join(' ');
+}
+
 export {
   updateField,
-  todayDate
+  todayDate,
+  formatDate
 };
