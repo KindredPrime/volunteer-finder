@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { todayDate } from '../util';
 import VolunteerContext from '../VolunteerContext';
 import Nav from '../Nav/Nav';
 import CauseList from '../CauseList/CauseList';
-import './Organization.css';
+import EventList from '../EventList/EventList';
 
 function Organization(props) {
   const id = props.match.params.id;
@@ -67,26 +65,7 @@ function Organization(props) {
                 <h2>Events</h2>
               </header>
 
-              <ul className="Organization__events">
-                {orgEvents
-                  .sort((firstEvent, secondEvent) => {
-                    const firstDate = new Date(firstEvent.date).getTime();
-                    const secondDate = new Date(secondEvent.date).getTime();
-
-                    return secondDate - firstDate;
-                  })
-                  .map((event) => {
-                    const eventDate = new Date(event.date);
-                    const classNames = eventDate >= todayDate() 
-                      ? 'Organization__event'
-                      : 'Organization__event passed';
-                    return (
-                      <li key={event.id}>
-                        <Link to={`/event/${id}`} className={classNames}>{event.name}</Link>
-                      </li>
-                    );
-                  })}
-              </ul>
+              <EventList events={orgEvents} />
             </section>
           </div>
           );

@@ -65,10 +65,12 @@ exports[`SignUp Component creates a new user and redirects to its page 1`] = `
             <h2>
               Events Added
             </h2>
-            <ul
-              class="User__events"
-            />
           </header>
+          <div
+            class="EventList"
+          >
+            <ul />
+          </div>
         </section>
       </div>
     </div>

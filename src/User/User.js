@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import VolunteerContext from '../VolunteerContext';
 import Nav from '../Nav/Nav';
+import EventList from '../EventList/EventList';
 import './User.css';
 
 class User extends Component {
@@ -52,14 +53,9 @@ class User extends Component {
         <section>
           <header>
             <h2>Events Added</h2>
-            <ul className="User__events">
-              {fullEventsAdded.map((event) => (
-                <li key={event.id} className="User__event">
-                  <Link to={`/event/${event.id}`}>{event.name}</Link>
-                </li>
-              ))}
-            </ul>
           </header>
+
+          <EventList events={fullEventsAdded} />
         </section>
       </div>
     );

@@ -54,7 +54,7 @@ describe("Login Component", () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it("redirects on correct login", () => {
+  it("redirects to user page on correct login", () => {
     render(
       <MemoryRouter initialEntries={['/login']}>
         <App />
