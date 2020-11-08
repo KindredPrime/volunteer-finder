@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { todayDate } from '../util';
 import VolunteerContext from '../VolunteerContext';
 import Nav from '../Nav/Nav';
+import CauseList from '../CauseList/CauseList';
 import './Organization.css';
 
 function Organization(props) {
@@ -50,13 +51,7 @@ function Organization(props) {
               <header>
                 <h2>Causes</h2>
               </header>
-              <ul className="Organization__causes">
-                {fullOrgCauses.map((cause) => (
-                  <li key={cause.id}>
-                    {cause.name}
-                  </li>
-                ))}
-              </ul>
+              <CauseList causes={fullOrgCauses}/>
             </section>
 
             <section>

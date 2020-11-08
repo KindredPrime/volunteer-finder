@@ -66,19 +66,21 @@ exports[`Organization Component renders the UI as expected 1`] = `
             Causes
           </h2>
         </header>
-        <ul
-          class="Organization__causes"
+        <div
+          class="CauseList"
         >
-          <li>
-            Youth
-          </li>
-          <li>
-            Community
-          </li>
-          <li>
-            Health
-          </li>
-        </ul>
+          <ul>
+            <li>
+              Youth
+            </li>
+            <li>
+              Community
+            </li>
+            <li>
+              Health
+            </li>
+          </ul>
+        </div>
       </section>
       <section>
         <header>
