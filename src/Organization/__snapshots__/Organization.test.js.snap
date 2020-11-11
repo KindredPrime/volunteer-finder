@@ -17,6 +17,11 @@ exports[`Organization Component renders the UI as expected 1`] = `
           Home
         </a>
         <a
+          href="/search"
+        >
+          Search
+        </a>
+        <a
           href="/login"
         >
           Login
@@ -76,9 +81,6 @@ exports[`Organization Component renders the UI as expected 1`] = `
           <ul>
             <li>
               Youth
-            </li>
-            <li>
-              Community
             </li>
             <li>
               Health

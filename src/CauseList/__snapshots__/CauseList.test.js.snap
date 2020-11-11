@@ -11,9 +11,6 @@ exports[`CauseList Component renders the UI as expected 1`] = `
           Youth
         </li>
         <li>
-          Community
-        </li>
-        <li>
           Health
         </li>
         <li>
@@ -23,7 +20,7 @@ exports[`CauseList Component renders the UI as expected 1`] = `
           Animals
         </li>
         <li>
-          Museums
+          History
         </li>
         <li>
           Education
@@ -33,6 +30,15 @@ exports[`CauseList Component renders the UI as expected 1`] = `
         </li>
         <li>
           Arts
+        </li>
+        <li>
+          Wildlife and Environment
+        </li>
+        <li>
+          Elderly
+        </li>
+        <li>
+          Poverty
         </li>
       </ul>
     </div>

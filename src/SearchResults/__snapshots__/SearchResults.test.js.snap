@@ -1,0 +1,247 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResults Component renders the UI as expected 1`] = `
+<body>
+  <div>
+    <section
+      class="SearchResults"
+    >
+      <header>
+        <h2>
+          Results
+        </h2>
+      </header>
+      <ul>
+        <li>
+          <a
+            href="/org/1"
+          >
+            YMCA
+          </a>
+        </li>
+        <li>
+          <a
+            href="/org/2"
+          >
+            ASPCA
+          </a>
+        </li>
+        <li>
+          <a
+            href="/org/3"
+          >
+            National VOAD
+          </a>
+        </li>
+        <li>
+          <a
+            href="/org/4"
+          >
+            National Air and Space Museum
+          </a>
+        </li>
+        <li>
+          <a
+            href="/org/5"
+          >
+            Fairfax County Health Department
+          </a>
+        </li>
+        <li>
+          <a
+            href="/org/6"
+          >
+            Sully Historic Site
+          </a>
+        </li>
+        <li>
+          <a
+            href="/org/7"
+          >
+            Vecinos Unidos
+          </a>
+        </li>
+        <li>
+          <a
+            href="/org/8"
+          >
+            Girls on the Run of Northern Virginia
+          </a>
+        </li>
+        <li>
+          <a
+            href="/org/9"
+          >
+            Optimist Club of Herndon, VA
+          </a>
+        </li>
+        <li>
+          <a
+            href="/org/10"
+          >
+            FACETS
+          </a>
+        </li>
+      </ul>
+      <div
+        class="SearchResults__page-buttons"
+      >
+        <button
+          disabled=""
+          type="button"
+        >
+          Previous
+        </button>
+        <button
+          type="button"
+        >
+          Next
+        </button>
+      </div>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`SearchResults Component renders the next page when 'Next' clicked 1`] = `
+<body>
+  <div>
+    <section
+      class="SearchResults"
+    >
+      <header>
+        <h2>
+          Results
+        </h2>
+      </header>
+      <ul>
+        <li>
+          <a
+            href="/org/11"
+          >
+            American Cancer Society in District of Columbia
+          </a>
+        </li>
+      </ul>
+      <div
+        class="SearchResults__page-buttons"
+      >
+        <button
+          type="button"
+        >
+          Previous
+        </button>
+        <button
+          disabled=""
+          type="button"
+        >
+          Next
+        </button>
+      </div>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`SearchResults Component renders the previous page when 'Previous' clicked 1`] = `
+<body>
+  <div>
+    <section
+      class="SearchResults"
+    >
+      <header>
+        <h2>
+          Results
+        </h2>
+      </header>
+      <ul>
+        <li>
+          <a
+            href="/org/1"
+          >
+            YMCA
+          </a>
+        </li>
+        <li>
+          <a
+            href="/org/2"
+          >
+            ASPCA
+          </a>
+        </li>
+        <li>
+          <a
+            href="/org/3"
+          >
+            National VOAD
+          </a>
+        </li>
+        <li>
+          <a
+            href="/org/4"
+          >
+            National Air and Space Museum
+          </a>
+        </li>
+        <li>
+          <a
+            href="/org/5"
+          >
+            Fairfax County Health Department
+          </a>
+        </li>
+        <li>
+          <a
+            href="/org/6"
+          >
+            Sully Historic Site
+          </a>
+        </li>
+        <li>
+          <a
+            href="/org/7"
+          >
+            Vecinos Unidos
+          </a>
+        </li>
+        <li>
+          <a
+            href="/org/8"
+          >
+            Girls on the Run of Northern Virginia
+          </a>
+        </li>
+        <li>
+          <a
+            href="/org/9"
+          >
+            Optimist Club of Herndon, VA
+          </a>
+        </li>
+        <li>
+          <a
+            href="/org/10"
+          >
+            FACETS
+          </a>
+        </li>
+      </ul>
+      <div
+        class="SearchResults__page-buttons"
+      >
+        <button
+          disabled=""
+          type="button"
+        >
+          Previous
+        </button>
+        <button
+          type="button"
+        >
+          Next
+        </button>
+      </div>
+    </section>
+  </div>
+</body>
+`;

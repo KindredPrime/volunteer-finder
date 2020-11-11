@@ -18,6 +18,11 @@ exports[`Login Component redirects to account page on correct login 1`] = `
             Home
           </a>
           <a
+            href="/search"
+          >
+            Search
+          </a>
+          <a
             aria-current="page"
             class="active"
             href="/account"

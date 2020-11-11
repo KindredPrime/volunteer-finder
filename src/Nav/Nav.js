@@ -19,6 +19,7 @@ class Nav extends Component {
     return (
       <nav className="Nav">
         <NavLink exact to="/">Home</NavLink>
+        <NavLink to="/search">Search</NavLink>
         {user
           ? <>
             <NavLink to="/account">Account</NavLink>

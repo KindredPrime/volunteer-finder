@@ -17,6 +17,11 @@ exports[`Event Component renders a blank page when no event 1`] = `
           Home
         </a>
         <a
+          href="/search"
+        >
+          Search
+        </a>
+        <a
           href="/account"
         >
           Account
@@ -50,6 +55,11 @@ exports[`Event Component renders the UI as expected 1`] = `
           href="/"
         >
           Home
+        </a>
+        <a
+          href="/search"
+        >
+          Search
         </a>
         <a
           href="/login"
@@ -113,10 +123,10 @@ exports[`Event Component renders the UI as expected 1`] = `
         >
           <ul>
             <li>
-              Community
+              Health
             </li>
             <li>
-              Health
+              Elderly
             </li>
           </ul>
         </div>

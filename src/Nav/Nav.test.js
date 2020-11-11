@@ -58,6 +58,11 @@ describe("Nav Component", () => {
           Home
         </a>
         <a
+          href="/search"
+        >
+          Search
+        </a>
+        <a
           href="/login"
         >
           Login

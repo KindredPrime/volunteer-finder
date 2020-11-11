@@ -17,6 +17,11 @@ exports[`Account Component renders the UI as expected 1`] = `
           Home
         </a>
         <a
+          href="/search"
+        >
+          Search
+        </a>
+        <a
           href="/account"
         >
           Account

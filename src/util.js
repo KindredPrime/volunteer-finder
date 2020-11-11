@@ -16,8 +16,13 @@ function formatDate(date) {
   return excludingTimestamp.join(' ');
 }
 
+function getEntitiesById(ids, allEntities) {
+  return ids.map((id) => allEntities.find((entity) => entity.id === id));
+}
+
 export {
   updateField,
   todayDate,
-  formatDate
+  formatDate,
+  getEntitiesById
 };

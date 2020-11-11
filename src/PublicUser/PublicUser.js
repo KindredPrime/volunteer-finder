@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import VolunteerContext from '../VolunteerContext';
+import { getEntitiesById } from '../util';
 import Nav from '../Nav/Nav';
 import OrganizationsList from '../OrganizationsList/OrganizationsList';
 import EventList from '../EventList/EventList';
@@ -16,7 +17,7 @@ function PublicUser(props) {
 
         if (desiredUser) {
           const { username, orgsAdded, eventsAdded } = desiredUser;
-          const fullOrgsAdded = orgsAdded.map((orgAdded) => orgs.find((org) => org.id === orgAdded));
+          const fullOrgsAdded = getEntitiesById(orgsAdded, orgs);
           const fullEventsAdded = eventsAdded.map((eventAdded) => events.find((event) => event.id === eventAdded))
 
           return (

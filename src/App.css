@@ -23,3 +23,11 @@ label {
 form button {
   margin-top: 10px;
 }
+
+fieldset {
+  border: none;
+}
+
+legend {
+  font-weight: bold;
+}
