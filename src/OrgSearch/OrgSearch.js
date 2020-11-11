@@ -28,31 +28,6 @@ class OrgSearch extends Component {
     searched: false
   };
 
-  /*
-    When checked, add the checkbox value to causes in the state
-    When unchecked, remove the checkbox value from causes in the state
-  */
-  flipCheckboxValue = (fieldName, checkboxName) => {
-    const origFieldValues = this.state[fieldName];
-    const origCheckboxValue = origFieldValues[checkboxName];
-
-    if (origCheckboxValue) {
-      const newCheckboxValues = this.state[fieldName];
-      delete newCheckboxValues[checkboxName];
-
-      this.setState({
-        [fieldName]: newCheckboxValues
-      });
-    } else {
-      this.setState({
-        [fieldName]: {
-          ...origFieldValues,
-          [checkboxName]: true
-        }
-      });
-    }
-  }
-
   handleSubmit = (e) => {
     e.preventDefault();
 

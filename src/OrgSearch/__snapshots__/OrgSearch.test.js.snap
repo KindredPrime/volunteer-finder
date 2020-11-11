@@ -141,6 +141,364 @@ exports[`OrgSearch Component renders search results after clicking 'Search' 1`] 
 </body>
 `;
 
+exports[`OrgSearch Component renders search results that have the selected causes 1`] = `
+<body>
+  <div>
+    <div
+      class="OrgSearch"
+    >
+      <nav
+        class="Nav"
+      >
+        <a
+          aria-current="page"
+          class="active"
+          href="/"
+        >
+          Home
+        </a>
+        <a
+          href="/org-search"
+        >
+          Search Organizations
+        </a>
+        <a
+          href="/event-search"
+        >
+          Search Events
+        </a>
+        <a
+          href="/login"
+        >
+          Login
+        </a>
+        <a
+          href="/signup"
+        >
+          Sign Up
+        </a>
+      </nav>
+      <header>
+        <h1>
+          Search for Organizations
+        </h1>
+      </header>
+      <form>
+        <div>
+          <label
+            for="search-term"
+          >
+            Search Term
+          </label>
+          <input
+            id="search-term"
+            type="text"
+          />
+        </div>
+        <br />
+        <fieldset
+          class="EntityCheckboxes"
+        >
+          <legend>
+            Causes
+             (all are selected by default)
+          </legend>
+          <div>
+            <label
+              for="causes-1"
+            >
+              Youth
+            </label>
+            <input
+              id="causes-1"
+              name="causes"
+              type="checkbox"
+              value="Youth"
+            />
+          </div>
+        </fieldset>
+        <br />
+        <button
+          type="submit"
+        >
+          Search
+        </button>
+      </form>
+      <section
+        class="SearchResults"
+      >
+        <header>
+          <h2>
+            Results
+          </h2>
+        </header>
+        <ul>
+          <li>
+            <a
+              href="/org/1"
+            >
+              YMCA DC
+            </a>
+          </li>
+          <li>
+            <a
+              href="/org/5"
+            >
+              Fairfax County Health Department
+            </a>
+          </li>
+          <li>
+            <a
+              href="/org/7"
+            >
+              Vecinos Unidos
+            </a>
+          </li>
+          <li>
+            <a
+              href="/org/8"
+            >
+              Girls on the Run of Northern Virginia
+            </a>
+          </li>
+          <li>
+            <a
+              href="/org/9"
+            >
+              Optimist Club of Herndon, VA
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`OrgSearch Component renders search results that have the selected tags 1`] = `
+<body>
+  <div>
+    <div
+      class="OrgSearch"
+    >
+      <nav
+        class="Nav"
+      >
+        <a
+          aria-current="page"
+          class="active"
+          href="/"
+        >
+          Home
+        </a>
+        <a
+          href="/org-search"
+        >
+          Search Organizations
+        </a>
+        <a
+          href="/event-search"
+        >
+          Search Events
+        </a>
+        <a
+          href="/login"
+        >
+          Login
+        </a>
+        <a
+          href="/signup"
+        >
+          Sign Up
+        </a>
+      </nav>
+      <header>
+        <h1>
+          Search for Organizations
+        </h1>
+      </header>
+      <form>
+        <div>
+          <label
+            for="search-term"
+          >
+            Search Term
+          </label>
+          <input
+            id="search-term"
+            type="text"
+          />
+        </div>
+        <br />
+        <fieldset
+          class="EntityCheckboxes"
+        >
+          <legend>
+            Tags
+             (all are selected by default)
+          </legend>
+          <div>
+            <label
+              for="tags-1"
+            >
+              virtual
+            </label>
+            <input
+              id="tags-1"
+              name="tags"
+              type="checkbox"
+              value="virtual"
+            />
+          </div>
+        </fieldset>
+        <button
+          type="submit"
+        >
+          Search
+        </button>
+      </form>
+      <section
+        class="SearchResults"
+      >
+        <header>
+          <h2>
+            Results
+          </h2>
+        </header>
+        <ul>
+          <li>
+            <a
+              href="/org/4"
+            >
+              National Air and Space Museum
+            </a>
+          </li>
+          <li>
+            <a
+              href="/org/5"
+            >
+              Fairfax County Health Department
+            </a>
+          </li>
+          <li>
+            <a
+              href="/org/6"
+            >
+              Sully Historic Site
+            </a>
+          </li>
+          <li>
+            <a
+              href="/org/7"
+            >
+              Vecinos Unidos
+            </a>
+          </li>
+          <li>
+            <a
+              href="/org/10"
+            >
+              FACETS
+            </a>
+          </li>
+          <li>
+            <a
+              href="/org/11"
+            >
+              American Cancer Society in District of Columbia
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`OrgSearch Component renders search results that match the search term 1`] = `
+<body>
+  <div>
+    <div
+      class="OrgSearch"
+    >
+      <nav
+        class="Nav"
+      >
+        <a
+          aria-current="page"
+          class="active"
+          href="/"
+        >
+          Home
+        </a>
+        <a
+          href="/org-search"
+        >
+          Search Organizations
+        </a>
+        <a
+          href="/event-search"
+        >
+          Search Events
+        </a>
+        <a
+          href="/login"
+        >
+          Login
+        </a>
+        <a
+          href="/signup"
+        >
+          Sign Up
+        </a>
+      </nav>
+      <header>
+        <h1>
+          Search for Organizations
+        </h1>
+      </header>
+      <form>
+        <div>
+          <label
+            for="search-term"
+          >
+            Search Term
+          </label>
+          <input
+            id="search-term"
+            type="text"
+          />
+        </div>
+        <br />
+        <button
+          type="submit"
+        >
+          Search
+        </button>
+      </form>
+      <section
+        class="SearchResults"
+      >
+        <header>
+          <h2>
+            Results
+          </h2>
+        </header>
+        <ul>
+          <li>
+            <a
+              href="/org/1"
+            >
+              YMCA DC
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`OrgSearch Component renders the UI as expected 1`] = `
 <body>
   <div>

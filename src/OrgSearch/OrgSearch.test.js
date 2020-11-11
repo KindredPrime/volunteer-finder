@@ -52,14 +52,60 @@ describe('OrgSearch Component', () => {
     expect(document.body).toMatchSnapshot();
   });
 
-  // test search term
+  it('renders search results that match the search term', () => {
+    const contextValue = {
+      orgs: dummyOrgs,
+      causes: [],
+      tags: []
+    };
+    render(
+      <VolunteerContext.Provider value={contextValue}>
+        <BrowserRouter>
+          <OrgSearch pageLimit={10} />
+        </BrowserRouter>
+      </VolunteerContext.Provider>
+    );
 
-
-  // test selecting causes
-  it.skip('renders search results based on selected causes', () => {
-
+    userEvent.type(screen.getByLabelText('Search Term'), 'YMCA');
+    userEvent.click(screen.getByRole('button', { name: 'Search' }));
+    expect(document.body).toMatchSnapshot();
   });
 
-  // test selecting tags
+  it('renders search results that have the selected causes', () => {
+    const contextValue = {
+      orgs: dummyOrgs,
+      causes: dummyCauses.slice(0, 1),
+      tags: []
+    };
+    render(
+      <VolunteerContext.Provider value={contextValue}>
+        <BrowserRouter>
+          <OrgSearch pageLimit={10} />
+        </BrowserRouter>
+      </VolunteerContext.Provider>
+    );
 
+    userEvent.click(screen.getByLabelText('Youth'));
+    userEvent.click(screen.getByRole('button', { name: 'Search' }));
+    expect(document.body).toMatchSnapshot();
+  });
+
+  it('renders search results that have the selected tags', () => {
+    const contextValue = {
+      orgs: dummyOrgs,
+      causes: [],
+      tags: dummyTags.slice(0, 1)
+    };
+    render(
+      <VolunteerContext.Provider value={contextValue}>
+        <BrowserRouter>
+          <OrgSearch pageLimit={10} />
+        </BrowserRouter>
+      </VolunteerContext.Provider>
+    );
+
+    userEvent.click(screen.getByLabelText('virtual'));
+    userEvent.click(screen.getByRole('button', { name: 'Search' }));
+    expect(document.body).toMatchSnapshot();
+  });
 });
