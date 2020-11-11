@@ -72,49 +72,63 @@ exports[`OrgSearch Component renders search results after clicking 'Search' 1`] 
         <ul>
           <li>
             <a
-              href="/org/1"
+              href="http://localhost/org/1"
+              rel="noreferrer"
+              target="_blank"
             >
               YMCA DC
             </a>
           </li>
           <li>
             <a
-              href="/org/2"
+              href="http://localhost/org/2"
+              rel="noreferrer"
+              target="_blank"
             >
               Humane Society of Fairfax County, Inc
             </a>
           </li>
           <li>
             <a
-              href="/org/3"
+              href="http://localhost/org/3"
+              rel="noreferrer"
+              target="_blank"
             >
               National VOAD
             </a>
           </li>
           <li>
             <a
-              href="/org/4"
+              href="http://localhost/org/4"
+              rel="noreferrer"
+              target="_blank"
             >
               National Air and Space Museum
             </a>
           </li>
           <li>
             <a
-              href="/org/5"
+              href="http://localhost/org/5"
+              rel="noreferrer"
+              target="_blank"
             >
               Fairfax County Health Department
             </a>
           </li>
           <li>
             <a
-              href="/org/6"
+              href="http://localhost/org/6"
+              rel="noreferrer"
+              target="_blank"
             >
               Sully Historic Site
             </a>
           </li>
           <li>
             <a
-              href="/org/7"
+              href="http://localhost/org/7"
+              rel="noreferrer"
+              target="_blank"
             >
               Vecinos Unidos
             </a>
@@ -235,35 +249,45 @@ exports[`OrgSearch Component renders search results that have the selected cause
         <ul>
           <li>
             <a
-              href="/org/1"
+              href="http://localhost/org/1"
+              rel="noreferrer"
+              target="_blank"
             >
               YMCA DC
             </a>
           </li>
           <li>
             <a
-              href="/org/5"
+              href="http://localhost/org/5"
+              rel="noreferrer"
+              target="_blank"
             >
               Fairfax County Health Department
             </a>
           </li>
           <li>
             <a
-              href="/org/7"
+              href="http://localhost/org/7"
+              rel="noreferrer"
+              target="_blank"
             >
               Vecinos Unidos
             </a>
           </li>
           <li>
             <a
-              href="/org/8"
+              href="http://localhost/org/8"
+              rel="noreferrer"
+              target="_blank"
             >
               Girls on the Run of Northern Virginia
             </a>
           </li>
           <li>
             <a
-              href="/org/9"
+              href="http://localhost/org/9"
+              rel="noreferrer"
+              target="_blank"
             >
               Optimist Club of Herndon, VA
             </a>
@@ -368,42 +392,54 @@ exports[`OrgSearch Component renders search results that have the selected tags 
         <ul>
           <li>
             <a
-              href="/org/4"
+              href="http://localhost/org/4"
+              rel="noreferrer"
+              target="_blank"
             >
               National Air and Space Museum
             </a>
           </li>
           <li>
             <a
-              href="/org/5"
+              href="http://localhost/org/5"
+              rel="noreferrer"
+              target="_blank"
             >
               Fairfax County Health Department
             </a>
           </li>
           <li>
             <a
-              href="/org/6"
+              href="http://localhost/org/6"
+              rel="noreferrer"
+              target="_blank"
             >
               Sully Historic Site
             </a>
           </li>
           <li>
             <a
-              href="/org/7"
+              href="http://localhost/org/7"
+              rel="noreferrer"
+              target="_blank"
             >
               Vecinos Unidos
             </a>
           </li>
           <li>
             <a
-              href="/org/10"
+              href="http://localhost/org/10"
+              rel="noreferrer"
+              target="_blank"
             >
               FACETS
             </a>
           </li>
           <li>
             <a
-              href="/org/11"
+              href="http://localhost/org/11"
+              rel="noreferrer"
+              target="_blank"
             >
               American Cancer Society in District of Columbia
             </a>
@@ -487,7 +523,9 @@ exports[`OrgSearch Component renders search results that match the search term 1
         <ul>
           <li>
             <a
-              href="/org/1"
+              href="http://localhost/org/1"
+              rel="noreferrer"
+              target="_blank"
             >
               YMCA DC
             </a>

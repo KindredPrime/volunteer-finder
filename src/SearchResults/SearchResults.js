@@ -38,6 +38,10 @@ class SearchResults extends Component {
 
     const pageResults = this.getPageResults();
 
+    // Grab the full URL, minus the pathname
+    const endOfBaseUrl = window.location.href.lastIndexOf(window.location.pathname);
+    const baseUrl = window.location.href.substring(0, endOfBaseUrl);
+
     return (
       <section className="SearchResults">
         <header>
@@ -50,7 +54,17 @@ class SearchResults extends Component {
 
             return (
               <li key={`result-${id}`}>
-                <Link to={`/${resultType}/${id}`}>{name}</Link>
+                {/* 
+                  Open the link in a new tab, so the user doesn't lose all of their other search
+                  results
+                */}
+                <a 
+                  href={`${baseUrl}/${resultType}/${id}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {name}
+                </a>
               </li>
             );
           })}

@@ -224,49 +224,63 @@ exports[`EventSearch Component renders search results after clicking 'Search' 1`
         <ul>
           <li>
             <a
-              href="/event/1"
+              href="http://localhost/event/1"
+              rel="noreferrer"
+              target="_blank"
             >
               Member Appreciation Day
             </a>
           </li>
           <li>
             <a
-              href="/event/2"
+              href="http://localhost/event/2"
+              rel="noreferrer"
+              target="_blank"
             >
               Triathlon Assistance
             </a>
           </li>
           <li>
             <a
-              href="/event/3"
+              href="http://localhost/event/3"
+              rel="noreferrer"
+              target="_blank"
             >
               Adoption Day
             </a>
           </li>
           <li>
             <a
-              href="/event/4"
+              href="http://localhost/event/4"
+              rel="noreferrer"
+              target="_blank"
             >
               Docent Training Class
             </a>
           </li>
           <li>
             <a
-              href="/event/5"
+              href="http://localhost/event/5"
+              rel="noreferrer"
+              target="_blank"
             >
               Touring Docent Sully Historic Site
             </a>
           </li>
           <li>
             <a
-              href="/event/6"
+              href="http://localhost/event/6"
+              rel="noreferrer"
+              target="_blank"
             >
               Volunteer Drivers needed to assist older adults in the community
             </a>
           </li>
           <li>
             <a
-              href="/event/7"
+              href="http://localhost/event/7"
+              rel="noreferrer"
+              target="_blank"
             >
               Help Children with Homework and Reading
             </a>
@@ -387,21 +401,27 @@ exports[`EventSearch Component renders search results that have the selected cau
         <ul>
           <li>
             <a
-              href="/event/7"
+              href="http://localhost/event/7"
+              rel="noreferrer"
+              target="_blank"
             >
               Help Children with Homework and Reading
             </a>
           </li>
           <li>
             <a
-              href="/event/8"
+              href="http://localhost/event/8"
+              rel="noreferrer"
+              target="_blank"
             >
               Coach with Girls on the Run in Loudoun County - Role Models Needed!
             </a>
           </li>
           <li>
             <a
-              href="/event/9"
+              href="http://localhost/event/9"
+              rel="noreferrer"
+              target="_blank"
             >
               Coach a Youth Sports Team
             </a>
@@ -507,7 +527,9 @@ exports[`EventSearch Component renders search results that have the selected org
         <ul>
           <li>
             <a
-              href="/event/6"
+              href="http://localhost/event/6"
+              rel="noreferrer"
+              target="_blank"
             >
               Volunteer Drivers needed to assist older adults in the community
             </a>
@@ -612,7 +634,9 @@ exports[`EventSearch Component renders search results that have the selected tag
         <ul>
           <li>
             <a
-              href="/event/7"
+              href="http://localhost/event/7"
+              rel="noreferrer"
+              target="_blank"
             >
               Help Children with Homework and Reading
             </a>
@@ -696,14 +720,18 @@ exports[`EventSearch Component renders search results that match the search term
         <ul>
           <li>
             <a
-              href="/event/1"
+              href="http://localhost/event/1"
+              rel="noreferrer"
+              target="_blank"
             >
               Member Appreciation Day
             </a>
           </li>
           <li>
             <a
-              href="/event/2"
+              href="http://localhost/event/2"
+              rel="noreferrer"
+              target="_blank"
             >
               Triathlon Assistance
             </a>
