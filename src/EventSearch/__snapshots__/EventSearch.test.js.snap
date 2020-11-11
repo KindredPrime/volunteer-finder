@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`OrgSearch Component renders search results after clicking 'Search' 1`] = `
+exports[`EventSearch Component renders search results after clicking 'Search' 1`] = `
 <body>
   <div>
     <div
-      class="OrgSearch"
+      class="EventSearch"
     >
       <nav
         class="Nav"
@@ -39,7 +39,7 @@ exports[`OrgSearch Component renders search results after clicking 'Search' 1`] 
       </nav>
       <header>
         <h1>
-          Search for Organizations
+          Search for Events
         </h1>
       </header>
       <form>
@@ -54,6 +54,158 @@ exports[`OrgSearch Component renders search results after clicking 'Search' 1`] 
             type="text"
           />
         </div>
+        <br />
+        <fieldset
+          class="EntityCheckboxes"
+        >
+          <legend>
+            Organizations
+             (all are selected by default)
+          </legend>
+          <div>
+            <label
+              for="organizations-1"
+            >
+              YMCA
+            </label>
+            <input
+              id="organizations-1"
+              name="organizations"
+              type="checkbox"
+              value="YMCA"
+            />
+          </div>
+          <div>
+            <label
+              for="organizations-2"
+            >
+              ASPCA
+            </label>
+            <input
+              id="organizations-2"
+              name="organizations"
+              type="checkbox"
+              value="ASPCA"
+            />
+          </div>
+          <div>
+            <label
+              for="organizations-3"
+            >
+              National VOAD
+            </label>
+            <input
+              id="organizations-3"
+              name="organizations"
+              type="checkbox"
+              value="National VOAD"
+            />
+          </div>
+          <div>
+            <label
+              for="organizations-4"
+            >
+              National Air and Space Museum
+            </label>
+            <input
+              id="organizations-4"
+              name="organizations"
+              type="checkbox"
+              value="National Air and Space Museum"
+            />
+          </div>
+          <div>
+            <label
+              for="organizations-5"
+            >
+              Fairfax County Health Department
+            </label>
+            <input
+              id="organizations-5"
+              name="organizations"
+              type="checkbox"
+              value="Fairfax County Health Department"
+            />
+          </div>
+          <div>
+            <label
+              for="organizations-6"
+            >
+              Sully Historic Site
+            </label>
+            <input
+              id="organizations-6"
+              name="organizations"
+              type="checkbox"
+              value="Sully Historic Site"
+            />
+          </div>
+          <div>
+            <label
+              for="organizations-7"
+            >
+              Vecinos Unidos
+            </label>
+            <input
+              id="organizations-7"
+              name="organizations"
+              type="checkbox"
+              value="Vecinos Unidos"
+            />
+          </div>
+          <div>
+            <label
+              for="organizations-8"
+            >
+              Girls on the Run of Northern Virginia
+            </label>
+            <input
+              id="organizations-8"
+              name="organizations"
+              type="checkbox"
+              value="Girls on the Run of Northern Virginia"
+            />
+          </div>
+          <div>
+            <label
+              for="organizations-9"
+            >
+              Optimist Club of Herndon, VA
+            </label>
+            <input
+              id="organizations-9"
+              name="organizations"
+              type="checkbox"
+              value="Optimist Club of Herndon, VA"
+            />
+          </div>
+          <div>
+            <label
+              for="organizations-10"
+            >
+              FACETS
+            </label>
+            <input
+              id="organizations-10"
+              name="organizations"
+              type="checkbox"
+              value="FACETS"
+            />
+          </div>
+          <div>
+            <label
+              for="organizations-11"
+            >
+              American Cancer Society in District of Columbia
+            </label>
+            <input
+              id="organizations-11"
+              name="organizations"
+              type="checkbox"
+              value="American Cancer Society in District of Columbia"
+            />
+          </div>
+        </fieldset>
         <br />
         <button
           type="submit"
@@ -74,49 +226,49 @@ exports[`OrgSearch Component renders search results after clicking 'Search' 1`] 
             <a
               href="/org/1"
             >
-              YMCA
+              Member Appreciation Day
             </a>
           </li>
           <li>
             <a
               href="/org/2"
             >
-              ASPCA
+              Triathlon Assistance
             </a>
           </li>
           <li>
             <a
               href="/org/3"
             >
-              National VOAD
+              Adoption Day
             </a>
           </li>
           <li>
             <a
               href="/org/4"
             >
-              National Air and Space Museum
+              Docent Training Class
             </a>
           </li>
           <li>
             <a
               href="/org/5"
             >
-              Fairfax County Health Department
+              Touring Docent Sully Historic Site
             </a>
           </li>
           <li>
             <a
               href="/org/6"
             >
-              Sully Historic Site
+              Volunteer Drivers needed to assist older adults in the community
             </a>
           </li>
           <li>
             <a
               href="/org/7"
             >
-              Vecinos Unidos
+              Help Children with Homework and Reading
             </a>
           </li>
         </ul>
@@ -141,11 +293,11 @@ exports[`OrgSearch Component renders search results after clicking 'Search' 1`] 
 </body>
 `;
 
-exports[`OrgSearch Component renders the UI as expected 1`] = `
+exports[`EventSearch Component renders the UI as expected 1`] = `
 <body>
   <div>
     <div
-      class="OrgSearch"
+      class="EventSearch"
     >
       <nav
         class="Nav"
@@ -180,7 +332,7 @@ exports[`OrgSearch Component renders the UI as expected 1`] = `
       </nav>
       <header>
         <h1>
-          Search for Organizations
+          Search for Events
         </h1>
       </header>
       <form>
@@ -195,6 +347,158 @@ exports[`OrgSearch Component renders the UI as expected 1`] = `
             type="text"
           />
         </div>
+        <br />
+        <fieldset
+          class="EntityCheckboxes"
+        >
+          <legend>
+            Organizations
+             (all are selected by default)
+          </legend>
+          <div>
+            <label
+              for="organizations-1"
+            >
+              YMCA
+            </label>
+            <input
+              id="organizations-1"
+              name="organizations"
+              type="checkbox"
+              value="YMCA"
+            />
+          </div>
+          <div>
+            <label
+              for="organizations-2"
+            >
+              ASPCA
+            </label>
+            <input
+              id="organizations-2"
+              name="organizations"
+              type="checkbox"
+              value="ASPCA"
+            />
+          </div>
+          <div>
+            <label
+              for="organizations-3"
+            >
+              National VOAD
+            </label>
+            <input
+              id="organizations-3"
+              name="organizations"
+              type="checkbox"
+              value="National VOAD"
+            />
+          </div>
+          <div>
+            <label
+              for="organizations-4"
+            >
+              National Air and Space Museum
+            </label>
+            <input
+              id="organizations-4"
+              name="organizations"
+              type="checkbox"
+              value="National Air and Space Museum"
+            />
+          </div>
+          <div>
+            <label
+              for="organizations-5"
+            >
+              Fairfax County Health Department
+            </label>
+            <input
+              id="organizations-5"
+              name="organizations"
+              type="checkbox"
+              value="Fairfax County Health Department"
+            />
+          </div>
+          <div>
+            <label
+              for="organizations-6"
+            >
+              Sully Historic Site
+            </label>
+            <input
+              id="organizations-6"
+              name="organizations"
+              type="checkbox"
+              value="Sully Historic Site"
+            />
+          </div>
+          <div>
+            <label
+              for="organizations-7"
+            >
+              Vecinos Unidos
+            </label>
+            <input
+              id="organizations-7"
+              name="organizations"
+              type="checkbox"
+              value="Vecinos Unidos"
+            />
+          </div>
+          <div>
+            <label
+              for="organizations-8"
+            >
+              Girls on the Run of Northern Virginia
+            </label>
+            <input
+              id="organizations-8"
+              name="organizations"
+              type="checkbox"
+              value="Girls on the Run of Northern Virginia"
+            />
+          </div>
+          <div>
+            <label
+              for="organizations-9"
+            >
+              Optimist Club of Herndon, VA
+            </label>
+            <input
+              id="organizations-9"
+              name="organizations"
+              type="checkbox"
+              value="Optimist Club of Herndon, VA"
+            />
+          </div>
+          <div>
+            <label
+              for="organizations-10"
+            >
+              FACETS
+            </label>
+            <input
+              id="organizations-10"
+              name="organizations"
+              type="checkbox"
+              value="FACETS"
+            />
+          </div>
+          <div>
+            <label
+              for="organizations-11"
+            >
+              American Cancer Society in District of Columbia
+            </label>
+            <input
+              id="organizations-11"
+              name="organizations"
+              type="checkbox"
+              value="American Cancer Society in District of Columbia"
+            />
+          </div>
+        </fieldset>
         <br />
         <fieldset
           class="EntityCheckboxes"

@@ -10,6 +10,7 @@ import Organization from './Organization/Organization';
 import Event from './Event/Event';
 import PublicUser from './PublicUser/PublicUser';
 import OrgSearch from './OrgSearch/OrgSearch';
+import EventSearch from './EventSearch/EventSearch';
 import './App.css';
 
 class App extends Component {
@@ -108,7 +109,8 @@ class App extends Component {
           <Route path="/org/:id" component={Organization} />
           <Route path="/event/:id" component={Event} />
           <Route path="/user/:id" component={PublicUser} />
-          <Route path="/search" render={() => <OrgSearch pageLimit={10} />} />
+          <Route path="/org-search" render={() => <OrgSearch pageLimit={10} />} />
+          <Route path="/event-search" component={EventSearch} />
         </div>
       </VolunteerContext.Provider>
     );

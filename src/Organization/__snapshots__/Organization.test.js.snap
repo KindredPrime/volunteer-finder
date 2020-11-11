@@ -17,9 +17,14 @@ exports[`Organization Component renders the UI as expected 1`] = `
           Home
         </a>
         <a
-          href="/search"
+          href="/org-search"
         >
-          Search
+          Search Organizations
+        </a>
+        <a
+          href="/event-search"
+        >
+          Search Events
         </a>
         <a
           href="/login"

@@ -18,9 +18,14 @@ exports[`SignUp Component creates a new user and redirects to its page 1`] = `
             Home
           </a>
           <a
-            href="/search"
+            href="/org-search"
           >
-            Search
+            Search Organizations
+          </a>
+          <a
+            href="/event-search"
+          >
+            Search Events
           </a>
           <a
             aria-current="page"

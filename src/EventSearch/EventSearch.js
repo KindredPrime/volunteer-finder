@@ -7,16 +7,19 @@ import Nav from '../Nav/Nav';
 import EntityCheckboxes from '../EntityCheckboxes/EntityCheckboxes';
 import SearchResults from '../SearchResults/SearchResults';
 
-class OrgSearch extends Component {
+class EventSearch extends Component {
   static contextType = VolunteerContext;
 
   static defaultProps = {
     pageLimit: 10
   };
 
-  // Only causes/tags that are true are kept in the state
+  // Only causes and tags that are checked are kept in the state
   state = {
     searchTerm: '',
+    orgs: {
+
+    },
     causes: {
 
     },
@@ -28,62 +31,43 @@ class OrgSearch extends Component {
     searched: false
   };
 
-  /*
-    When checked, add the checkbox value to causes in the state
-    When unchecked, remove the checkbox value from causes in the state
-  */
-  flipCheckboxValue = (fieldName, checkboxName) => {
-    const origFieldValues = this.state[fieldName];
-    const origCheckboxValue = origFieldValues[checkboxName];
-
-    if (origCheckboxValue) {
-      const newCheckboxValues = this.state[fieldName];
-      delete newCheckboxValues[checkboxName];
-
-      this.setState({
-        [fieldName]: newCheckboxValues
-      });
-    } else {
-      this.setState({
-        [fieldName]: {
-          ...origFieldValues,
-          [checkboxName]: true
-        }
-      });
-    }
-  }
-
   handleSubmit = (e) => {
     e.preventDefault();
 
     const { searchTerm } = this.state;
+    const searchOrgs = Object.entries(this.state.orgs);
     const searchCauses = Object.entries(this.state.causes);
     const searchTags = Object.entries(this.state.tags);
 
+    const allOrgs = this.context.orgs;
     const allCauses = this.context.causes;
     const allTags = this.context.tags;
-    const allOrgs = this.context.orgs;
+    const allEvents = this.context.events;
 
-    const searchResults = allOrgs
-      .map((org) => ({
-        ...org,
-        causes: getEntitiesById(org.causes, allCauses),
-        tags: getEntitiesById(org.tags, allTags)
+    const searchResults = allEvents
+      .map((event) => ({
+        ...event,
+        organization: getEntitiesById([event.organization], allOrgs)[0],
+        causes: getEntitiesById(event.causes, allCauses),
+        tags: getEntitiesById(event.tags, allTags)
       }))
-      .filter((org) => {
-        const { name, address, description } = org;
-        const orgCauses = org.causes;
-        const orgTags = org.tags;
+      .filter((event) => {
+        const { name, location, description } = event;
+        const eventOrg = event.organization;
+        const eventCauses = event.causes;
+        const eventTags = event.tags;
         const regEx = new RegExp(searchTerm, 'i');
 
-        return (regEx.test(name) || regEx.test(address) || regEx.test(description))
-          && (searchCauses.length === 0 || orgCauses
-            .find((orgCause) => searchCauses.find(([cause, __]) => (
-              cause === orgCause.name
+        return (regEx.test(name) || regEx.test(eventOrg) || regEx.test(location) || regEx.test(description)
+          )
+          && (searchOrgs.length === 0 || searchOrgs.find(([org, __]) => org === eventOrg.name))
+          && (searchCauses.length === 0 || eventCauses
+            .find((eventCause) => searchCauses.find(([cause, __]) => (
+              cause === eventCause.name
             ))))
-          && (searchTags.length === 0 || orgTags
-            .find((orgTag) => searchTags.find(([tag, __]) => ( 
-              tag === orgTag.name
+          && (searchTags.length === 0 || eventTags
+            .find((eventTag) => searchTags.find(([tag, __]) => ( 
+              tag === eventTag.name
             ))));
       });
 
@@ -96,16 +80,16 @@ class OrgSearch extends Component {
   render() {
     // Every time the component is rendered, it grabs the current context for the app's causes and 
     //  tags, to render dynamically on the page.
-    const { causes, tags } = this.context;
+    const { orgs, causes, tags } = this.context;
     const { searchResults, searched } = this.state;
     const { pageLimit } = this.props;
 
     return (
-      <div className="OrgSearch">
+      <div className="EventSearch">
         <Nav />
         
         <header>
-          <h1>Search for Organizations</h1>
+          <h1>Search for Events</h1>
         </header>
 
         <form onSubmit={this.handleSubmit}>
@@ -119,6 +103,17 @@ class OrgSearch extends Component {
           </div>
 
           <br />
+
+          {orgs && orgs.length > 0 && (
+            <>
+              <EntityCheckboxes 
+                entities={orgs} handleClick={setCheckboxValue('orgs', this)}
+                type="organizations"
+              />
+
+              <br />
+            </>
+          )}
 
           {causes && causes.length > 0 && (
             <>
@@ -151,8 +146,8 @@ class OrgSearch extends Component {
   }
 }
 
-OrgSearch.propTypes = {
+EventSearch.propTypes = {
   pageLimit: PropTypes.number.isRequired
 };
 
-export default OrgSearch;
+export default EventSearch;

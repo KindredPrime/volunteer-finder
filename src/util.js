@@ -20,9 +20,35 @@ function getEntitiesById(ids, allEntities) {
   return ids.map((id) => allEntities.find((entity) => entity.id === id));
 }
 
+/*
+  When checked, add the checkbox value to causes in the state
+  When unchecked, remove the checkbox value from causes in the state
+*/
+const setCheckboxValue = (fieldName, componentInstance) => (checkboxName) => {
+  const origFieldValues = componentInstance.state[fieldName];
+  const origCheckboxValue = origFieldValues[checkboxName];
+
+  if (origCheckboxValue) {
+    const newCheckboxValues = componentInstance.state[fieldName];
+    delete newCheckboxValues[checkboxName];
+
+    componentInstance.setState({
+      [fieldName]: newCheckboxValues
+    });
+  } else {
+    componentInstance.setState({
+      [fieldName]: {
+        ...origFieldValues,
+        [checkboxName]: true
+      }
+    });
+  }
+}
+
 export {
   updateField,
   todayDate,
   formatDate,
-  getEntitiesById
+  getEntitiesById,
+  setCheckboxValue
 };
