@@ -98,7 +98,7 @@ exports[`Event Component renders the UI as expected 1`] = `
           <a
             href="/org/1"
           >
-            YMCA
+            YMCA DC
           </a>
         </p>
         <p>
@@ -128,18 +128,16 @@ exports[`Event Component renders the UI as expected 1`] = `
             Causes
           </h2>
         </header>
-        <div
-          class="CauseList"
+        <ul
+          class="Event__causes"
         >
-          <ul>
-            <li>
-              Health
-            </li>
-            <li>
-              Elderly
-            </li>
-          </ul>
-        </div>
+          <li>
+            Health
+          </li>
+          <li>
+            Elderly
+          </li>
+        </ul>
       </section>
       <section>
         <header>

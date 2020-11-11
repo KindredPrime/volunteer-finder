@@ -74,14 +74,14 @@ exports[`OrgSearch Component renders search results after clicking 'Search' 1`] 
             <a
               href="/org/1"
             >
-              YMCA
+              YMCA DC
             </a>
           </li>
           <li>
             <a
               href="/org/2"
             >
-              ASPCA
+              Humane Society of Fairfax County, Inc
             </a>
           </li>
           <li>

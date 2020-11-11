@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import VolunteerContext from '../VolunteerContext';
 import Nav from '../Nav/Nav';
-import CauseList from '../CauseList/CauseList';
 import EventList from '../EventList/EventList';
 
 function Organization(props) {
@@ -13,21 +12,14 @@ function Organization(props) {
     <VolunteerContext.Consumer>
       {(value) => {
         const { users, orgs, events } = value;
-        const allCauses = value.causes;
-        const allTags = value.tags;
         const org = orgs.find((elem) => elem.id === parseInt(orgId));
 
         if (org) {
-          const { name, website, phone, email, address, description } = org;
-          const orgCauseIds = org.causes;
-          const orgTagIds = org.tags;
+          const { name, website, phone, email, address, description, causes, tags } = org;
 
-          const fullOrgCauses = orgCauseIds.map((orgCauseId) => allCauses.find((cause) => cause.id === orgCauseId));
-          const fullOrgTags = orgTagIds.map((orgTagId) => allTags.find((tag) => tag.id === orgTagId));
+          const orgEvents = events.filter((event) => event.organization === name);
 
-          const orgEvents = events.filter((event) => event.organization === parseInt(orgId));
-
-          const creator = users.find((user) => user.orgsAdded.includes(parseInt(orgId)));
+          const creator = users.find((user) => user.orgsAdded.includes(name));
 
           return (
             <div className="Organization">
@@ -53,7 +45,14 @@ function Organization(props) {
               <header>
                 <h2>Causes</h2>
               </header>
-              <CauseList causes={fullOrgCauses}/>
+              
+              <ul className="Organization__causes">
+                {causes.map((cause, index) => (
+                  <li key={index}>
+                    {cause}
+                  </li>
+                ))}
+              </ul>
             </section>
 
             <section>
@@ -61,7 +60,7 @@ function Organization(props) {
                 <h2>Tags</h2>
               </header>
 
-              <p className="Organization__tags">{fullOrgTags.map((tag) => tag.name).join(', ')}</p>
+              <p className="Organization__tags">{tags.join(', ')}</p>
             </section>
 
             <section>

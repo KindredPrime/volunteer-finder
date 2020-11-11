@@ -35,12 +35,12 @@ EventList.propTypes = {
   events: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
     name: PropTypes.string,
-    organization: PropTypes.number,
+    organization: PropTypes.string,
     location: PropTypes.string,
     date: PropTypes.string,
-    causes: PropTypes.arrayOf(PropTypes.number),
-    tags: PropTypes.arrayOf(PropTypes.number)
-  }))
+    causes: PropTypes.arrayOf(PropTypes.string),
+    tags: PropTypes.arrayOf(PropTypes.string)
+  })).isRequired
 };
 
 export default EventList;

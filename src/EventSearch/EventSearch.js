@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import { updateField, getEntitiesById, setCheckboxValue } from '../util';
+import { updateField, setCheckboxValue } from '../util';
 import VolunteerContext from '../VolunteerContext';
 import Nav from '../Nav/Nav';
 import EntityCheckboxes from '../EntityCheckboxes/EntityCheckboxes';
@@ -38,19 +38,10 @@ class EventSearch extends Component {
     const searchOrgs = Object.entries(this.state.orgs);
     const searchCauses = Object.entries(this.state.causes);
     const searchTags = Object.entries(this.state.tags);
-
-    const allOrgs = this.context.orgs;
-    const allCauses = this.context.causes;
-    const allTags = this.context.tags;
+    
     const allEvents = this.context.events;
 
     const searchResults = allEvents
-      .map((event) => ({
-        ...event,
-        organization: getEntitiesById([event.organization], allOrgs)[0],
-        causes: getEntitiesById(event.causes, allCauses),
-        tags: getEntitiesById(event.tags, allTags)
-      }))
       .filter((event) => {
         const { name, location, description } = event;
         const eventOrg = event.organization;
@@ -60,14 +51,14 @@ class EventSearch extends Component {
 
         return (regEx.test(name) || regEx.test(eventOrg) || regEx.test(location) || regEx.test(description)
           )
-          && (searchOrgs.length === 0 || searchOrgs.find(([org, __]) => org === eventOrg.name))
+          && (searchOrgs.length === 0 || searchOrgs.find(([org, __]) => org === eventOrg))
           && (searchCauses.length === 0 || eventCauses
             .find((eventCause) => searchCauses.find(([cause, __]) => (
-              cause === eventCause.name
+              cause === eventCause
             ))))
           && (searchTags.length === 0 || eventTags
             .find((eventTag) => searchTags.find(([tag, __]) => ( 
-              tag === eventTag.name
+              tag === eventTag
             ))));
       });
 
@@ -140,7 +131,9 @@ class EventSearch extends Component {
           </button>
         </form>
 
-        {searched && <SearchResults results={searchResults} pageLimit={pageLimit} />}
+        {searched && (
+          <SearchResults results={searchResults} pageLimit={pageLimit} resultType='event' />
+        )}
       </div>
     );
   }

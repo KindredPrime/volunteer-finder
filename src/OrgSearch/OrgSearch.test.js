@@ -51,4 +51,15 @@ describe('OrgSearch Component', () => {
     userEvent.click(screen.getByRole('button', { name: 'Search' }));
     expect(document.body).toMatchSnapshot();
   });
+
+  // test search term
+
+
+  // test selecting causes
+  it.skip('renders search results based on selected causes', () => {
+
+  });
+
+  // test selecting tags
+
 });

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Nav from '../Nav/Nav';
 import VolunteerContext from '../VolunteerContext';
-import CauseList from '../CauseList/CauseList';
 import { todayDate, formatDate } from '../util';
 import './Event.css';
 
@@ -14,20 +13,14 @@ function Event(props) {
     <VolunteerContext.Consumer>
       {(value) => {
         const { events, orgs, users } = value;
-        const allCauses = value.causes;
-        const allTags = value.tags;
         const event = events.find((elem) => elem.id === parseInt(eventId));
 
         if (event) {
-          const { name, organization, location, date, duration, description } = event;
-          const eventCauseIds = event.causes;
-          const eventTagIds = event.tags;
+          const { name, organization, location, date, duration, description, causes, tags } = event;
 
-          const fullOrg = orgs.find((org) => org.id === organization);
-          const fullCauses = eventCauseIds.map((eventCauseId) => allCauses.find((cause) => cause.id === eventCauseId));
-          const fullTags = eventTagIds.map((eventTagId) => allTags.find((tags) => tags.id === eventTagId));
+          const fullOrg = orgs.find((org) => org.name === organization);
 
-          const creator = users.find((user) => user.eventsAdded.includes(parseInt(eventId)));
+          const creator = users.find((user) => user.eventsAdded.includes(name));
 
           const eventDateObj = new Date(date);
 
@@ -56,8 +49,14 @@ function Event(props) {
                 <header>
                   <h2>Causes</h2>
                 </header>
-
-                <CauseList causes={fullCauses} />
+              
+                <ul className="Event__causes">
+                  {causes.map((cause, index) => (
+                    <li key={index}>
+                      {cause}
+                    </li>
+                  ))}
+                </ul>
               </section>
 
               <section>
@@ -65,7 +64,7 @@ function Event(props) {
                   <h2>Tags</h2>
                 </header>
 
-                <p className="Event__tags">{fullTags.map((tag) => tag.name).join(', ')}</p>
+                <p className="Event__tags">{tags.join(', ')}</p>
               </section>
 
               <p>Created By: <Link to={`/user/${creator.id}`}>{creator.username}</Link></p>

@@ -16,10 +16,6 @@ function formatDate(date) {
   return excludingTimestamp.join(' ');
 }
 
-function getEntitiesById(ids, allEntities) {
-  return ids.map((id) => allEntities.find((entity) => entity.id === id));
-}
-
 /*
   When checked, add the checkbox value to causes in the state
   When unchecked, remove the checkbox value from causes in the state
@@ -49,6 +45,5 @@ export {
   updateField,
   todayDate,
   formatDate,
-  getEntitiesById,
   setCheckboxValue
 };

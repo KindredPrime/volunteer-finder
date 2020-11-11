@@ -16,14 +16,14 @@ exports[`SearchResults Component renders the UI as expected 1`] = `
           <a
             href="/org/1"
           >
-            YMCA
+            YMCA DC
           </a>
         </li>
         <li>
           <a
             href="/org/2"
           >
-            ASPCA
+            Humane Society of Fairfax County, Inc
           </a>
         </li>
         <li>
@@ -159,14 +159,14 @@ exports[`SearchResults Component renders the previous page when 'Previous' click
           <a
             href="/org/1"
           >
-            YMCA
+            YMCA DC
           </a>
         </li>
         <li>
           <a
             href="/org/2"
           >
-            ASPCA
+            Humane Society of Fairfax County, Inc
           </a>
         </li>
         <li>

@@ -73,7 +73,7 @@ exports[`Login Component redirects to account page on correct login 1`] = `
                   <a
                     href="/org/1"
                   >
-                    YMCA
+                    YMCA DC
                   </a>
                 </li>
               </ul>

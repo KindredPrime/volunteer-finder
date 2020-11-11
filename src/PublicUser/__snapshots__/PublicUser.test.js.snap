@@ -56,7 +56,7 @@ exports[`PublicUser Component renders the UI as expected 1`] = `
                   <a
                     href="/org/1"
                   >
-                    YMCA
+                    YMCA DC
                   </a>
                 </li>
               </ul>

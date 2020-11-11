@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+/*
+  Props:
+    - results: the search results to render from
+    - pageLimit: how many results can be displayed at once
+    - resultType: either 'org' or 'event'
+*/
 class SearchResults extends Component {
   static defaultProps = {
     pageLimit: 10
@@ -27,7 +33,7 @@ class SearchResults extends Component {
   }
 
   render() {
-    const { results, pageLimit } = this.props;
+    const { results, pageLimit, resultType } = this.props;
     const { page } = this.state;
 
     const pageResults = this.getPageResults();
@@ -44,7 +50,7 @@ class SearchResults extends Component {
 
             return (
               <li key={`result-${id}`}>
-                <Link to={`/org/${id}`}>{name}</Link>
+                <Link to={`/${resultType}/${id}`}>{name}</Link>
               </li>
             );
           })}
@@ -80,17 +86,10 @@ class SearchResults extends Component {
 
 SearchResults.propTypes = {
   results: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
-    name: PropTypes.string,
-    website: PropTypes.string,
-    phone: PropTypes.string,
-    email: PropTypes.string,
-    address: PropTypes.string,
-    description: PropTypes.string,
-    causes: PropTypes.arrayOf(PropTypes.number),
-    tags: PropTypes.arrayOf(PropTypes.number)
+    id: PropTypes.number
   })).isRequired,
-  pageLimit: PropTypes.number.isRequired
+  pageLimit: PropTypes.number.isRequired,
+  resultType: PropTypes.oneOf(['org', 'event']).isRequired
 };
 
 export default SearchResults;

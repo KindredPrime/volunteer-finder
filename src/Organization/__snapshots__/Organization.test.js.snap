@@ -39,7 +39,7 @@ exports[`Organization Component renders the UI as expected 1`] = `
       </nav>
       <header>
         <h1>
-          YMCA
+          YMCA DC
         </h1>
       </header>
       <section>
@@ -51,27 +51,29 @@ exports[`Organization Component renders the UI as expected 1`] = `
         <p>
           Website: 
           <a
-            href="https://www.ymca.com"
+            href="https://www.ymcadc.org/locations/ymca-fairfax-county-reston/"
             rel="noreferrer"
             target="_blank"
           >
-            https://www.ymca.com
+            https://www.ymcadc.org/locations/ymca-fairfax-county-reston/
           </a>
         </p>
         <p>
           Phone: 
-          1-800-555-7777
+          703-742-8800
         </p>
         <p>
           Email: 
-          contact@ymca.com
+          Carson.Henry@ymcadc.org
         </p>
         <p>
           Address: 
-          1 YMCA Street Real City, Real State
+          12196 Sunset Hills Road, Reston, VA 20190
         </p>
         <p>
-          It's fun to stay at the Y-M-C-A!
+          Today, the Y engages more than 10,000 neighborhoods across the U.S. As the nation’s leading nonprofit committed to helping people and communities to learn, grow and thrive, our contributions are both far-reaching and intimate—from influencing our nation’s culture during times of profound social change to the individual support we provide an adult learning to read.
+
+    By empowering young people to reach their full potential, improving individual and community well-being and giving back and inspiring action in our communities, the Y ensures that everyone has the opportunity to become healthier, more confident, connected and secure.
         </p>
       </section>
       <section>
@@ -80,18 +82,19 @@ exports[`Organization Component renders the UI as expected 1`] = `
             Causes
           </h2>
         </header>
-        <div
-          class="CauseList"
+        <ul
+          class="Organization__causes"
         >
-          <ul>
-            <li>
-              Youth
-            </li>
-            <li>
-              Health
-            </li>
-          </ul>
-        </div>
+          <li>
+            Youth
+          </li>
+          <li>
+            Health
+          </li>
+          <li>
+            Elderly
+          </li>
+        </ul>
       </section>
       <section>
         <header>

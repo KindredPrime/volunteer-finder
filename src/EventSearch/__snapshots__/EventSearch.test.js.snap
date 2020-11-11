@@ -66,26 +66,26 @@ exports[`EventSearch Component renders search results after clicking 'Search' 1`
             <label
               for="organizations-1"
             >
-              YMCA
+              YMCA DC
             </label>
             <input
               id="organizations-1"
               name="organizations"
               type="checkbox"
-              value="YMCA"
+              value="YMCA DC"
             />
           </div>
           <div>
             <label
               for="organizations-2"
             >
-              ASPCA
+              Humane Society of Fairfax County, Inc
             </label>
             <input
               id="organizations-2"
               name="organizations"
               type="checkbox"
-              value="ASPCA"
+              value="Humane Society of Fairfax County, Inc"
             />
           </div>
           <div>
@@ -224,49 +224,49 @@ exports[`EventSearch Component renders search results after clicking 'Search' 1`
         <ul>
           <li>
             <a
-              href="/org/1"
+              href="/event/1"
             >
               Member Appreciation Day
             </a>
           </li>
           <li>
             <a
-              href="/org/2"
+              href="/event/2"
             >
               Triathlon Assistance
             </a>
           </li>
           <li>
             <a
-              href="/org/3"
+              href="/event/3"
             >
               Adoption Day
             </a>
           </li>
           <li>
             <a
-              href="/org/4"
+              href="/event/4"
             >
               Docent Training Class
             </a>
           </li>
           <li>
             <a
-              href="/org/5"
+              href="/event/5"
             >
               Touring Docent Sully Historic Site
             </a>
           </li>
           <li>
             <a
-              href="/org/6"
+              href="/event/6"
             >
               Volunteer Drivers needed to assist older adults in the community
             </a>
           </li>
           <li>
             <a
-              href="/org/7"
+              href="/event/7"
             >
               Help Children with Homework and Reading
             </a>
@@ -359,26 +359,26 @@ exports[`EventSearch Component renders the UI as expected 1`] = `
             <label
               for="organizations-1"
             >
-              YMCA
+              YMCA DC
             </label>
             <input
               id="organizations-1"
               name="organizations"
               type="checkbox"
-              value="YMCA"
+              value="YMCA DC"
             />
           </div>
           <div>
             <label
               for="organizations-2"
             >
-              ASPCA
+              Humane Society of Fairfax County, Inc
             </label>
             <input
               id="organizations-2"
               name="organizations"
               type="checkbox"
-              value="ASPCA"
+              value="Humane Society of Fairfax County, Inc"
             />
           </div>
           <div>

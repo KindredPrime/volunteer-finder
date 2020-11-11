@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import { updateField, getEntitiesById, setCheckboxValue } from '../util';
+import { updateField, setCheckboxValue } from '../util';
 import VolunteerContext from '../VolunteerContext';
 import Nav from '../Nav/Nav';
 import EntityCheckboxes from '../EntityCheckboxes/EntityCheckboxes';
@@ -59,17 +59,10 @@ class OrgSearch extends Component {
     const { searchTerm } = this.state;
     const searchCauses = Object.entries(this.state.causes);
     const searchTags = Object.entries(this.state.tags);
-
-    const allCauses = this.context.causes;
-    const allTags = this.context.tags;
+    
     const allOrgs = this.context.orgs;
 
     const searchResults = allOrgs
-      .map((org) => ({
-        ...org,
-        causes: getEntitiesById(org.causes, allCauses),
-        tags: getEntitiesById(org.tags, allTags)
-      }))
       .filter((org) => {
         const { name, address, description } = org;
         const orgCauses = org.causes;
@@ -79,11 +72,11 @@ class OrgSearch extends Component {
         return (regEx.test(name) || regEx.test(address) || regEx.test(description))
           && (searchCauses.length === 0 || orgCauses
             .find((orgCause) => searchCauses.find(([cause, __]) => (
-              cause === orgCause.name
+              cause === orgCause
             ))))
           && (searchTags.length === 0 || orgTags
             .find((orgTag) => searchTags.find(([tag, __]) => ( 
-              tag === orgTag.name
+              tag === orgTag
             ))));
       });
 
@@ -145,7 +138,9 @@ class OrgSearch extends Component {
           </button>
         </form>
 
-        {searched && <SearchResults results={searchResults} pageLimit={pageLimit} />}
+        {searched && (
+          <SearchResults results={searchResults} pageLimit={pageLimit} resultType='org' />
+        )}
       </div>
     );
   }
