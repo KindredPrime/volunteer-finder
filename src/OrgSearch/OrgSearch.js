@@ -91,8 +91,10 @@ class OrgSearch extends Component {
           {causes && causes.length > 0 && (
             <>
               <EntityCheckboxes 
-                entities={causes} handleClick={setCheckboxValue('causes', this)} 
-                type="causes" 
+                entities={causes}
+                handleClick={setCheckboxValue('causes', this)} 
+                type="causes"
+                legend="Causes (all are selected by default)"
               />
 
               <br />
@@ -101,8 +103,10 @@ class OrgSearch extends Component {
 
           {tags && tags.length > 0 && (
             <EntityCheckboxes 
-              entities={tags} handleClick={setCheckboxValue('tags', this)} 
+              entities={tags}
+              handleClick={setCheckboxValue('tags', this)} 
               type="tags" 
+              legend="Tags (all are selected by default)"
             />
           )}
 

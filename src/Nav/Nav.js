@@ -23,6 +23,7 @@ class Nav extends Component {
         <NavLink to="/event-search">Search Events</NavLink>
         {user
           ? <>
+            <NavLink to="/add-org">Add Organization</NavLink>
             <NavLink to="/account">Account</NavLink>
             <Link to="" onClick={this.handleLogout}>Logout</Link>
           </>

@@ -59,8 +59,7 @@ exports[`EventSearch Component renders search results after clicking 'Search' 1`
           class="EntityCheckboxes"
         >
           <legend>
-            Organizations
-             (all are selected by default)
+            Organizations (all are selected by default)
           </legend>
           <div>
             <label
@@ -366,8 +365,7 @@ exports[`EventSearch Component renders search results that have the selected cau
           class="EntityCheckboxes"
         >
           <legend>
-            Causes
-             (all are selected by default)
+            Causes (all are selected by default)
           </legend>
           <div>
             <label
@@ -492,8 +490,7 @@ exports[`EventSearch Component renders search results that have the selected org
           class="EntityCheckboxes"
         >
           <legend>
-            Organizations
-             (all are selected by default)
+            Organizations (all are selected by default)
           </legend>
           <div>
             <label
@@ -600,8 +597,7 @@ exports[`EventSearch Component renders search results that have the selected tag
           class="EntityCheckboxes"
         >
           <legend>
-            Tags
-             (all are selected by default)
+            Tags (all are selected by default)
           </legend>
           <div>
             <label
@@ -802,8 +798,7 @@ exports[`EventSearch Component renders the UI as expected 1`] = `
           class="EntityCheckboxes"
         >
           <legend>
-            Organizations
-             (all are selected by default)
+            Organizations (all are selected by default)
           </legend>
           <div>
             <label
@@ -954,8 +949,7 @@ exports[`EventSearch Component renders the UI as expected 1`] = `
           class="EntityCheckboxes"
         >
           <legend>
-            Causes
-             (all are selected by default)
+            Causes (all are selected by default)
           </legend>
           <div>
             <label
@@ -1106,8 +1100,7 @@ exports[`EventSearch Component renders the UI as expected 1`] = `
           class="EntityCheckboxes"
         >
           <legend>
-            Tags
-             (all are selected by default)
+            Tags (all are selected by default)
           </legend>
           <div>
             <label

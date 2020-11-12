@@ -28,6 +28,11 @@ exports[`Login Component redirects to account page on correct login 1`] = `
             Search Events
           </a>
           <a
+            href="/add-org"
+          >
+            Add Organization
+          </a>
+          <a
             aria-current="page"
             class="active"
             href="/account"

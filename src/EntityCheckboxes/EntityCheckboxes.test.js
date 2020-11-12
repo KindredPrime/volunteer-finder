@@ -7,14 +7,26 @@ describe('EntityCheckboxes Component', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-      <EntityCheckboxes entities={[]} handleClick={() => {}} type="causes" />,
+      <EntityCheckboxes 
+        entities={[]}
+        handleClick={() => {}}
+        type="causes"
+        legend="Legend"
+      />,
       div
     );
     ReactDOM.unmountComponentAtNode(div);
   });
 
   it('renders the UI as expected', () => {
-    render(<EntityCheckboxes entities={dummyCauses} handleClick={() => {}} type="causes" />);
+    render(
+      <EntityCheckboxes
+        entities={dummyCauses}
+        handleClick={() => {}}
+        type="causes"
+        legend="Causes"
+      />
+    );
 
     expect(document.body).toMatchSnapshot();
   });

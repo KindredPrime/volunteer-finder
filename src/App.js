@@ -11,6 +11,7 @@ import Event from './Event/Event';
 import PublicUser from './PublicUser/PublicUser';
 import OrgSearch from './OrgSearch/OrgSearch';
 import EventSearch from './EventSearch/EventSearch';
+import AddOrg from './AddOrg/AddOrg';
 import './App.css';
 
 class App extends Component {
@@ -53,7 +54,7 @@ class App extends Component {
   signUpUser = (email, username, password) => {
     const { users } = this.state;
 
-    const id = users.length;
+    const id = users.length + 1;
     users.push({
       id,
       email,
@@ -68,6 +69,40 @@ class App extends Component {
     });
 
     this.loginUser(username, password);
+
+    return id;
+  }
+
+  addOrg = (name, website, phone, email, address, causes, tags) => {
+    const { user, users, orgs } = this.state;
+    const id = orgs.length + 1;
+    const org = {
+      id,
+      name,
+      website: website || 'Not Available',
+      phone: phone || 'Not Available',
+      email: email || 'Not Available',
+      address: address || 'Not Available',
+      causes,
+      tags
+    };
+
+    const newUser = {
+      ...user,
+      orgsAdded: [...user.orgsAdded, org.name]
+    };
+    const newUsers = users.map((elem) => {
+      if (elem.id === user.id) {
+        return newUser
+      }
+
+      return elem;
+    });
+    this.setState({
+      user: newUser,
+      users: newUsers,
+      orgs: [...orgs, org]
+    });
 
     return id;
   }
@@ -94,7 +129,8 @@ class App extends Component {
       tags,
       loginUser: this.loginUser,
       logoutUser: this.logoutUser,
-      signUpUser: this.signUpUser
+      signUpUser: this.signUpUser,
+      addOrg: this.addOrg
     };
 
     return (
@@ -111,6 +147,9 @@ class App extends Component {
           <Route path="/user/:id" component={PublicUser} />
           <Route path="/org-search" render={() => <OrgSearch pageLimit={10} />} />
           <Route path="/event-search" component={EventSearch} />
+          <Route path="/add-org" render={({ history }) => (
+            window.localStorage.getItem('userId') ? <AddOrg history={history}/> : <Redirect to="/login" />
+          )} />
         </div>
       </VolunteerContext.Provider>
     );

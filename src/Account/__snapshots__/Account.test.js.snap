@@ -27,6 +27,11 @@ exports[`Account Component renders the UI as expected 1`] = `
           Search Events
         </a>
         <a
+          href="/add-org"
+        >
+          Add Organization
+        </a>
+        <a
           href="/account"
         >
           Account

@@ -27,6 +27,11 @@ exports[`Event Component renders a blank page when no event 1`] = `
           Search Events
         </a>
         <a
+          href="/add-org"
+        >
+          Add Organization
+        </a>
+        <a
           href="/account"
         >
           Account

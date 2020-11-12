@@ -98,8 +98,10 @@ class EventSearch extends Component {
           {orgs && orgs.length > 0 && (
             <>
               <EntityCheckboxes 
-                entities={orgs} handleClick={setCheckboxValue('orgs', this)}
+                entities={orgs}
+                handleClick={setCheckboxValue('orgs', this)}
                 type="organizations"
+                legend="Organizations (all are selected by default)"
               />
 
               <br />
@@ -109,8 +111,10 @@ class EventSearch extends Component {
           {causes && causes.length > 0 && (
             <>
               <EntityCheckboxes 
-                entities={causes} handleClick={setCheckboxValue('causes', this)} 
+                entities={causes}
+                handleClick={setCheckboxValue('causes', this)} 
                 type="causes" 
+                legend="Causes (all are selected by default)"
               />
 
               <br />
@@ -119,8 +123,10 @@ class EventSearch extends Component {
 
           {tags && tags.length > 0 && (
             <EntityCheckboxes 
-              entities={tags} handleClick={setCheckboxValue('tags', this)} 
+              entities={tags}
+              handleClick={setCheckboxValue('tags', this)} 
               type="tags" 
+              legend="Tags (all are selected by default)"
             />
           )}
 

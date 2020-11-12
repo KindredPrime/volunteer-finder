@@ -6,11 +6,11 @@ import _ from 'lodash';
   Used to render checkboxes for either causes or tags
 */
 function EntityCheckboxes(props) {
-  const { entities, handleClick, type } = props;
+  const { entities, handleClick, type, legend } = props;
 
   return (
     <fieldset className="EntityCheckboxes">
-      <legend>{_.capitalize(type)} (all are selected by default)</legend>
+      <legend>{legend}</legend>
 
       {entities.map((entity) => (
         <div key={entity.id}>
@@ -34,7 +34,8 @@ EntityCheckboxes.propTypes = {
     name: PropTypes.string
   })).isRequired,
   handleClick: PropTypes.func.isRequired,
-  type: PropTypes.string.isRequired
+  type: PropTypes.string.isRequired,
+  legend: PropTypes.string.isRequired
 }
 
 export default EntityCheckboxes;

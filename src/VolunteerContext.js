@@ -9,7 +9,8 @@ const VolunteerContext = React.createContext({
   tags: [],
   loginUser: () => {},
   logoutUser: () => {},
-  signUpUser: () => {}
+  signUpUser: () => {},
+  addOrg: () => {}
 });
 
 export default VolunteerContext;

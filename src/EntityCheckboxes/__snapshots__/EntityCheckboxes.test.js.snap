@@ -8,7 +8,6 @@ exports[`EntityCheckboxes Component renders the UI as expected 1`] = `
     >
       <legend>
         Causes
-         (all are selected by default)
       </legend>
       <div>
         <label
