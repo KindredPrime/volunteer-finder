@@ -32,7 +32,7 @@ describe('AddOrg Component', () => {
     const div = document.createElement('div');
     ReactDOM.render(
       <BrowserRouter>
-        <AddOrg />
+        <AddOrg history={{}} />
       </BrowserRouter>,
       div
     );
@@ -87,7 +87,7 @@ describe('AddOrg Component', () => {
   it(`renders an error when 'Name' is missing`, () => {    
     render(
       <BrowserRouter>
-        <AddOrg />
+        <AddOrg history={{}} />
       </BrowserRouter>
     );
 
@@ -102,7 +102,7 @@ describe('AddOrg Component', () => {
   it('renders an error when no contact info fields', () => {
     render(
       <BrowserRouter>
-        <AddOrg />
+        <AddOrg history={{}} />
       </BrowserRouter>
     );
 

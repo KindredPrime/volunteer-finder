@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import VolunteerContext from '../VolunteerContext';
 import Nav from '../Nav/Nav';
 import EntityCheckboxes from '../EntityCheckboxes/EntityCheckboxes';
@@ -255,5 +256,11 @@ class AddOrg extends Component {
     );
   }
 }
+
+AddOrg.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func
+  }).isRequired
+};
 
 export default AddOrg;
