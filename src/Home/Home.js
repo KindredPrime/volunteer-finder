@@ -6,17 +6,23 @@ function Home() {
     <div className="Home">
       <Nav />
       <header className="page-title">
-        <h1>VolunteerUp</h1>
+        <h1>Welcome to VolunteerUp</h1>
       </header>
 
       <section>
-        <h2>Find Volunteer Opportunites</h2>
-        <p>Users can search for events or organizations by name and cause(s).  The search functions will search for names/causes and tags that match the search terms.</p>
+        <h2>Find Volunteer Organizations</h2>
+        <p>
+          Search for organizations in the DC metropolitan area by name, cause(s), 
+          and any relevant tags.
+        </p>
       </section>
 
       <section>
-        <h2>Add Organizations and Events</h2>
-        <p>Each organization includes a location, contact info, a website, the cause(s) it’s involved with, and any other tags users want to add.  Each event includes the organization running the event, the location, the date, the cause(s) it’s involved with, and any other tags users add.</p>
+        <h2>Create an Account to Add Organizations</h2>
+        <p>
+          Each organization includes a name, contact info, the cause(s) it’s involved with, and any
+          other miscellaneous tags.
+        </p>
       </section>
     </div>
   );
