@@ -1,19 +1,16 @@
 import ReactDOM from 'react-dom';
-import { BrowserRouter, MemoryRouter } from 'react-router-dom';
-import userEvent from '@testing-library/user-event';
-import { render, screen } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
+import { render } from '@testing-library/react';
 import Account from './Account';
-import App from '../App';
 import VolunteerContext from '../VolunteerContext';
-import { dummyUsers, dummyOrgs, dummyEvents } from '../dummyData';
+import { dummyUsers, dummyOrgs } from '../dummyData';
 
 describe('Account Component', () => {
   const origStoredId = window.localStorage.getItem('userId');
 
   const contextValue = {
     user: dummyUsers[0],
-    orgs: dummyOrgs,
-    events: dummyEvents
+    orgs: dummyOrgs
   };
 
   beforeAll(() => {

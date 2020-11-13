@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { dummyUsers, dummyOrgs, dummyEvents, dummyCauses, dummyTags } from './dummyData';
+import { dummyUsers, dummyOrgs, dummyCauses, dummyTags } from './dummyData';
 import VolunteerContext from './VolunteerContext';
 import Home from './Home/Home';
 import Login from './Login/Login';
 import SignUp from './SignUp/SignUp';
 import Account from './Account/Account';
 import Organization from './Organization/Organization';
-import Event from './Event/Event';
 import PublicUser from './PublicUser/PublicUser';
 import OrgSearch from './OrgSearch/OrgSearch';
-import EventSearch from './EventSearch/EventSearch';
 import AddOrg from './AddOrg/AddOrg';
 import './App.css';
 
@@ -21,7 +19,6 @@ class App extends Component {
     user: null,
     users: dummyUsers,
     orgs: dummyOrgs,
-    events: dummyEvents,
     causes: dummyCauses,
     tags: dummyTags
   };
@@ -60,8 +57,7 @@ class App extends Component {
       email,
       username,
       password,
-      orgsAdded: [],
-      eventsAdded: []
+      orgsAdded: []
     });
 
     this.setState({
@@ -119,12 +115,11 @@ class App extends Component {
   }
 
   render() {
-    const { user, users, orgs, events, causes, tags } = this.state;
+    const { user, users, orgs, causes, tags } = this.state;
     const contextValue = {
       user,
       users,
       orgs,
-      events,
       causes,
       tags,
       loginUser: this.loginUser,
@@ -143,10 +138,8 @@ class App extends Component {
           <Route path="/signup" component={SignUp} />
           <Route path="/account" render={() => user ? <Account /> : <Redirect to="/login" />} />
           <Route path="/org/:id" component={Organization} />
-          <Route path="/event/:id" component={Event} />
           <Route path="/user/:id" component={PublicUser} />
           <Route path="/org-search" render={() => <OrgSearch pageLimit={10} />} />
-          <Route path="/event-search" component={EventSearch} />
           <Route path="/add-org" render={({ history }) => (
             window.localStorage.getItem('userId') ? <AddOrg history={history}/> : <Redirect to="/login" />
           )} />

@@ -23,11 +23,6 @@ exports[`AddOrg Component goes to org page after successful add 1`] = `
             Search Organizations
           </a>
           <a
-            href="/event-search"
-          >
-            Search Events
-          </a>
-          <a
             href="/add-org"
           >
             Add Organization
@@ -103,18 +98,6 @@ exports[`AddOrg Component goes to org page after successful add 1`] = `
           >
             virtual
           </p>
-        </section>
-        <section>
-          <header>
-            <h2>
-              Events
-            </h2>
-          </header>
-          <div
-            class="EventList"
-          >
-            <ul />
-          </div>
         </section>
         <p>
           Created By: 

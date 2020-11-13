@@ -20,7 +20,6 @@ class Nav extends Component {
       <nav className="Nav">
         <NavLink exact to="/">Home</NavLink>
         <NavLink to="/org-search">Search Organizations</NavLink>
-        <NavLink to="/event-search">Search Events</NavLink>
         {user
           ? <>
             <NavLink to="/add-org">Add Organization</NavLink>

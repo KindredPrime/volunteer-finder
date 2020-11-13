@@ -63,11 +63,6 @@ describe("Nav Component", () => {
           Search Organizations
         </a>
         <a
-          href="/event-search"
-        >
-          Search Events
-        </a>
-        <a
           href="/login"
         >
           Login

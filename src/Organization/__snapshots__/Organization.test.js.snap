@@ -22,11 +22,6 @@ exports[`Organization Component renders the UI as expected 1`] = `
           Search Organizations
         </a>
         <a
-          href="/event-search"
-        >
-          Search Events
-        </a>
-        <a
           href="/login"
         >
           Login
@@ -107,35 +102,6 @@ exports[`Organization Component renders the UI as expected 1`] = `
         >
           in-person, weekends, weekdays, group
         </p>
-      </section>
-      <section>
-        <header>
-          <h2>
-            Events
-          </h2>
-        </header>
-        <div
-          class="EventList"
-        >
-          <ul>
-            <li>
-              <a
-                class="EventList__event passed"
-                href="/event/1"
-              >
-                Member Appreciation Day
-              </a>
-            </li>
-            <li>
-              <a
-                class="EventList__event passed"
-                href="/event/2"
-              >
-                Triathlon Assistance
-              </a>
-            </li>
-          </ul>
-        </div>
       </section>
       <p>
         Created By: 

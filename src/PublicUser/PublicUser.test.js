@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import PublicUser from './PublicUser';
-import { dummyUsers, dummyOrgs, dummyEvents } from '../dummyData';
+import { dummyUsers, dummyOrgs } from '../dummyData';
 import VolunteerContext from '../VolunteerContext';
 import App from '../App';
 
@@ -23,8 +23,7 @@ describe('PublicUser Component', () => {
   it('renders the UI as expected', () => {
     const contextValue = {
       users: dummyUsers,
-      orgs: dummyOrgs,
-      events: dummyEvents
+      orgs: dummyOrgs
     };
 
     render(

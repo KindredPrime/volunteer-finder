@@ -2,17 +2,15 @@ import React, { Component } from 'react';
 import VolunteerContext from '../VolunteerContext';
 import Nav from '../Nav/Nav';
 import OrganizationsList from '../OrganizationsList/OrganizationsList';
-import EventList from '../EventList/EventList';
 
 class Account extends Component {
   static contextType = VolunteerContext;
 
   render() {
-    const { user, orgs, events } = this.context;
-    const { email, username, orgsAdded, eventsAdded } = user;
+    const { user, orgs } = this.context;
+    const { email, username, orgsAdded } = user;
 
     const fullOrgsAdded = orgsAdded.map((orgName) => orgs.find((org) => org.name === orgName));
-    const fullEventsAdded = eventsAdded.map((eventName) => events.find((event) => event.name === eventName))
 
     return (
       <div className="Account">
@@ -37,14 +35,6 @@ class Account extends Component {
 
             <OrganizationsList orgs={fullOrgsAdded} />
           </header>
-        </section>
-
-        <section>
-          <header>
-            <h2>Events Added</h2>
-          </header>
-
-          <EventList events={fullEventsAdded} />
         </section>
       </div>
     );

@@ -9,7 +9,7 @@ describe('SearchResults Component', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-      <SearchResults results={[]} pageLimit={0} resultType="event" />,
+      <SearchResults results={[]} pageLimit={0} />,
       div
     );
     ReactDOM.unmountComponentAtNode(div);
@@ -18,7 +18,7 @@ describe('SearchResults Component', () => {
   it('renders the UI as expected', () => {
     render(
       <BrowserRouter>
-        <SearchResults results={dummyOrgs} pageLimit={10} resultType="org" />
+        <SearchResults results={dummyOrgs} pageLimit={10} />
       </BrowserRouter>
     );
 
@@ -28,7 +28,7 @@ describe('SearchResults Component', () => {
   it(`renders the next page when 'Next' clicked`, () => {
     render(
       <BrowserRouter>
-        <SearchResults results={dummyOrgs} pageLimit={10} resultType="org" />
+        <SearchResults results={dummyOrgs} pageLimit={10} />
       </BrowserRouter>
     );
 
@@ -39,7 +39,7 @@ describe('SearchResults Component', () => {
   it(`renders the previous page when 'Previous' clicked`, () => {
     render(
       <BrowserRouter>
-        <SearchResults results={dummyOrgs} pageLimit={10} resultType="org" />
+        <SearchResults results={dummyOrgs} pageLimit={10} />
       </BrowserRouter>
     );
 

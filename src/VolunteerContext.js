@@ -4,7 +4,6 @@ const VolunteerContext = React.createContext({
   user: {},
   users: [],
   orgs: [],
-  events: [],
   causes: [],
   tags: [],
   loginUser: () => {},

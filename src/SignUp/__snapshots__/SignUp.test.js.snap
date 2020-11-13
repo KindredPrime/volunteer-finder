@@ -23,11 +23,6 @@ exports[`SignUp Component creates a new user and redirects to its page 1`] = `
             Search Organizations
           </a>
           <a
-            href="/event-search"
-          >
-            Search Events
-          </a>
-          <a
             href="/add-org"
           >
             Add Organization
@@ -76,18 +71,6 @@ exports[`SignUp Component creates a new user and redirects to its page 1`] = `
               <ul />
             </div>
           </header>
-        </section>
-        <section>
-          <header>
-            <h2>
-              Events Added
-            </h2>
-          </header>
-          <div
-            class="EventList"
-          >
-            <ul />
-          </div>
         </section>
       </div>
     </div>

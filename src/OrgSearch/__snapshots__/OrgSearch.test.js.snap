@@ -22,11 +22,6 @@ exports[`OrgSearch Component renders search results after clicking 'Search' 1`] 
           Search Organizations
         </a>
         <a
-          href="/event-search"
-        >
-          Search Events
-        </a>
-        <a
           href="/login"
         >
           Login
@@ -177,11 +172,6 @@ exports[`OrgSearch Component renders search results that have the selected cause
           Search Organizations
         </a>
         <a
-          href="/event-search"
-        >
-          Search Events
-        </a>
-        <a
           href="/login"
         >
           Login
@@ -318,11 +308,6 @@ exports[`OrgSearch Component renders search results that have the selected tags 
           href="/org-search"
         >
           Search Organizations
-        </a>
-        <a
-          href="/event-search"
-        >
-          Search Events
         </a>
         <a
           href="/login"
@@ -471,11 +456,6 @@ exports[`OrgSearch Component renders search results that match the search term 1
           Search Organizations
         </a>
         <a
-          href="/event-search"
-        >
-          Search Events
-        </a>
-        <a
           href="/login"
         >
           Login
@@ -555,11 +535,6 @@ exports[`OrgSearch Component renders the UI as expected 1`] = `
           href="/org-search"
         >
           Search Organizations
-        </a>
-        <a
-          href="/event-search"
-        >
-          Search Events
         </a>
         <a
           href="/login"

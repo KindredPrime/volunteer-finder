@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 /*
   Props:
     - results: the search results to render from
     - pageLimit: how many results can be displayed at once
-    - resultType: either 'org' or 'event'
 */
 class SearchResults extends Component {
   static defaultProps = {
@@ -33,7 +31,7 @@ class SearchResults extends Component {
   }
 
   render() {
-    const { results, pageLimit, resultType } = this.props;
+    const { results, pageLimit } = this.props;
     const { page } = this.state;
 
     const pageResults = this.getPageResults();
@@ -59,7 +57,7 @@ class SearchResults extends Component {
                   results
                 */}
                 <a 
-                  href={`${baseUrl}/${resultType}/${id}`}
+                  href={`${baseUrl}/org/${id}`}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -102,8 +100,7 @@ SearchResults.propTypes = {
   results: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number
   })).isRequired,
-  pageLimit: PropTypes.number.isRequired,
-  resultType: PropTypes.oneOf(['org', 'event']).isRequired
+  pageLimit: PropTypes.number.isRequired
 };
 
 export default SearchResults;

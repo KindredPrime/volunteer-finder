@@ -4,86 +4,70 @@ const dummyUsers = [
     email: 'email1@email.com',
     username: 'user1',
     password: 'password1',
-    orgsAdded: ['YMCA DC'],
-    eventsAdded: ['Member Appreciation Day', 'Triathlon Assistance']
+    orgsAdded: ['YMCA DC']
   },
   {
     id: 2,
     email: 'email2@email.com',
     username: 'user2',
     password: 'password2',
-    orgsAdded: ['Humane Society of Fairfax County, Inc'],
-    eventsAdded: ['Adoption Day']
+    orgsAdded: ['Humane Society of Fairfax County, Inc']
   },
   {
     id: 3,
     email: 'email3@email.com',
     username: 'user3',
     password: 'password3',
-    orgsAdded: ['National VOAD'],
-    eventsAdded: []
+    orgsAdded: ['National VOAD']
   },
   {
     id: 4,
     email: 'email4@email.com',
     username: 'user4',
     password: 'password4',
-    orgsAdded: [],
-    eventsAdded: []
+    orgsAdded: []
   },
   {
     id: 5,
     email: 'email5@email.com',
     username: 'user5',
     password: 'password5',
-    orgsAdded: ['National Air and Space Museum'],
-    eventsAdded: ['Docent Training Class']
+    orgsAdded: ['National Air and Space Museum']
   },
   {
     id: 6,
     email: 'email6@email.com',
     username: 'user6',
     password: 'password6',
-    orgsAdded: [],
-    eventsAdded: ['Front Desk Volunteers', 'Help Children with Homework and Reading']
+    orgsAdded: []
   },
   {
     id: 7,
     email: 'email7@email.com',
     username: 'user7',
     password: 'password7',
-    orgsAdded: ['Sully Historic Site', 'Optimist Club of Herndon, VA'],
-    eventsAdded: []
+    orgsAdded: ['Sully Historic Site', 'Optimist Club of Herndon, VA']
   },
   {
     id: 8,
     email: 'email8@email.com',
     username: 'user8',
     password: 'password8',
-    orgsAdded: ['Fairfax County Health Department'],
-    eventsAdded: ['Volunteer Drivers needed to assist older adults in the community']
+    orgsAdded: ['Fairfax County Health Department']
   },
   {
     id: 9,
     email: 'email9@email.com',
     username: 'user9',
     password: 'password9',
-    orgsAdded: ['Girls on the Run of Northern Virginia'],
-    eventsAdded: [
-      'Coach with Girls on the Run in Loudoun County - Role Models Needed!',
-      'Coach a Youth Sports Team'
-    ]
+    orgsAdded: ['Girls on the Run of Northern Virginia']
   },
   {
     id: 10,
     email: 'email10@email.com',
     username: 'user10',
     password: 'password10',
-    orgsAdded: ['Vecinos Unidos', 'FACETS', 'American Cancer Society in District of Columbia'],
-    eventsAdded: [
-      'Touring Docent Sully Historic Site',
-      'Drive Cancer Patients to Lifesaving Treatment'
-    ]
+    orgsAdded: ['Vecinos Unidos', 'FACETS', 'American Cancer Society in District of Columbia']
   }
 ];
 
@@ -236,154 +220,6 @@ const dummyOrgs = [
   },
 ];
 
-const dummyEvents = [
-  {
-    id: 1,
-    name: 'Member Appreciation Day',
-    organization: 'YMCA DC',
-    location: 'Reston YMCA Center',
-    date: 'February 20, 2020 00:00:00',
-    duration: '4 hours',
-    description: 'Greet YMCA members as they enter the facility and offer them snacks.  See https://www.website.com for more details.',
-    causes: ['Health', 'Elderly'],
-    tags: ['in-person', 'weekdays', 'greeting']
-  },
-  {
-    id: 2,
-    name: 'Triathlon Assistance',
-    organization: 'YMCA DC',
-    location: 'Reston YMCA Center',
-    date: 'January 27, 2020 00:00:00',
-    duration: '4 hours',
-    description: 'Help YMCA staff host their annual indoor triathlon: sign in triathlon participants, direct the participants to the different stages of the triathlon, and record times. See https://www.triathlon.com for more details.',
-    causes: ['Health'],
-    tags: ['in-person', 'weekends', 'administration']
-  },
-  {
-    id: 3,
-    name: 'Adoption Day',
-    organization: 'Humane Society of Fairfax County, Inc',
-    location: 'Times Square, New York City, New York',
-    date: 'December 13, 2020 00:00:00',
-    duration: '8 hours',
-    description: 'Help the Humane Society of Fairfax County run their annual adoption day for their pet shelter.',
-    causes: ['Animals'],
-    tags: ['in-person', 'weekends', 'administration', 'greeting']
-  },
-  {
-    id: 4,
-    name: 'Docent Training Class',
-    organization: 'National Air and Space Museum',
-    location: '14390 Air and Space Museum Pkwy Chantilly, VA 20151',
-    date: 'January 30, 2021 00:00:00',
-    duration: '2 hours',
-    description: 'This is a required class for anyone who wants to be a docent (tour guide) at the National Air and Space Museum.',
-    causes: ['History', 'Education'],
-    tags: ['in-person', 'weekends', 'training']
-  },
-  {
-    id: 5,
-    name: 'Touring Docent Sully Historic Site',
-    organization: 'Sully Historic Site',
-    location: '3650 Historic Sully Way Chantilly, VA 20151',
-    date: 'January 27, 2020 00:00:00',
-    duration: '5 hours',
-    description: `Do you like history? Do you like conversation? Volunteer at Sully Historic Site conducting tours that showcase 1794 home of Richard Bland Lee. The site containing the original house and outbuildings, along with a representative slave quarter depict life in early Virginia. If you like history and have a desire to share your knowledge with others than Sully might be right for you! Guides small groups and individuals on tours of the historic site. Facilitates discussion and answers questions relevant to the site's history, buildings, grounds, and collections. Supports scheduled site programs and special events. Every day except Tuesdays. Minimum age: 16`,
-    causes: ['History', 'Education'],
-    tags: ['in-person', 'weekends', 'weekdays', 'greeting']
-  },
-  {
-    id: 6,
-    name: 'Volunteer Drivers needed to assist older adults in the community',
-    organization: 'Fairfax County Health Department',
-    location: 'Fairfax County',
-    date: 'January 27, 2020 00:00:00',
-    duration: '4 hours',
-    description: `There is a great need for additional volunteer drivers to meet the transportation needs of non-driving adults in the community. NV Rides coordinates a network of volunteer driving programs throughout the region, in partnership with the Fairfax County, that help non-driving older adults with rides to the doctor and the grocery store. You can contact us directly at info@nvrides.org or find the program that operates in your area on our website www.nvrides.org. During the COVID-19 pandemic, we require all drivers and riders to wear masks and observe physical distancing protocols. Watch our video here (https://www.youtube.com/watch?v=Q9kow-vofhY&t=3s). Minimum age: 21`,
-    causes: ['Elderly'],
-    tags: ['in-person', 'weekends', 'weekdays', 'driving']
-  },
-  {
-    id: 7,
-    name: 'Help Children with Homework and Reading',
-    organization: 'Vecinos Unidos',
-    location: 'Herndon Neighborhood Resource Center, 1086 Elden St., Herndon, VA 20170',
-    duration: '1.5 hours',
-    date: 'January 27, 2020 00:00:00',
-    description: `If you want to make a difference in a child's life, we need YOU. Our volunteers help low-income students in grades 1 through 6 with homework and reading after school. Our students' parents do not have the English skills to be able to help with academics, but they recognize how important school success is. With help from our volunteers, these young people can become successful in school and on the road beyond. Volunteers are needed Monday through Thursday during the school year from 4:30-6:00 p.m. We have a waiting list of students, and need your help now. The program is located at the Herndon Neighborhood Resource Center, 1086 Elden St., Herndon, VA 20170.`,
-    causes: ['Youth', 'Education'],
-    tags: ['virtual', 'in-person', 'weekdays']
-  },
-  {
-    id: 8,
-    name: 'Coach with Girls on the Run in Loudoun County - Role Models Needed!',
-    organization: 'Girls on the Run of Northern Virginia',
-    location: 'Dulles, Virginia, 20103',
-    //date: '10/05/2020 - 12/06/2020',
-    date: 'December 6, 2020 00:00:00',
-    duration: '2-3 hours per week for 8 weeks',
-    description: `Girls on the Run of Northern Virginia is looking for coaches across our area for our Fall 2020 Season!ﾠLace up your sneakers and inspire a group of girls to be strong, confident, and healthy! Girls on the Run is a youth development program for girls in 3rd through 8th grade that creatively integrates running. Teams of volunteer coaches are trained to facilitate our easy-to-follow curriculum with small groups of girls twice a week over the course of 8 weeks.ﾠ
-
-    You don't need to be a runner or a competitive athlete to coach! Successful coaches only need to serve as role models for girls by showing up prepared and on time, by listening attentively, and by demonstrating a positive attitude!
-    
-    Coaches are required to commit to 2-3 hours per week for the 8 week season, with additional time required for Coach Training and the GOTR 5K race. Practice schedules will vary based on team. GOTR's Fallﾠ2020 Season starts the week of Octoberﾠ5th and ends on December 6th.?
-    
-    To apply as a Fall 2020 Girls on the Run of NOVA coach, go to https://www.raceplanner.com/volunteer/index/fall-2020-newcoachWe have program sites at over 110 schools and community centers in Northern Virginia - so we can certainly find a location that works for you to volunteer!Learn more about volunteering with us at https://www.gotrnova.org/volunteer or email clambacher@gotrnova.org.ﾠ"I am so thankful that this program exists in Northern Virginia.
-    
-    Every year I coach it just gets better and better and we are more equipped to make an impact on the lives of these girls!" -- GOTR NOVA Coach`,
-    causes: ['Youth'],
-    tags: ['in-person', 'weekends', 'weekdays']
-  },
-  {
-    id: 9,
-    name: 'Coach a Youth Sports Team',
-    organization: 'Optimist Club of Herndon, VA',
-    location: 'Herndon, VA 20170',
-    // Remove the date and duration later
-    date: 'January 27, 2020 00:00:00',
-    duration: '4 hours',
-    description: `Donate your time and make a difference that lasts a lifetime by coaching a youth recreational sports team! We need adult coaches for baseball, basketball, cheerleading, field hockey, football, and lacrosse. The Optimist Club of Herndon VA is a not-for-profit, all volunteer organization serving the Herndon-Reston-Sterling VA communities.
-
-    We provide low and no cost sports programs to over 2000 kids per year and need your help by volunteering your time to coach a youth sports team.`,
-    causes: ['Youth'],
-    tags: ['in-person', 'weekends', 'weekdays', 'outdoors']
-  },
-  {
-    id: 10,
-    name: 'Front Desk Volunteers',
-    organization: 'FACETS',
-    location: '10700 Page Ave, Fairfax, Virginia, 22030',
-    date: 'January 27, 2020 00:00:00',
-    duration: '4 hours',
-    description: `FACETS works to break the cycle of poverty and homelessness in Fairfax County. We are looking for engaged volunteers for our Fairfax City location to be in charge of receptionist duties including answering phones, and creating a welcoming and friendly environment for FACETS clients and guests.
-
-    Schedule: Mondays- Fridays with two shifts (9am-1pm or 1pm to 5pm) weekly.
-    
-    This is an in-person volunteer opportunity, and FACETS requires staff and guests to wear masks, practice frequent handwashing, and observe other covid-prevention measures.
-    
-    Candidates should be interested in helping open doors for people in need. Prior experience in a receptionist role is helpful, as is basic phone and computer knowledge.`,
-    causes: ['Poverty'],
-    tags: ['in-person', 'weekdays', 'administration']
-  },
-  {
-    id: 11,
-    name: 'Drive Cancer Patients to Lifesaving Treatment',
-    organization: 'American Cancer Society in District of Columbia',
-    location: 'District Of Columbia',
-    date: 'January 27, 2020 00:00:00',
-    duration: '4 hours',
-    description: `Did you know that transportation is a top need of cancer patients - and you can help? For many cancer patients, getting to and from treatment is one of their toughest challenges. The American Cancer Society needs volunteer drivers to provide rides to treatment for people with cancer.
-
-    For more than 30 years, volunteers with the American Cancer Society Road To Recovery program have donated their time and the use of their car to make sure that people with cancer get to their lifesaving treatments. Volunteers are needed Monday - Friday, and you decide how often you want to drive and what distance you are willing to drive.
-    
-    Volunteer drivers provide encouragement and support, and patients are very thankful for the help. It is a rewarding experience and is ideal for people who like one-on-one interaction and driving. It is a great way to give back if you are a cancer survivor or if you have had a friend or family member who has had cancer. You get to build relationships and provide a vital service to cancer patients, while keeping a flexible schedule.
-    
-    Volunteer drivers must have a current, valid driver's license, proof of automobile insurance, and own a safe and reliable vehicle. Drivers must be between the ages of 18-84 and be willing to have a background check and motor vehicle records check to ensure volunteer and patient safety. Training is provided. For more information or to sign up to volunteer, please visit www.cancer.org/drive.`,
-    causes: ['Health'],
-    tags: ['weekdays', 'driving']
-  }
-];
-
 const dummyCauses = [
   {
     id: 1,
@@ -497,7 +333,6 @@ const dummyTags = [
 export {
   dummyUsers,
   dummyOrgs,
-  dummyEvents,
   dummyCauses,
   dummyTags
 };
