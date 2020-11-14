@@ -16,119 +16,121 @@ exports[`OrgSearch Component renders search results after clicking 'Search' 1`] 
           Menu
         </button>
       </nav>
-      <header>
-        <h1>
-          Search for Organizations
-        </h1>
-      </header>
-      <form>
-        <div>
-          <label
-            for="search-term"
-          >
-            Search Term
-          </label>
-          <input
-            id="search-term"
-            type="text"
-          />
-        </div>
-        <br />
-        <button
-          type="submit"
-        >
-          Search
-        </button>
-      </form>
-      <section
-        class="SearchResults"
-      >
+      <main>
         <header>
-          <h2>
-            Results
-          </h2>
+          <h1>
+            Search for Organizations
+          </h1>
         </header>
-        <ul>
-          <li>
-            <a
-              href="http://localhost/org/1"
-              rel="noreferrer"
-              target="_blank"
+        <form>
+          <div>
+            <label
+              for="search-term"
             >
-              YMCA DC
-            </a>
-          </li>
-          <li>
-            <a
-              href="http://localhost/org/2"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Humane Society of Fairfax County, Inc
-            </a>
-          </li>
-          <li>
-            <a
-              href="http://localhost/org/3"
-              rel="noreferrer"
-              target="_blank"
-            >
-              National VOAD
-            </a>
-          </li>
-          <li>
-            <a
-              href="http://localhost/org/4"
-              rel="noreferrer"
-              target="_blank"
-            >
-              National Air and Space Museum
-            </a>
-          </li>
-          <li>
-            <a
-              href="http://localhost/org/5"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Fairfax County Health Department
-            </a>
-          </li>
-          <li>
-            <a
-              href="http://localhost/org/6"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Sully Historic Site
-            </a>
-          </li>
-          <li>
-            <a
-              href="http://localhost/org/7"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Vecinos Unidos
-            </a>
-          </li>
-        </ul>
-        <div
-          class="SearchResults__page-buttons"
+              Search Term
+            </label>
+            <input
+              id="search-term"
+              type="text"
+            />
+          </div>
+          <br />
+          <button
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
+        <section
+          class="SearchResults"
         >
-          <button
-            disabled=""
-            type="button"
+          <header>
+            <h2>
+              Results
+            </h2>
+          </header>
+          <ul>
+            <li>
+              <a
+                href="http://localhost/org/1"
+                rel="noreferrer"
+                target="_blank"
+              >
+                YMCA DC
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://localhost/org/2"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Humane Society of Fairfax County, Inc
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://localhost/org/3"
+                rel="noreferrer"
+                target="_blank"
+              >
+                National VOAD
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://localhost/org/4"
+                rel="noreferrer"
+                target="_blank"
+              >
+                National Air and Space Museum
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://localhost/org/5"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Fairfax County Health Department
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://localhost/org/6"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Sully Historic Site
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://localhost/org/7"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Vecinos Unidos
+              </a>
+            </li>
+          </ul>
+          <div
+            class="SearchResults__page-buttons"
           >
-            Previous
-          </button>
-          <button
-            type="button"
-          >
-            Next
-          </button>
-        </div>
-      </section>
+            <button
+              disabled=""
+              type="button"
+            >
+              Previous
+            </button>
+            <button
+              type="button"
+            >
+              Next
+            </button>
+          </div>
+        </section>
+      </main>
     </div>
   </div>
 </body>
@@ -150,107 +152,109 @@ exports[`OrgSearch Component renders search results that have the selected cause
           Menu
         </button>
       </nav>
-      <header>
-        <h1>
-          Search for Organizations
-        </h1>
-      </header>
-      <form>
-        <div>
-          <label
-            for="search-term"
-          >
-            Search Term
-          </label>
-          <input
-            id="search-term"
-            type="text"
-          />
-        </div>
-        <br />
-        <fieldset
-          class="EntityCheckboxes"
-        >
-          <legend>
-            Causes (all are selected by default)
-          </legend>
+      <main>
+        <header>
+          <h1>
+            Search for Organizations
+          </h1>
+        </header>
+        <form>
           <div>
             <label
-              for="causes-1"
+              for="search-term"
             >
-              Youth
+              Search Term
             </label>
             <input
-              id="causes-1"
-              name="causes"
-              type="checkbox"
-              value="Youth"
+              id="search-term"
+              type="text"
             />
           </div>
-        </fieldset>
-        <br />
-        <button
-          type="submit"
+          <br />
+          <fieldset
+            class="EntityCheckboxes"
+          >
+            <legend>
+              Causes (all are selected by default)
+            </legend>
+            <div>
+              <label
+                for="causes-1"
+              >
+                Youth
+              </label>
+              <input
+                id="causes-1"
+                name="causes"
+                type="checkbox"
+                value="Youth"
+              />
+            </div>
+          </fieldset>
+          <br />
+          <button
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
+        <section
+          class="SearchResults"
         >
-          Search
-        </button>
-      </form>
-      <section
-        class="SearchResults"
-      >
-        <header>
-          <h2>
-            Results
-          </h2>
-        </header>
-        <ul>
-          <li>
-            <a
-              href="http://localhost/org/1"
-              rel="noreferrer"
-              target="_blank"
-            >
-              YMCA DC
-            </a>
-          </li>
-          <li>
-            <a
-              href="http://localhost/org/5"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Fairfax County Health Department
-            </a>
-          </li>
-          <li>
-            <a
-              href="http://localhost/org/7"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Vecinos Unidos
-            </a>
-          </li>
-          <li>
-            <a
-              href="http://localhost/org/8"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Girls on the Run of Northern Virginia
-            </a>
-          </li>
-          <li>
-            <a
-              href="http://localhost/org/9"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Optimist Club of Herndon, VA
-            </a>
-          </li>
-        </ul>
-      </section>
+          <header>
+            <h2>
+              Results
+            </h2>
+          </header>
+          <ul>
+            <li>
+              <a
+                href="http://localhost/org/1"
+                rel="noreferrer"
+                target="_blank"
+              >
+                YMCA DC
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://localhost/org/5"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Fairfax County Health Department
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://localhost/org/7"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Vecinos Unidos
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://localhost/org/8"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Girls on the Run of Northern Virginia
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://localhost/org/9"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Optimist Club of Herndon, VA
+              </a>
+            </li>
+          </ul>
+        </section>
+      </main>
     </div>
   </div>
 </body>
@@ -272,115 +276,117 @@ exports[`OrgSearch Component renders search results that have the selected tags 
           Menu
         </button>
       </nav>
-      <header>
-        <h1>
-          Search for Organizations
-        </h1>
-      </header>
-      <form>
-        <div>
-          <label
-            for="search-term"
-          >
-            Search Term
-          </label>
-          <input
-            id="search-term"
-            type="text"
-          />
-        </div>
-        <br />
-        <fieldset
-          class="EntityCheckboxes"
-        >
-          <legend>
-            Tags (all are selected by default)
-          </legend>
+      <main>
+        <header>
+          <h1>
+            Search for Organizations
+          </h1>
+        </header>
+        <form>
           <div>
             <label
-              for="tags-1"
+              for="search-term"
             >
-              virtual
+              Search Term
             </label>
             <input
-              id="tags-1"
-              name="tags"
-              type="checkbox"
-              value="virtual"
+              id="search-term"
+              type="text"
             />
           </div>
-        </fieldset>
-        <button
-          type="submit"
+          <br />
+          <fieldset
+            class="EntityCheckboxes"
+          >
+            <legend>
+              Tags (all are selected by default)
+            </legend>
+            <div>
+              <label
+                for="tags-1"
+              >
+                virtual
+              </label>
+              <input
+                id="tags-1"
+                name="tags"
+                type="checkbox"
+                value="virtual"
+              />
+            </div>
+          </fieldset>
+          <button
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
+        <section
+          class="SearchResults"
         >
-          Search
-        </button>
-      </form>
-      <section
-        class="SearchResults"
-      >
-        <header>
-          <h2>
-            Results
-          </h2>
-        </header>
-        <ul>
-          <li>
-            <a
-              href="http://localhost/org/4"
-              rel="noreferrer"
-              target="_blank"
-            >
-              National Air and Space Museum
-            </a>
-          </li>
-          <li>
-            <a
-              href="http://localhost/org/5"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Fairfax County Health Department
-            </a>
-          </li>
-          <li>
-            <a
-              href="http://localhost/org/6"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Sully Historic Site
-            </a>
-          </li>
-          <li>
-            <a
-              href="http://localhost/org/7"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Vecinos Unidos
-            </a>
-          </li>
-          <li>
-            <a
-              href="http://localhost/org/10"
-              rel="noreferrer"
-              target="_blank"
-            >
-              FACETS
-            </a>
-          </li>
-          <li>
-            <a
-              href="http://localhost/org/11"
-              rel="noreferrer"
-              target="_blank"
-            >
-              American Cancer Society in District of Columbia
-            </a>
-          </li>
-        </ul>
-      </section>
+          <header>
+            <h2>
+              Results
+            </h2>
+          </header>
+          <ul>
+            <li>
+              <a
+                href="http://localhost/org/4"
+                rel="noreferrer"
+                target="_blank"
+              >
+                National Air and Space Museum
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://localhost/org/5"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Fairfax County Health Department
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://localhost/org/6"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Sully Historic Site
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://localhost/org/7"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Vecinos Unidos
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://localhost/org/10"
+                rel="noreferrer"
+                target="_blank"
+              >
+                FACETS
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://localhost/org/11"
+                rel="noreferrer"
+                target="_blank"
+              >
+                American Cancer Society in District of Columbia
+              </a>
+            </li>
+          </ul>
+        </section>
+      </main>
     </div>
   </div>
 </body>
@@ -402,50 +408,52 @@ exports[`OrgSearch Component renders search results that match the search term 1
           Menu
         </button>
       </nav>
-      <header>
-        <h1>
-          Search for Organizations
-        </h1>
-      </header>
-      <form>
-        <div>
-          <label
-            for="search-term"
-          >
-            Search Term
-          </label>
-          <input
-            id="search-term"
-            type="text"
-          />
-        </div>
-        <br />
-        <button
-          type="submit"
-        >
-          Search
-        </button>
-      </form>
-      <section
-        class="SearchResults"
-      >
+      <main>
         <header>
-          <h2>
-            Results
-          </h2>
+          <h1>
+            Search for Organizations
+          </h1>
         </header>
-        <ul>
-          <li>
-            <a
-              href="http://localhost/org/1"
-              rel="noreferrer"
-              target="_blank"
+        <form>
+          <div>
+            <label
+              for="search-term"
             >
-              YMCA DC
-            </a>
-          </li>
-        </ul>
-      </section>
+              Search Term
+            </label>
+            <input
+              id="search-term"
+              type="text"
+            />
+          </div>
+          <br />
+          <button
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
+        <section
+          class="SearchResults"
+        >
+          <header>
+            <h2>
+              Results
+            </h2>
+          </header>
+          <ul>
+            <li>
+              <a
+                href="http://localhost/org/1"
+                rel="noreferrer"
+                target="_blank"
+              >
+                YMCA DC
+              </a>
+            </li>
+          </ul>
+        </section>
+      </main>
     </div>
   </div>
 </body>
@@ -467,383 +475,385 @@ exports[`OrgSearch Component renders the UI as expected 1`] = `
           Menu
         </button>
       </nav>
-      <header>
-        <h1>
-          Search for Organizations
-        </h1>
-      </header>
-      <form>
-        <div>
-          <label
-            for="search-term"
+      <main>
+        <header>
+          <h1>
+            Search for Organizations
+          </h1>
+        </header>
+        <form>
+          <div>
+            <label
+              for="search-term"
+            >
+              Search Term
+            </label>
+            <input
+              id="search-term"
+              type="text"
+            />
+          </div>
+          <br />
+          <fieldset
+            class="EntityCheckboxes"
           >
-            Search Term
-          </label>
-          <input
-            id="search-term"
-            type="text"
-          />
-        </div>
-        <br />
-        <fieldset
-          class="EntityCheckboxes"
-        >
-          <legend>
-            Causes (all are selected by default)
-          </legend>
-          <div>
-            <label
-              for="causes-1"
-            >
-              Youth
-            </label>
-            <input
-              id="causes-1"
-              name="causes"
-              type="checkbox"
-              value="Youth"
-            />
-          </div>
-          <div>
-            <label
-              for="causes-2"
-            >
-              Health
-            </label>
-            <input
-              id="causes-2"
-              name="causes"
-              type="checkbox"
-              value="Health"
-            />
-          </div>
-          <div>
-            <label
-              for="causes-3"
-            >
-              Disaster Response
-            </label>
-            <input
-              id="causes-3"
-              name="causes"
-              type="checkbox"
-              value="Disaster Response"
-            />
-          </div>
-          <div>
-            <label
-              for="causes-4"
-            >
-              Animals
-            </label>
-            <input
-              id="causes-4"
-              name="causes"
-              type="checkbox"
-              value="Animals"
-            />
-          </div>
-          <div>
-            <label
-              for="causes-5"
-            >
-              History
-            </label>
-            <input
-              id="causes-5"
-              name="causes"
-              type="checkbox"
-              value="History"
-            />
-          </div>
-          <div>
-            <label
-              for="causes-6"
-            >
-              Education
-            </label>
-            <input
-              id="causes-6"
-              name="causes"
-              type="checkbox"
-              value="Education"
-            />
-          </div>
-          <div>
-            <label
-              for="causes-7"
-            >
-              Human Rights
-            </label>
-            <input
-              id="causes-7"
-              name="causes"
-              type="checkbox"
-              value="Human Rights"
-            />
-          </div>
-          <div>
-            <label
-              for="causes-8"
-            >
-              Arts
-            </label>
-            <input
-              id="causes-8"
-              name="causes"
-              type="checkbox"
-              value="Arts"
-            />
-          </div>
-          <div>
-            <label
-              for="causes-9"
-            >
-              Wildlife and Environment
-            </label>
-            <input
-              id="causes-9"
-              name="causes"
-              type="checkbox"
-              value="Wildlife and Environment"
-            />
-          </div>
-          <div>
-            <label
-              for="causes-10"
-            >
-              Elderly
-            </label>
-            <input
-              id="causes-10"
-              name="causes"
-              type="checkbox"
-              value="Elderly"
-            />
-          </div>
-          <div>
-            <label
-              for="causes-11"
-            >
-              Poverty
-            </label>
-            <input
-              id="causes-11"
-              name="causes"
-              type="checkbox"
-              value="Poverty"
-            />
-          </div>
-        </fieldset>
-        <br />
-        <fieldset
-          class="EntityCheckboxes"
-        >
-          <legend>
-            Tags (all are selected by default)
-          </legend>
-          <div>
-            <label
-              for="tags-1"
-            >
-              virtual
-            </label>
-            <input
-              id="tags-1"
-              name="tags"
-              type="checkbox"
-              value="virtual"
-            />
-          </div>
-          <div>
-            <label
-              for="tags-2"
-            >
-              in-person
-            </label>
-            <input
-              id="tags-2"
-              name="tags"
-              type="checkbox"
-              value="in-person"
-            />
-          </div>
-          <div>
-            <label
-              for="tags-3"
-            >
-              weekends
-            </label>
-            <input
-              id="tags-3"
-              name="tags"
-              type="checkbox"
-              value="weekends"
-            />
-          </div>
-          <div>
-            <label
-              for="tags-4"
-            >
-              weekdays
-            </label>
-            <input
-              id="tags-4"
-              name="tags"
-              type="checkbox"
-              value="weekdays"
-            />
-          </div>
-          <div>
-            <label
-              for="tags-5"
-            >
-              nights
-            </label>
-            <input
-              id="tags-5"
-              name="tags"
-              type="checkbox"
-              value="nights"
-            />
-          </div>
-          <div>
-            <label
-              for="tags-6"
-            >
-              group
-            </label>
-            <input
-              id="tags-6"
-              name="tags"
-              type="checkbox"
-              value="group"
-            />
-          </div>
-          <div>
-            <label
-              for="tags-7"
-            >
-              delivery
-            </label>
-            <input
-              id="tags-7"
-              name="tags"
-              type="checkbox"
-              value="delivery"
-            />
-          </div>
-          <div>
-            <label
-              for="tags-8"
-            >
-              cooking
-            </label>
-            <input
-              id="tags-8"
-              name="tags"
-              type="checkbox"
-              value="cooking"
-            />
-          </div>
-          <div>
-            <label
-              for="tags-9"
-            >
-              administration
-            </label>
-            <input
-              id="tags-9"
-              name="tags"
-              type="checkbox"
-              value="administration"
-            />
-          </div>
-          <div>
-            <label
-              for="tags-10"
-            >
-              cleaning
-            </label>
-            <input
-              id="tags-10"
-              name="tags"
-              type="checkbox"
-              value="cleaning"
-            />
-          </div>
-          <div>
-            <label
-              for="tags-11"
-            >
-              heavy lifting
-            </label>
-            <input
-              id="tags-11"
-              name="tags"
-              type="checkbox"
-              value="heavy lifting"
-            />
-          </div>
-          <div>
-            <label
-              for="tags-12"
-            >
-              greeting
-            </label>
-            <input
-              id="tags-12"
-              name="tags"
-              type="checkbox"
-              value="greeting"
-            />
-          </div>
-          <div>
-            <label
-              for="tags-13"
-            >
-              training
-            </label>
-            <input
-              id="tags-13"
-              name="tags"
-              type="checkbox"
-              value="training"
-            />
-          </div>
-          <div>
-            <label
-              for="tags-14"
-            >
-              driving
-            </label>
-            <input
-              id="tags-14"
-              name="tags"
-              type="checkbox"
-              value="driving"
-            />
-          </div>
-          <div>
-            <label
-              for="tags-15"
-            >
-              outdoors
-            </label>
-            <input
-              id="tags-15"
-              name="tags"
-              type="checkbox"
-              value="outdoors"
-            />
-          </div>
-        </fieldset>
-        <button
-          type="submit"
-        >
-          Search
-        </button>
-      </form>
+            <legend>
+              Causes (all are selected by default)
+            </legend>
+            <div>
+              <label
+                for="causes-1"
+              >
+                Youth
+              </label>
+              <input
+                id="causes-1"
+                name="causes"
+                type="checkbox"
+                value="Youth"
+              />
+            </div>
+            <div>
+              <label
+                for="causes-2"
+              >
+                Health
+              </label>
+              <input
+                id="causes-2"
+                name="causes"
+                type="checkbox"
+                value="Health"
+              />
+            </div>
+            <div>
+              <label
+                for="causes-3"
+              >
+                Disaster Response
+              </label>
+              <input
+                id="causes-3"
+                name="causes"
+                type="checkbox"
+                value="Disaster Response"
+              />
+            </div>
+            <div>
+              <label
+                for="causes-4"
+              >
+                Animals
+              </label>
+              <input
+                id="causes-4"
+                name="causes"
+                type="checkbox"
+                value="Animals"
+              />
+            </div>
+            <div>
+              <label
+                for="causes-5"
+              >
+                History
+              </label>
+              <input
+                id="causes-5"
+                name="causes"
+                type="checkbox"
+                value="History"
+              />
+            </div>
+            <div>
+              <label
+                for="causes-6"
+              >
+                Education
+              </label>
+              <input
+                id="causes-6"
+                name="causes"
+                type="checkbox"
+                value="Education"
+              />
+            </div>
+            <div>
+              <label
+                for="causes-7"
+              >
+                Human Rights
+              </label>
+              <input
+                id="causes-7"
+                name="causes"
+                type="checkbox"
+                value="Human Rights"
+              />
+            </div>
+            <div>
+              <label
+                for="causes-8"
+              >
+                Arts
+              </label>
+              <input
+                id="causes-8"
+                name="causes"
+                type="checkbox"
+                value="Arts"
+              />
+            </div>
+            <div>
+              <label
+                for="causes-9"
+              >
+                Wildlife and Environment
+              </label>
+              <input
+                id="causes-9"
+                name="causes"
+                type="checkbox"
+                value="Wildlife and Environment"
+              />
+            </div>
+            <div>
+              <label
+                for="causes-10"
+              >
+                Elderly
+              </label>
+              <input
+                id="causes-10"
+                name="causes"
+                type="checkbox"
+                value="Elderly"
+              />
+            </div>
+            <div>
+              <label
+                for="causes-11"
+              >
+                Poverty
+              </label>
+              <input
+                id="causes-11"
+                name="causes"
+                type="checkbox"
+                value="Poverty"
+              />
+            </div>
+          </fieldset>
+          <br />
+          <fieldset
+            class="EntityCheckboxes"
+          >
+            <legend>
+              Tags (all are selected by default)
+            </legend>
+            <div>
+              <label
+                for="tags-1"
+              >
+                virtual
+              </label>
+              <input
+                id="tags-1"
+                name="tags"
+                type="checkbox"
+                value="virtual"
+              />
+            </div>
+            <div>
+              <label
+                for="tags-2"
+              >
+                in-person
+              </label>
+              <input
+                id="tags-2"
+                name="tags"
+                type="checkbox"
+                value="in-person"
+              />
+            </div>
+            <div>
+              <label
+                for="tags-3"
+              >
+                weekends
+              </label>
+              <input
+                id="tags-3"
+                name="tags"
+                type="checkbox"
+                value="weekends"
+              />
+            </div>
+            <div>
+              <label
+                for="tags-4"
+              >
+                weekdays
+              </label>
+              <input
+                id="tags-4"
+                name="tags"
+                type="checkbox"
+                value="weekdays"
+              />
+            </div>
+            <div>
+              <label
+                for="tags-5"
+              >
+                nights
+              </label>
+              <input
+                id="tags-5"
+                name="tags"
+                type="checkbox"
+                value="nights"
+              />
+            </div>
+            <div>
+              <label
+                for="tags-6"
+              >
+                group
+              </label>
+              <input
+                id="tags-6"
+                name="tags"
+                type="checkbox"
+                value="group"
+              />
+            </div>
+            <div>
+              <label
+                for="tags-7"
+              >
+                delivery
+              </label>
+              <input
+                id="tags-7"
+                name="tags"
+                type="checkbox"
+                value="delivery"
+              />
+            </div>
+            <div>
+              <label
+                for="tags-8"
+              >
+                cooking
+              </label>
+              <input
+                id="tags-8"
+                name="tags"
+                type="checkbox"
+                value="cooking"
+              />
+            </div>
+            <div>
+              <label
+                for="tags-9"
+              >
+                administration
+              </label>
+              <input
+                id="tags-9"
+                name="tags"
+                type="checkbox"
+                value="administration"
+              />
+            </div>
+            <div>
+              <label
+                for="tags-10"
+              >
+                cleaning
+              </label>
+              <input
+                id="tags-10"
+                name="tags"
+                type="checkbox"
+                value="cleaning"
+              />
+            </div>
+            <div>
+              <label
+                for="tags-11"
+              >
+                heavy lifting
+              </label>
+              <input
+                id="tags-11"
+                name="tags"
+                type="checkbox"
+                value="heavy lifting"
+              />
+            </div>
+            <div>
+              <label
+                for="tags-12"
+              >
+                greeting
+              </label>
+              <input
+                id="tags-12"
+                name="tags"
+                type="checkbox"
+                value="greeting"
+              />
+            </div>
+            <div>
+              <label
+                for="tags-13"
+              >
+                training
+              </label>
+              <input
+                id="tags-13"
+                name="tags"
+                type="checkbox"
+                value="training"
+              />
+            </div>
+            <div>
+              <label
+                for="tags-14"
+              >
+                driving
+              </label>
+              <input
+                id="tags-14"
+                name="tags"
+                type="checkbox"
+                value="driving"
+              />
+            </div>
+            <div>
+              <label
+                for="tags-15"
+              >
+                outdoors
+              </label>
+              <input
+                id="tags-15"
+                name="tags"
+                type="checkbox"
+                value="outdoors"
+              />
+            </div>
+          </fieldset>
+          <button
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
+      </main>
     </div>
   </div>
 </body>

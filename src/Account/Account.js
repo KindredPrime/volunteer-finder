@@ -16,26 +16,28 @@ class Account extends Component {
       <div className="Account">
         <Nav />
 
-        <header>
-          <h1>Account</h1>
-        </header>
-
-        <section>
+        <main>
           <header>
-            <h2>Account Info</h2>
+            <h1>Account</h1>
           </header>
 
-          <p>Username: {username}</p>
-          <p>Email: {email}</p>
-        </section>
+          <section>
+            <header>
+              <h2>Account Info</h2>
+            </header>
 
-        <section>
-          <header>
-            <h2>Organizations Added</h2>
+            <p>Username: {username}</p>
+            <p>Email: {email}</p>
+          </section>
 
-            <OrganizationsList orgs={orgsAdded} />
-          </header>
-        </section>
+          <section>
+            <header>
+              <h2>Organizations Added</h2>
+
+              <OrganizationsList orgs={orgsAdded} />
+            </header>
+          </section>
+        </main>
       </div>
     );
   }

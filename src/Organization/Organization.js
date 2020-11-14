@@ -22,45 +22,47 @@ function Organization(props) {
             <div className="Organization">
             <Nav />
     
-            <header>
-              <h1>{name}</h1>
-            </header>
-
-            <section>
+            <main>
               <header>
-                <h2>Contact Info</h2>
+                <h1>{name}</h1>
               </header>
 
-              <p>Website: <a href={website} target="_blank" rel="noreferrer">{website}</a></p>
-              <p>Phone: {phone}</p>
-              <p>Email: {email}</p>
-              <p>Address: {address}</p>
-              <p>{description}</p>
-            </section>
+              <section>
+                <header>
+                  <h2>Contact Info</h2>
+                </header>
 
-            <section>
-              <header>
-                <h2>Causes</h2>
-              </header>
+                <p>Website: <a href={website} target="_blank" rel="noreferrer">{website}</a></p>
+                <p>Phone: {phone}</p>
+                <p>Email: {email}</p>
+                <p>Address: {address}</p>
+                <p>{description}</p>
+              </section>
+
+              <section>
+                <header>
+                  <h2>Causes</h2>
+                </header>
+                
+                <ul className="Organization__causes">
+                  {causes.map((cause, index) => (
+                    <li key={index}>
+                      {cause}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              <section>
+                <header>
+                  <h2>Tags</h2>
+                </header>
+
+                <p className="Organization__tags">{tags.join(', ')}</p>
+              </section>
               
-              <ul className="Organization__causes">
-                {causes.map((cause, index) => (
-                  <li key={index}>
-                    {cause}
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            <section>
-              <header>
-                <h2>Tags</h2>
-              </header>
-
-              <p className="Organization__tags">{tags.join(', ')}</p>
-            </section>
-            
-            <p>Created By: <Link to={`/user/${fullCreator.id}`}>{fullCreator.username}</Link></p>
+              <p>Created By: <Link to={`/user/${fullCreator.id}`}>{fullCreator.username}</Link></p>
+            </main>
           </div>
           );
         }
@@ -69,7 +71,9 @@ function Organization(props) {
           <div className="Organization">
             <Nav />
 
-            <p>No organization found</p>
+            <main>
+              <p>No organization found</p>
+            </main>
           </div>
         )
       }}

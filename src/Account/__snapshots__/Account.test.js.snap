@@ -16,46 +16,48 @@ exports[`Account Component renders the UI as expected 1`] = `
           Menu
         </button>
       </nav>
-      <header>
-        <h1>
-          Account
-        </h1>
-      </header>
-      <section>
+      <main>
         <header>
-          <h2>
-            Account Info
-          </h2>
+          <h1>
+            Account
+          </h1>
         </header>
-        <p>
-          Username: 
-          user1
-        </p>
-        <p>
-          Email: 
-          email1@email.com
-        </p>
-      </section>
-      <section>
-        <header>
-          <h2>
-            Organizations Added
-          </h2>
-          <div
-            class="OrganizationsList"
-          >
-            <ul>
-              <li>
-                <a
-                  href="/org/1"
-                >
-                  YMCA DC
-                </a>
-              </li>
-            </ul>
-          </div>
-        </header>
-      </section>
+        <section>
+          <header>
+            <h2>
+              Account Info
+            </h2>
+          </header>
+          <p>
+            Username: 
+            user1
+          </p>
+          <p>
+            Email: 
+            email1@email.com
+          </p>
+        </section>
+        <section>
+          <header>
+            <h2>
+              Organizations Added
+            </h2>
+            <div
+              class="OrganizationsList"
+            >
+              <ul>
+                <li>
+                  <a
+                    href="/org/1"
+                  >
+                    YMCA DC
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </header>
+        </section>
+      </main>
     </div>
   </div>
 </body>

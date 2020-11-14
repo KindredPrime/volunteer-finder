@@ -71,54 +71,56 @@ class OrgSearch extends Component {
       <div className="OrgSearch">
         <Nav />
         
-        <header>
-          <h1>Search for Organizations</h1>
-        </header>
+        <main>
+          <header>
+            <h1>Search for Organizations</h1>
+          </header>
 
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <label htmlFor="search-term">Search Term</label>
-            <input 
-              type="text"
-              id="search-term"
-              onChange={(e) => updateField('searchTerm', e.target.value, this)}
-            />
-          </div>
-
-          <br />
-
-          {causes && causes.length > 0 && (
-            <>
-              <EntityCheckboxes 
-                entities={causes}
-                handleClick={setCheckboxValue('causes', this)} 
-                type="causes"
-                legend="Causes (all are selected by default)"
+          <form onSubmit={this.handleSubmit}>
+            <div>
+              <label htmlFor="search-term">Search Term</label>
+              <input 
+                type="text"
+                id="search-term"
+                onChange={(e) => updateField('searchTerm', e.target.value, this)}
               />
+            </div>
 
-              <br />
-            </>
+            <br />
+
+            {causes && causes.length > 0 && (
+              <>
+                <EntityCheckboxes 
+                  entities={causes}
+                  handleClick={setCheckboxValue('causes', this)} 
+                  type="causes"
+                  legend="Causes (all are selected by default)"
+                />
+
+                <br />
+              </>
+            )}
+
+            {tags && tags.length > 0 && (
+              <EntityCheckboxes 
+                entities={tags}
+                handleClick={setCheckboxValue('tags', this)} 
+                type="tags" 
+                legend="Tags (all are selected by default)"
+              />
+            )}
+
+            <button
+              type="submit"
+            >
+              Search
+            </button>
+          </form>
+
+          {searched && (
+            <SearchResults results={searchResults} pageLimit={pageLimit} resultType='org' />
           )}
-
-          {tags && tags.length > 0 && (
-            <EntityCheckboxes 
-              entities={tags}
-              handleClick={setCheckboxValue('tags', this)} 
-              type="tags" 
-              legend="Tags (all are selected by default)"
-            />
-          )}
-
-          <button
-            type="submit"
-          >
-            Search
-          </button>
-        </form>
-
-        {searched && (
-          <SearchResults results={searchResults} pageLimit={pageLimit} resultType='org' />
-        )}
+        </main>
       </div>
     );
   }

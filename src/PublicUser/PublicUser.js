@@ -21,24 +21,28 @@ function PublicUser(props) {
             <div className="PublicUser">
               <Nav />
 
-              <header>
-                <h1>{username}</h1>
-              </header>
-
-              <section>
+              <main>
                 <header>
-                  <h2>Organizations Added</h2>
-
-                  <OrganizationsList orgs={orgsAdded} />
+                  <h1>{username}</h1>
                 </header>
-              </section>
+
+                <section>
+                  <header>
+                    <h2>Organizations Added</h2>
+
+                    <OrganizationsList orgs={orgsAdded} />
+                  </header>
+                </section>
+              </main>
             </div>
           );
         }
 
         return (
           <div className="PublicUser">
-            <p>No user found</p>
+            <main>
+              <p>No user found</p>
+            </main>
           </div>
         );
       }}
