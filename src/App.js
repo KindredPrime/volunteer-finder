@@ -5,7 +5,6 @@ import { dummyUsers, dummyOrgs, dummyCauses, dummyTags } from './dummyData';
 import VolunteerContext from './VolunteerContext';
 import { setUserId } from './storageManager';
 import Home from './Home/Home';
-import SignUp from './SignUp/SignUp';
 import Account from './Account/Account';
 import Organization from './Organization/Organization';
 import PublicUser from './PublicUser/PublicUser';
@@ -119,7 +118,7 @@ class App extends Component {
           {/*<Route path="/login" render={({ history }) => (
             !user ? <Login history={history} /> : <Redirect to="/account" />
           )} />*/}
-          <Route path="/signup" component={SignUp} />
+          {/*<Route path="/signup" component={SignUp} />*/}
           {/*<Route path="/account" render={() => user ? <Account /> : <Redirect to="/login" />} />*/}
           <Route path="/account" component={Account} />
           <Route path="/org/:id" component={Organization} />
