@@ -44,7 +44,8 @@ describe("Login Component", () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it("redirects to account page on correct login", () => {
+  // Finish this test after the API is created
+  it.skip("redirects to account page on correct login", () => {
     render(
       <MemoryRouter initialEntries={['/login']}>
         <App />
@@ -59,7 +60,8 @@ describe("Login Component", () => {
     expect(document.body).toMatchSnapshot();
   });
 
-  it("displays an error when incorrect username or password", () => {
+  // Finish this test after the API is created
+  it.skip("displays an error when incorrect username or password", () => {
     history.push("/login");
     render(
       <Router history={history}>

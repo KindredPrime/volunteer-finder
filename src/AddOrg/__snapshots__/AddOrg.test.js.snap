@@ -32,11 +32,6 @@ exports[`AddOrg Component goes to org page after successful add 1`] = `
           >
             Account
           </a>
-          <a
-            href="/"
-          >
-            Logout
-          </a>
         </nav>
         <header>
           <h1>

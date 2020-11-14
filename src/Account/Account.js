@@ -8,9 +8,9 @@ class Account extends Component {
 
   render() {
     const { user, orgs } = this.context;
-    const { email, username, orgsAdded } = user;
+    const { email, username } = user;
 
-    const fullOrgsAdded = orgsAdded.map((orgName) => orgs.find((org) => org.name === orgName));
+    const orgsAdded = orgs.filter((org) => org.creator === username);
 
     return (
       <div className="Account">
@@ -33,7 +33,7 @@ class Account extends Component {
           <header>
             <h2>Organizations Added</h2>
 
-            <OrganizationsList orgs={fullOrgsAdded} />
+            <OrganizationsList orgs={orgsAdded} />
           </header>
         </section>
       </div>

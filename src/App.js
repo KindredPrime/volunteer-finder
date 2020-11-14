@@ -3,7 +3,6 @@ import { Route, Redirect } from 'react-router-dom';
 import { dummyUsers, dummyOrgs, dummyCauses, dummyTags } from './dummyData';
 import VolunteerContext from './VolunteerContext';
 import Home from './Home/Home';
-import Login from './Login/Login';
 import SignUp from './SignUp/SignUp';
 import Account from './Account/Account';
 import Organization from './Organization/Organization';
@@ -16,13 +15,14 @@ class App extends Component {
   static contextType = VolunteerContext;
 
   state = {
-    user: null,
+    user: dummyUsers[0],
     users: dummyUsers,
     orgs: dummyOrgs,
     causes: dummyCauses,
     tags: dummyTags
   };
 
+  /*
   loginUser = (username, password) => {
     const { users } = this.state;
 
@@ -68,9 +68,10 @@ class App extends Component {
 
     return id;
   }
+  */
 
-  addOrg = (name, website, phone, email, address, causes, tags) => {
-    const { user, users, orgs } = this.state;
+  addOrg = (name, website, phone, email, address, causes, tags, creator) => {
+    const { user, orgs } = this.state;
     const id = orgs.length + 1;
     const org = {
       id,
@@ -80,23 +81,11 @@ class App extends Component {
       email: email || 'Not Available',
       address: address || 'Not Available',
       causes,
-      tags
+      tags,
+      creator
     };
 
-    const newUser = {
-      ...user,
-      orgsAdded: [...user.orgsAdded, org.name]
-    };
-    const newUsers = users.map((elem) => {
-      if (elem.id === user.id) {
-        return newUser
-      }
-
-      return elem;
-    });
     this.setState({
-      user: newUser,
-      users: newUsers,
       orgs: [...orgs, org]
     });
 
@@ -105,12 +94,8 @@ class App extends Component {
 
   componentDidMount() {
     const storedId = window.localStorage.getItem('userId');
-    if (storedId) {
-      const { users } = this.state;
-      const user = users.find((elem) => elem.id === parseInt(storedId));
-      this.setState({
-        user
-      });
+    if (!storedId || storedId !== 1) {
+      window.localStorage.setItem('userId', 1);
     }
   }
 
@@ -122,9 +107,9 @@ class App extends Component {
       orgs,
       causes,
       tags,
-      loginUser: this.loginUser,
-      logoutUser: this.logoutUser,
-      signUpUser: this.signUpUser,
+      //loginUser: this.loginUser,
+      //logoutUser: this.logoutUser,
+      //signUpUser: this.signUpUser,
       addOrg: this.addOrg
     };
 
@@ -132,11 +117,12 @@ class App extends Component {
       <VolunteerContext.Provider value={contextValue}>
         <div className="App">
           <Route exact path="/" component={Home} />
-          <Route path="/login" render={({ history }) => (
+          {/*<Route path="/login" render={({ history }) => (
             !user ? <Login history={history} /> : <Redirect to="/account" />
-          )} />
+          )} />*/}
           <Route path="/signup" component={SignUp} />
-          <Route path="/account" render={() => user ? <Account /> : <Redirect to="/login" />} />
+          {/*<Route path="/account" render={() => user ? <Account /> : <Redirect to="/login" />} />*/}
+          <Route path="/account" component={Account} />
           <Route path="/org/:id" component={Organization} />
           <Route path="/user/:id" component={PublicUser} />
           <Route path="/org-search" render={() => <OrgSearch pageLimit={10} />} />

@@ -106,7 +106,7 @@ class AddOrg extends Component {
     e.preventDefault();
 
     const { name, website, phone, email, address, causes, tags } = this.state;
-    const { addOrg } = this.context;
+    const { user, addOrg } = this.context;
 
     if (this.orgExists()) {
       this.setState({
@@ -121,7 +121,8 @@ class AddOrg extends Component {
         email.value,
         address.value,
         Object.entries(causes).map(([cause, __]) => cause), // Converts causes into an array
-        Object.entries(tags).map(([tag, __]) => tag)
+        Object.entries(tags).map(([tag, __]) => tag),
+        user.username
       );
 
       this.props.history.push(`/org/${newId}`);

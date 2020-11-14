@@ -2,72 +2,52 @@ const dummyUsers = [
   {
     id: 1,
     email: 'email1@email.com',
-    username: 'user1',
-    password: 'password1',
-    orgsAdded: ['YMCA DC']
+    username: 'user1'
   },
   {
     id: 2,
     email: 'email2@email.com',
-    username: 'user2',
-    password: 'password2',
-    orgsAdded: ['Humane Society of Fairfax County, Inc']
+    username: 'user2'
   },
   {
     id: 3,
     email: 'email3@email.com',
-    username: 'user3',
-    password: 'password3',
-    orgsAdded: ['National VOAD']
+    username: 'user3'
   },
   {
     id: 4,
     email: 'email4@email.com',
-    username: 'user4',
-    password: 'password4',
-    orgsAdded: []
+    username: 'user4'
   },
   {
     id: 5,
     email: 'email5@email.com',
-    username: 'user5',
-    password: 'password5',
-    orgsAdded: ['National Air and Space Museum']
+    username: 'user5'
   },
   {
     id: 6,
     email: 'email6@email.com',
-    username: 'user6',
-    password: 'password6',
-    orgsAdded: []
+    username: 'user6'
   },
   {
     id: 7,
     email: 'email7@email.com',
-    username: 'user7',
-    password: 'password7',
-    orgsAdded: ['Sully Historic Site', 'Optimist Club of Herndon, VA']
+    username: 'user7'
   },
   {
     id: 8,
     email: 'email8@email.com',
-    username: 'user8',
-    password: 'password8',
-    orgsAdded: ['Fairfax County Health Department']
+    username: 'user8'
   },
   {
     id: 9,
     email: 'email9@email.com',
-    username: 'user9',
-    password: 'password9',
-    orgsAdded: ['Girls on the Run of Northern Virginia']
+    username: 'user9'
   },
   {
     id: 10,
     email: 'email10@email.com',
-    username: 'user10',
-    password: 'password10',
-    orgsAdded: ['Vecinos Unidos', 'FACETS', 'American Cancer Society in District of Columbia']
+    username: 'user10'
   }
 ];
 
@@ -83,7 +63,8 @@ const dummyOrgs = [
 
     By empowering young people to reach their full potential, improving individual and community well-being and giving back and inspiring action in our communities, the Y ensures that everyone has the opportunity to become healthier, more confident, connected and secure.`,
     causes: ['Youth', 'Health', 'Elderly'],
-    tags: ['in-person', 'weekends', 'weekdays', 'group']
+    tags: ['in-person', 'weekends', 'weekdays', 'group'],
+    creator: 'user1'
   },
   {
     id: 2,
@@ -94,7 +75,8 @@ const dummyOrgs = [
     address: '4057 Chain Bridge Road, Fairfax, VA 22030',
     description: `The mission of the Humane Society of Fairfax County, Inc. is to promote humane education, to prevent all forms of cruelty to animals, both domestic and wild, by every legitimate means, and to assist the community with all matters pertaining to the welfare of animals.`,
     causes: ['Animals'],
-    tags: ['in-person', 'weekends', 'weekdays', 'cleaning', 'driving']
+    tags: ['in-person', 'weekends', 'weekdays', 'cleaning', 'driving'],
+    creator: 'user2'
   },
   {
     id: 3,
@@ -107,7 +89,8 @@ const dummyOrgs = [
 
     Recognizing that all sectors of society must work together to foster more resilient, self-reliant communities nationwide, we facilitate partnerships with federal, state and local emergency management and other governmental agencies, as well as for-profit corporations, foundations, and educational and research institutions. National VOAD Members represent a powerful force of goodwill in America. They are the leaders who do the work to make our communities stronger and more resilient. In times of need they deliver hope for a more positive future.`,
     causes: ['Disaster Response'],
-    tags: ['in-person', 'weekends', 'weekdays', 'nights', 'delivery', 'heavy lifting']
+    tags: ['in-person', 'weekends', 'weekdays', 'nights', 'delivery', 'heavy lifting'],
+    creator: 'user3'
   },
   {
     id: 4,
@@ -118,7 +101,8 @@ const dummyOrgs = [
     address: '655 Jefferson Drive, SW Washington, DC 20560',
     description: `The Smithsonian's National Air and Space Museum maintains the world's largest and most significant collection of aviation and space artifacts, encompassing all aspects of human flight, as well as related works of art and archival materials. It operates two landmark facilities that, together, welcome more than eight million visitors a year, making it the most visited museum in the country. It also is home to the Center for Earth and Planetary Studies.`,
     causes: ['History', 'Education'],
-    tags: ['virtual', 'in-person', 'weekends', 'weekdays', 'group', 'greeting']
+    tags: ['virtual', 'in-person', 'weekends', 'weekdays', 'group', 'greeting'],
+    creator: 'user5'
   },
   {
     id: 5,
@@ -129,7 +113,8 @@ const dummyOrgs = [
     address: '10777 Main Street Fairfax, VA 22030',
     description: `As an agency of the Fairfax County Health and Human Services System, we work to protect, promote and improve health and quality of life for all who live, work and play in our community. We do this by preventing epidemics and the spread of disease, protecting the public against environmental hazards, promoting and encouraging healthy behaviors, assuring the quality and accessibility of health services, responding to natural and man-made disasters, and assisting communities in recovery. Our vision is for all Fairfax County residents to live in thriving communities where every person has the opportunity to be healthy, safe and realize his or her potential.`,
     causes: ['Youth', 'Health', 'Disaster Response'],
-    tags: ['virtual', 'in-person', 'weekends', 'weekdays', 'group', 'driving']
+    tags: ['virtual', 'in-person', 'weekends', 'weekdays', 'group', 'driving'],
+    creator: 'user8'
   },
   {
     id: 6,
@@ -140,7 +125,8 @@ const dummyOrgs = [
     address: '3650 Historic Sully Way Chantilly, VA',
     description: `Sully was completed in 1799 by Richard Bland Lee, Northern Virginia's first Representative to Congress. It is on the National Register for Historic Places and is accredited by the American Alliance of Museums.`,
     causes: ['History'],
-    tags: ['virtual', 'in-person', 'weekends', 'weekdays', 'group', 'outdoors']
+    tags: ['virtual', 'in-person', 'weekends', 'weekdays', 'group', 'outdoors'],
+    creator: 'user7'
   },
   {
     id: 7,
@@ -151,7 +137,8 @@ const dummyOrgs = [
     address: '1086 Elden Street Herndon, Virginia 20170',
     description: `Vecinos Unidos makes a difference in the lives of students in grades 1-6 through homework assistance and summer enrichment programs—and has been doing so since 1997. With caring volunteers to guide them, students experience improved academic success and greater confidence in their ability to learn and achieve.`,
     causes: ['Youth', 'Education'],
-    tags: ['virtual', 'in-person', 'weekdays']
+    tags: ['virtual', 'in-person', 'weekdays'],
+    creator: 'user10'
   },
   {
     id: 8,
@@ -162,7 +149,8 @@ const dummyOrgs = [
     address: '10301 Democracy Lane, Suite 100 Fairfax, Virginia 22030',
     description: `At Girls on the Run of NOVA, we are creating a community of girls empowered to be their best, by teaching them the skills they need to be strong, confident, and healthy women. As a 501(c)(3) non-profit organization serving more than 70,000 girls since 2000, GOTR NOVA works to engage the entire community to positively impact the health and well being of the girls of Northern Virginia, their families and communities, and the volunteer coaches who serve them. GOTR NOVA is an Independent Council of Girls on the Run International, a network of more than 200 councils across 50 states and the District of Columbia. By connecting our councils’ deep local roots with our strong national unity, Girls on the Run has become a powerful movement that is making a difference in the holistic health of girls, families and communities across North America. Together, we are inspiring girls to know their limitless potential and boldly pursue their dreams.`,
     causes: ['Youth'],
-    tags: ['in-person', 'weekends', 'weekdays', 'outdoors']
+    tags: ['in-person', 'weekends', 'weekdays', 'outdoors'],
+    creator: 'user9'
   },
   {
     id: 9,
@@ -175,7 +163,8 @@ const dummyOrgs = [
 
     The Herndon Optimist Club (HOC) Board is focused on and committed to delivering on our mission of service to the youth of our community. If you have any suggestions for improvement or need assistance, please use the Feedback option and a member of the HOC Board will get back to you as soon as possible.`,
     causes: ['Youth'],
-    tags: ['in-person', 'weekends', 'weekdays', 'group']
+    tags: ['in-person', 'weekends', 'weekdays', 'group'],
+    creator: 'user7'
   },
   {
     id: 10,
@@ -205,7 +194,8 @@ const dummyOrgs = [
     Collaborative – FACETS works closely with more than one hundred faith communities, businesses, fellow nonprofits, county government bodies and foundations to end the cycle of poverty in Fairfax County. In 2008, FACETS was an organizing partner in an alliance of groups committed to ending homelessness in Fairfax County by 2018.
     `,
     causes: ['Education', 'Poverty'],
-    tags: ['virtual', 'in-person', 'weekends', 'weekdays', 'nights', 'delivery', 'cooking', 'driving']
+    tags: ['virtual', 'in-person', 'weekends', 'weekdays', 'nights', 'delivery', 'cooking', 'driving'],
+    creator: 'user10'
   },
   {
     id: 11,
@@ -216,7 +206,8 @@ const dummyOrgs = [
     address: ' 555 11th Street NW , Suite 300 Washington, DC 20004',
     description: `If you’re looking for cancer information and resources in District of Columbia you’ve come to the right place. From our local fundraising events to our cancer support programs, you’ll find everything you need to fuel the fight against cancer and get patient support – right here in our community.`,
     causes: ['Health'],
-    tags: ['virtual', 'in-person', 'weekends', 'weekdays', 'delivery', 'administration', 'driving']
+    tags: ['virtual', 'in-person', 'weekends', 'weekdays', 'delivery', 'administration', 'driving'],
+    creator: 'user10'
   },
 ];
 

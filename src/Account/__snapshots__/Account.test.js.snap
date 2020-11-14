@@ -31,11 +31,6 @@ exports[`Account Component renders the UI as expected 1`] = `
         >
           Account
         </a>
-        <a
-          href="/"
-        >
-          Logout
-        </a>
       </nav>
       <header>
         <h1>

@@ -37,7 +37,8 @@ describe("Nav Component", () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it("changes the nav when a user logs out", () => {
+  // Finish this test after the API is created
+  it.skip("changes the nav when a user logs out", () => {
     window.localStorage.setItem("userId", 1);
     render(
       <BrowserRouter>

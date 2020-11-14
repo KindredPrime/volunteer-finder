@@ -14,9 +14,9 @@ function Organization(props) {
         const org = orgs.find((elem) => elem.id === parseInt(orgId));
 
         if (org) {
-          const { name, website, phone, email, address, description, causes, tags } = org;
+          const { name, website, phone, email, address, description, causes, tags, creator } = org;
 
-          const creator = users.find((user) => user.orgsAdded.includes(name));
+          const fullCreator = users.find((user) => user.username === creator);
 
           return (
             <div className="Organization">
@@ -60,7 +60,7 @@ function Organization(props) {
               <p className="Organization__tags">{tags.join(', ')}</p>
             </section>
             
-            <p>Created By: <Link to={`/user/${creator.id}`}>{creator.username}</Link></p>
+            <p>Created By: <Link to={`/user/${fullCreator.id}`}>{fullCreator.username}</Link></p>
           </div>
           );
         }

@@ -1,3 +1,4 @@
+// This component is being excluded from the client until the API is built
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
@@ -56,29 +57,14 @@ class SignUp extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
+    // Implement this after the API is built
+    /*
     const { userEmail, username, password } = this.state;
-    const { users, signUpUser } = this.context;
-
-    const existingEmail = users.find((user) => user.email === userEmail.value);
-    if (existingEmail) {
-      this.setState({
-        error: new Error('A user with that email already exists')
-      });
-
-      return;
-    }
-
-    const existingUsername = users.find((user) => user.username === username.value);
-    if (existingUsername) {
-      this.setState({
-        error: new Error('That username is already taken')
-      });
-
-      return;
-    }
+    const { signUpUser } = this.context;
     
     signUpUser(userEmail.value, username.value, password.value);
     this.props.history.push(`/account`);
+    */
   };
 
   render() {

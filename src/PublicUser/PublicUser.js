@@ -14,8 +14,8 @@ function PublicUser(props) {
         const desiredUser = users.find((user) => user.id === parseInt(userId));
 
         if (desiredUser) {
-          const { username, orgsAdded } = desiredUser;
-          const fullOrgsAdded = orgsAdded.map((orgName) => orgs.find((org) => org.name === orgName));
+          const { username } = desiredUser;
+          const orgsAdded = orgs.filter((org) => org.creator === username);
 
           return (
             <div className="PublicUser">
@@ -29,7 +29,7 @@ function PublicUser(props) {
                 <header>
                   <h2>Organizations Added</h2>
 
-                  <OrganizationsList orgs={fullOrgsAdded} />
+                  <OrganizationsList orgs={orgsAdded} />
                 </header>
               </section>
             </div>

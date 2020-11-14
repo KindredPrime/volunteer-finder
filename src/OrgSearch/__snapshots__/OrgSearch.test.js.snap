@@ -22,14 +22,14 @@ exports[`OrgSearch Component renders search results after clicking 'Search' 1`] 
           Search Organizations
         </a>
         <a
-          href="/login"
+          href="/add-org"
         >
-          Login
+          Add Organization
         </a>
         <a
-          href="/signup"
+          href="/account"
         >
-          Sign Up
+          Account
         </a>
       </nav>
       <header>
@@ -172,14 +172,14 @@ exports[`OrgSearch Component renders search results that have the selected cause
           Search Organizations
         </a>
         <a
-          href="/login"
+          href="/add-org"
         >
-          Login
+          Add Organization
         </a>
         <a
-          href="/signup"
+          href="/account"
         >
-          Sign Up
+          Account
         </a>
       </nav>
       <header>
@@ -310,14 +310,14 @@ exports[`OrgSearch Component renders search results that have the selected tags 
           Search Organizations
         </a>
         <a
-          href="/login"
+          href="/add-org"
         >
-          Login
+          Add Organization
         </a>
         <a
-          href="/signup"
+          href="/account"
         >
-          Sign Up
+          Account
         </a>
       </nav>
       <header>
@@ -456,14 +456,14 @@ exports[`OrgSearch Component renders search results that match the search term 1
           Search Organizations
         </a>
         <a
-          href="/login"
+          href="/add-org"
         >
-          Login
+          Add Organization
         </a>
         <a
-          href="/signup"
+          href="/account"
         >
-          Sign Up
+          Account
         </a>
       </nav>
       <header>
@@ -537,14 +537,14 @@ exports[`OrgSearch Component renders the UI as expected 1`] = `
           Search Organizations
         </a>
         <a
-          href="/login"
+          href="/add-org"
         >
-          Login
+          Add Organization
         </a>
         <a
-          href="/signup"
+          href="/account"
         >
-          Sign Up
+          Account
         </a>
       </nav>
       <header>

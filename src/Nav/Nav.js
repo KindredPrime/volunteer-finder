@@ -14,13 +14,13 @@ class Nav extends Component {
   }
 
   render() {
-    const { user } = this.context;
+    //const { user } = this.context;
 
     return (
       <nav className="Nav">
         <NavLink exact to="/">Home</NavLink>
         <NavLink to="/org-search">Search Organizations</NavLink>
-        {user
+        {/*user
           ? <>
             <NavLink to="/add-org">Add Organization</NavLink>
             <NavLink to="/account">Account</NavLink>
@@ -29,7 +29,9 @@ class Nav extends Component {
           : <>
             <NavLink to="/login">Login</NavLink>
             <NavLink to="/signup">Sign Up</NavLink>
-          </>}
+          </>*/}
+        <NavLink to="/add-org">Add Organization</NavLink>
+        <NavLink to="/account">Account</NavLink>
       </nav>
     );
   }
