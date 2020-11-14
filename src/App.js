@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { dummyUsers, dummyOrgs, dummyCauses, dummyTags } from './dummyData';
 import VolunteerContext from './VolunteerContext';
+import { setUserId } from './storageManager';
 import Home from './Home/Home';
 import SignUp from './SignUp/SignUp';
 import Account from './Account/Account';
@@ -15,7 +16,7 @@ class App extends Component {
   static contextType = VolunteerContext;
 
   state = {
-    user: dummyUsers[0],
+    user: dummyUsers[setUserId(1) - 1],
     users: dummyUsers,
     orgs: dummyOrgs,
     causes: dummyCauses,
@@ -71,7 +72,7 @@ class App extends Component {
   */
 
   addOrg = (name, website, phone, email, address, causes, tags, creator) => {
-    const { user, orgs } = this.state;
+    const { orgs } = this.state;
     const id = orgs.length + 1;
     const org = {
       id,
@@ -92,13 +93,6 @@ class App extends Component {
     return id;
   }
 
-  componentDidMount() {
-    const storedId = window.localStorage.getItem('userId');
-    if (!storedId || storedId !== 1) {
-      window.localStorage.setItem('userId', 1);
-    }
-  }
-
   render() {
     const { user, users, orgs, causes, tags } = this.state;
     const contextValue = {
@@ -116,6 +110,10 @@ class App extends Component {
     return (
       <VolunteerContext.Provider value={contextValue}>
         <div className="App">
+          {/* 
+            login-related components and checks have been temporarily removed/replaced until
+            after the API is completed
+          */}
           <Route exact path="/" component={Home} />
           {/*<Route path="/login" render={({ history }) => (
             !user ? <Login history={history} /> : <Redirect to="/account" />
@@ -126,9 +124,10 @@ class App extends Component {
           <Route path="/org/:id" component={Organization} />
           <Route path="/user/:id" component={PublicUser} />
           <Route path="/org-search" render={() => <OrgSearch pageLimit={10} />} />
-          <Route path="/add-org" render={({ history }) => (
-            window.localStorage.getItem('userId') ? <AddOrg history={history}/> : <Redirect to="/login" />
-          )} />
+          {/*<Route path="/add-org" render={({ history }) => (
+            user ? <AddOrg history={history}/> : <Redirect to="/login" />
+          )} />*/}
+          <Route path="/add-org" component={AddOrg} />
         </div>
       </VolunteerContext.Provider>
     );
