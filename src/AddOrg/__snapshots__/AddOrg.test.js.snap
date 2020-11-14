@@ -12,26 +12,12 @@ exports[`AddOrg Component goes to org page after successful add 1`] = `
         <nav
           class="Nav"
         >
-          <a
-            href="/"
+          <button
+            class="Nav__expander"
+            type="button"
           >
-            Home
-          </a>
-          <a
-            href="/org-search"
-          >
-            Search Organizations
-          </a>
-          <a
-            href="/add-org"
-          >
-            Add Organization
-          </a>
-          <a
-            href="/account"
-          >
-            Account
-          </a>
+            Menu
+          </button>
         </nav>
         <header>
           <h1>

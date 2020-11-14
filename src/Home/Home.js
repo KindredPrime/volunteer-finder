@@ -6,7 +6,7 @@ function Home() {
     <div className="Home">
       <Nav />
       <header className="page-title">
-        <h1>Welcome to VolunteerUp</h1>
+        <h1>Welcome to VolunteerFinder</h1>
       </header>
 
       <section>
@@ -18,7 +18,7 @@ function Home() {
       </section>
 
       <section>
-        <h2>Create an Account to Add Organizations</h2>
+        <h2>Create an Account and Add Organizations</h2>
         <p>
           Each organization includes a name, contact info, the cause(s) it’s involved with, and any
           other miscellaneous tags.

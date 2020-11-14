@@ -9,28 +9,12 @@ exports[`OrgSearch Component renders search results after clicking 'Search' 1`] 
       <nav
         class="Nav"
       >
-        <a
-          aria-current="page"
-          class="active"
-          href="/"
+        <button
+          class="Nav__expander"
+          type="button"
         >
-          Home
-        </a>
-        <a
-          href="/org-search"
-        >
-          Search Organizations
-        </a>
-        <a
-          href="/add-org"
-        >
-          Add Organization
-        </a>
-        <a
-          href="/account"
-        >
-          Account
-        </a>
+          Menu
+        </button>
       </nav>
       <header>
         <h1>
@@ -159,28 +143,12 @@ exports[`OrgSearch Component renders search results that have the selected cause
       <nav
         class="Nav"
       >
-        <a
-          aria-current="page"
-          class="active"
-          href="/"
+        <button
+          class="Nav__expander"
+          type="button"
         >
-          Home
-        </a>
-        <a
-          href="/org-search"
-        >
-          Search Organizations
-        </a>
-        <a
-          href="/add-org"
-        >
-          Add Organization
-        </a>
-        <a
-          href="/account"
-        >
-          Account
-        </a>
+          Menu
+        </button>
       </nav>
       <header>
         <h1>
@@ -297,28 +265,12 @@ exports[`OrgSearch Component renders search results that have the selected tags 
       <nav
         class="Nav"
       >
-        <a
-          aria-current="page"
-          class="active"
-          href="/"
+        <button
+          class="Nav__expander"
+          type="button"
         >
-          Home
-        </a>
-        <a
-          href="/org-search"
-        >
-          Search Organizations
-        </a>
-        <a
-          href="/add-org"
-        >
-          Add Organization
-        </a>
-        <a
-          href="/account"
-        >
-          Account
-        </a>
+          Menu
+        </button>
       </nav>
       <header>
         <h1>
@@ -443,28 +395,12 @@ exports[`OrgSearch Component renders search results that match the search term 1
       <nav
         class="Nav"
       >
-        <a
-          aria-current="page"
-          class="active"
-          href="/"
+        <button
+          class="Nav__expander"
+          type="button"
         >
-          Home
-        </a>
-        <a
-          href="/org-search"
-        >
-          Search Organizations
-        </a>
-        <a
-          href="/add-org"
-        >
-          Add Organization
-        </a>
-        <a
-          href="/account"
-        >
-          Account
-        </a>
+          Menu
+        </button>
       </nav>
       <header>
         <h1>
@@ -524,28 +460,12 @@ exports[`OrgSearch Component renders the UI as expected 1`] = `
       <nav
         class="Nav"
       >
-        <a
-          aria-current="page"
-          class="active"
-          href="/"
+        <button
+          class="Nav__expander"
+          type="button"
         >
-          Home
-        </a>
-        <a
-          href="/org-search"
-        >
-          Search Organizations
-        </a>
-        <a
-          href="/add-org"
-        >
-          Add Organization
-        </a>
-        <a
-          href="/account"
-        >
-          Account
-        </a>
+          Menu
+        </button>
       </nav>
       <header>
         <h1>

@@ -37,6 +37,20 @@ describe("Nav Component", () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
+  it("expands and closes nav menu when 'Menu' is clicked", () => {
+    render(
+      <BrowserRouter>
+        <Nav />
+      </BrowserRouter>
+    );
+
+    userEvent.click(screen.getByRole('button', { name: 'Menu' }));
+    expect(document.body).toMatchSnapshot();
+
+    userEvent.click(screen.getByRole('button', { name: 'Menu' }));
+    expect(document.body).toMatchSnapshot();
+  })
+
   // Finish this test after the API is created
   it.skip("changes the nav when a user logs out", () => {
     window.localStorage.setItem("userId", 1);

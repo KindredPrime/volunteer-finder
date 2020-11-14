@@ -1,3 +1,4 @@
+// This component is being excluded from the client until the API is built
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import VolunteerContext from '../VolunteerContext';
@@ -17,6 +18,8 @@ class Login extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
+    // Finish this after the API is created
+    /*
     const { username, password } = this.state;
     const { loginUser } = this.context;
 
@@ -33,6 +36,7 @@ class Login extends Component {
         error: null
       });
     }
+    */
   }
 
   render() {

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
 
 /*
   Used to render checkboxes for either causes or tags

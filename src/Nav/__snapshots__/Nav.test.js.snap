@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav Component expands and closes nav menu when 'Menu' is clicked 1`] = `
+<body>
+  <div>
+    <nav
+      class="Nav"
+    >
+      <button
+        class="Nav__expander"
+        type="button"
+      >
+        Menu
+      </button>
+      <div
+        class="Nav__expanded"
+      >
+        <a
+          aria-current="page"
+          class="active"
+          href="/"
+        >
+          Home
+        </a>
+        <a
+          href="/org-search"
+        >
+          Search Organizations
+        </a>
+        <a
+          href="/add-org"
+        >
+          Add Organization
+        </a>
+        <a
+          href="/account"
+        >
+          Account
+        </a>
+      </div>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Nav Component expands and closes nav menu when 'Menu' is clicked 2`] = `
+<body>
+  <div>
+    <nav
+      class="Nav"
+    >
+      <button
+        class="Nav__expander"
+        type="button"
+      >
+        Menu
+      </button>
+    </nav>
+  </div>
+</body>
+`;

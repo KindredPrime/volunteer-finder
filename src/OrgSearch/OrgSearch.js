@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
 import { updateField, setCheckboxValue } from '../util';
 import VolunteerContext from '../VolunteerContext';
 import Nav from '../Nav/Nav';

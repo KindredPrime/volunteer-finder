@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Route, Redirect } from 'react-router-dom';
+//import { Route, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { dummyUsers, dummyOrgs, dummyCauses, dummyTags } from './dummyData';
 import VolunteerContext from './VolunteerContext';
 import { setUserId } from './storageManager';

@@ -80,7 +80,7 @@ class AddOrg extends Component {
         return true;
       }
       
-      const websiteEx = new RegExp(`^${website.value.trim()}\/*$`, 'i');
+      const websiteEx = new RegExp(`^${website.value.trim()}/*$`, 'i');
       if (websiteEx.test(org.website)) {
         return true;
       }
@@ -99,6 +99,8 @@ class AddOrg extends Component {
       if (addressEx.test(org.address)) {
         return true;
       }
+
+      return false;
     });
   }
 
