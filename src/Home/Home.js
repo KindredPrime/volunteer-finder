@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Nav from '../Nav/Nav';
+import './Home.css';
 
 function Home() {
   return (
@@ -16,7 +18,9 @@ function Home() {
         </p>
 
         <section>
-          <h2>Find Volunteer Organizations</h2>
+          <h2>
+            <Link to="/org-search" className="Home__header-link">Find Volunteer Organizations</Link>
+          </h2>
           <p>
             Search for organizations by name, address, description, cause(s), and any relevant 
             tags.
@@ -24,7 +28,9 @@ function Home() {
         </section>
 
         <section>
-          <h2>Add Organizations</h2>
+          <h2>
+            <Link to="add-org" className="Home__header-link">Add Organizations</Link>
+          </h2>
           <p>
             Know of a great organization for volunteering, but you don't see it here? You can 
             create an account and add it yourself!  To help make sure users can find it, give as 
