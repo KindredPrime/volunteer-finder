@@ -58,6 +58,7 @@ describe('AddOrg Component', () => {
     userEvent.type(screen.getByLabelText('Phone'), '1-800-555-5555');
     userEvent.type(screen.getByLabelText('Email'), 'contact@new-org.com');
     userEvent.type(screen.getByLabelText('Address'), 'White House, D.C');
+    userEvent.type(screen.getByLabelText('Description*'), 'New org description');
     userEvent.click(screen.getByLabelText('Human Rights'));
     userEvent.click(screen.getByLabelText('virtual'));
     userEvent.click(screen.getByRole('button', { name: 'Add Organization' }));
@@ -78,6 +79,7 @@ describe('AddOrg Component', () => {
 
     userEvent.type(screen.getByLabelText('Name*'), org.name);
     userEvent.type(screen.getByLabelText('Website'), org.website);
+    userEvent.type(screen.getByLabelText('Description*'), org.description);
     userEvent.click(screen.getByRole('button', { name: 'Add Organization' }));
 
     expect(screen.getByText('The organization already exists')).toBeInTheDocument();

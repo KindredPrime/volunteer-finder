@@ -71,7 +71,7 @@ class App extends Component {
   }
   */
 
-  addOrg = (name, website, phone, email, address, causes, tags, creator) => {
+  addOrg = (name, website, phone, email, address, description, causes, tags, creator) => {
     const { orgs } = this.state;
     const id = orgs.length + 1;
     const org = {
@@ -81,6 +81,7 @@ class App extends Component {
       phone: phone || 'Not Available',
       email: email || 'Not Available',
       address: address || 'Not Available',
+      description,
       causes,
       tags,
       creator

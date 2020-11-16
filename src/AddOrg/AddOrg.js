@@ -32,6 +32,10 @@ class AddOrg extends Component {
       touched: false,
       value: ''
     },
+    description: {
+      touched: false,
+      value: ''
+    },
     causes: {
 
     },
@@ -107,7 +111,7 @@ class AddOrg extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const { name, website, phone, email, address, causes, tags } = this.state;
+    const { name, website, phone, email, address, description, causes, tags } = this.state;
     const { user, addOrg } = this.context;
 
     if (this.orgExists()) {
@@ -122,6 +126,7 @@ class AddOrg extends Component {
         phone.value,
         email.value,
         address.value,
+        description.value,
         Object.entries(causes).map(([cause, __]) => cause), // Converts causes into an array
         Object.entries(tags).map(([tag, __]) => tag),
         user.username
@@ -133,7 +138,7 @@ class AddOrg extends Component {
 
   render() {
     const { causes, tags } = this.context;
-    const { name, website, phone, email, address, error } = this.state;
+    const { name, website, phone, email, address, description, error } = this.state;
 
     return (
       <div className="AddOrg">
@@ -218,6 +223,19 @@ class AddOrg extends Component {
                 <ValidationError message={this.validateContactInfo()} />}
             </fieldset>
 
+            <br />
+
+            <div>
+              <label htmlFor="description">Description*</label>
+              <textarea
+                id="description"
+                name="description"
+                onChange={(e) => this.updateField('description', e.target.value)}
+                required
+              />
+              {description.touched && <ValidationError message={this.validateRequiredInput('description')} />}
+            </div>
+
             {causes && causes.length > 0 && (
               <>
                 <br />
@@ -250,6 +268,7 @@ class AddOrg extends Component {
               type="submit"
               disabled={
                 this.validateRequiredInput('name')
+                || this.validateRequiredInput('description')
                 || this.validateContactInfo()}
             >
               Add Organization

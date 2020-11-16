@@ -53,7 +53,9 @@ exports[`AddOrg Component goes to org page after successful add 1`] = `
               Address: 
               White House, D.C
             </p>
-            <p />
+            <p>
+              New org description
+            </p>
           </section>
           <section>
             <header>
