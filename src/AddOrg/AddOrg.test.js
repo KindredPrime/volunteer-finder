@@ -3,30 +3,10 @@ import { BrowserRouter, MemoryRouter } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import AddOrg from './AddOrg';
-import { dummyUsers, dummyOrgs } from '../dummyData';
+import { dummyOrgs } from '../dummyData';
 import App from '../App';
 
 describe('AddOrg Component', () => {
-  const origStoredId = window.localStorage.getItem('userId');
-
-  beforeAll(() => {
-    if (origStoredId) {
-      window.localStorage.removeItem('userId');
-    }
-  });
-
-  afterEach(() => {
-    if (window.localStorage.getItem('userId')) {
-      window.localStorage.removeItem('userId');
-    }
-  });
-
-  afterAll(() => {
-    if (origStoredId) {
-      window.localStorage.setItem('userId', origStoredId);
-    }
-  });
-
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
@@ -44,9 +24,7 @@ describe('AddOrg Component', () => {
    * just need to delete the organizations from the test environment's database after I'm done 
    * testing
    */
-  it('goes to org page after successful add', () => {
-    window.localStorage.setItem('userId', dummyUsers[0].id);
-    
+  it('goes to org page after successful add', () => {    
     render(
       <MemoryRouter initialEntries={['/add-org']}>
         <App />
@@ -60,16 +38,13 @@ describe('AddOrg Component', () => {
     userEvent.type(screen.getByLabelText('Address'), 'White House, D.C');
     userEvent.type(screen.getByLabelText('Description*'), 'New org description');
     userEvent.click(screen.getByLabelText('Human Rights'));
-    userEvent.click(screen.getByLabelText('virtual'));
     userEvent.click(screen.getByRole('button', { name: 'Add Organization' }));
 
     expect(document.body).toMatchSnapshot();
   });
 
   it('renders error when org already exists', () => {
-    const user = dummyUsers[0];
     const org = dummyOrgs[0];
-    window.localStorage.setItem('userId', user.id);
     
     render(
       <MemoryRouter initialEntries={['/add-org']}>

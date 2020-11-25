@@ -71,26 +71,6 @@ exports[`AddOrg Component goes to org page after successful add 1`] = `
               </li>
             </ul>
           </section>
-          <section>
-            <header>
-              <h2>
-                Tags
-              </h2>
-            </header>
-            <p
-              class="Organization__tags"
-            >
-              virtual
-            </p>
-          </section>
-          <p>
-            Created By: 
-            <a
-              href="/user/1"
-            >
-              user1
-            </a>
-          </p>
         </main>
       </div>
     </div>

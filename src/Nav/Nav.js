@@ -10,15 +10,7 @@ class Nav extends Component {
     expanded: false
   };
 
-  /*handleLogout = (e) => {
-    e.preventDefault();
-
-    const { logoutUser } = this.context;
-    logoutUser();
-  }*/
-
   render() {
-    //const { user } = this.context;
     const { expanded } = this.state;
 
     return (
@@ -36,18 +28,7 @@ class Nav extends Component {
           <div className="Nav__expanded">
             <NavLink exact to="/">Home</NavLink>
             <NavLink to="/org-search">Search Organizations</NavLink>
-            {/*user
-              ? <>
-                <NavLink to="/add-org">Add Organization</NavLink>
-                <NavLink to="/account">Account</NavLink>
-                <Link to="" onClick={this.handleLogout}>Logout</Link>
-              </>
-              : <>
-                <NavLink to="/login">Login</NavLink>
-                <NavLink to="/signup">Sign Up</NavLink>
-              </>*/}
             <NavLink to="/add-org">Add Organization</NavLink>
-            <NavLink to="/account">Account</NavLink>
           </div>
         )}
       </nav>

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 /*
-  Used to render checkboxes for either causes or tags
+  Used to render checkboxes for causes
 */
 function EntityCheckboxes(props) {
   const { entities, handleClick, type, legend } = props;

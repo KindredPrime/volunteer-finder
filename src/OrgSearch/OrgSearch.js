@@ -13,13 +13,10 @@ class OrgSearch extends Component {
     pageLimit: 10
   };
 
-  // Only causes/tags that are true are kept in the state
+  // Only causes that are true are kept in the state
   state = {
     searchTerm: '',
     causes: {
-
-    },
-    tags: {
 
     },
     searchResults: [],
@@ -32,7 +29,6 @@ class OrgSearch extends Component {
 
     const { searchTerm } = this.state;
     const searchCauses = Object.entries(this.state.causes);
-    const searchTags = Object.entries(this.state.tags);
     
     const allOrgs = this.context.orgs;
 
@@ -40,17 +36,12 @@ class OrgSearch extends Component {
       .filter((org) => {
         const { name, address, description } = org;
         const orgCauses = org.causes;
-        const orgTags = org.tags;
         const regEx = new RegExp(searchTerm, 'i');
 
         return (regEx.test(name) || regEx.test(address) || regEx.test(description))
           && (searchCauses.length === 0 || orgCauses
             .find((orgCause) => searchCauses.find(([cause, __]) => (
               cause === orgCause
-            ))))
-          && (searchTags.length === 0 || orgTags
-            .find((orgTag) => searchTags.find(([tag, __]) => ( 
-              tag === orgTag
             ))));
       });
 
@@ -61,9 +52,9 @@ class OrgSearch extends Component {
   }
 
   render() {
-    // Every time the component is rendered, it grabs the current context for the app's causes and 
-    //  tags, to render dynamically on the page.
-    const { causes, tags } = this.context;
+    // Every time the component is rendered, it grabs the current context for the app's causes
+    // to render dynamically on the page.
+    const { causes } = this.context;
     const { searchResults, searched } = this.state;
     const { pageLimit } = this.props;
 
@@ -99,15 +90,6 @@ class OrgSearch extends Component {
 
                 <br />
               </>
-            )}
-
-            {tags && tags.length > 0 && (
-              <EntityCheckboxes 
-                entities={tags}
-                handleClick={setCheckboxValue('tags', this)} 
-                type="tags" 
-                legend="Tags (all are selected by default)"
-              />
             )}
 
             <button

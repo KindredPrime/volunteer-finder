@@ -10,13 +10,11 @@ function Organization(props) {
   return (
     <VolunteerContext.Consumer>
       {(value) => {
-        const { users, orgs } = value;
+        const { orgs } = value;
         const org = orgs.find((elem) => elem.id === parseInt(orgId));
 
         if (org) {
-          const { name, website, phone, email, address, description, causes, tags, creator } = org;
-
-          const fullCreator = users.find((user) => user.username === creator);
+          const { name, website, phone, email, address, description, causes } = org;
 
           return (
             <div className="Organization">
@@ -52,16 +50,6 @@ function Organization(props) {
                   ))}
                 </ul>
               </section>
-
-              <section>
-                <header>
-                  <h2>Tags</h2>
-                </header>
-
-                <p className="Organization__tags">{tags.join(', ')}</p>
-              </section>
-              
-              <p>Created By: <Link to={`/user/${fullCreator.id}`}>{fullCreator.username}</Link></p>
             </main>
           </div>
           );

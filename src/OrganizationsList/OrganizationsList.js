@@ -26,8 +26,7 @@ OrganizationsList.propTypes = {
     email: PropTypes.string,
     address: PropTypes.string,
     description: PropTypes.string,
-    causes: PropTypes.arrayOf(PropTypes.string),
-    tags: PropTypes.arrayOf(PropTypes.string)
+    causes: PropTypes.arrayOf(PropTypes.string)
   })).isRequired
 }
 

@@ -22,8 +22,7 @@ function Home() {
             <Link to="/org-search" className="Home__header-link">Find Volunteer Organizations</Link>
           </h2>
           <p>
-            Search for organizations by name, address, description, cause(s), and any relevant 
-            tags.
+            Search for organizations by name, address, description, and cause(s).
           </p>
         </section>
 
@@ -32,9 +31,9 @@ function Home() {
             <Link to="add-org" className="Home__header-link">Add Organizations</Link>
           </h2>
           <p>
-            Know of a great organization for volunteering, but you don't see it here? You can 
-            create an account and add it yourself!  To help make sure users can find it, give as 
-            much info as you can, and assign tags to it so it will easily show up in searches.
+            Know of a great organization for volunteering, but you don't see it here? You can add
+            it yourself!  To help make sure people can find it, give as much info as you can so it
+            will easily show up in searches.
           </p>
         </section>
       </main>

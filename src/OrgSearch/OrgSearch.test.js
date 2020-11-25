@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
 import OrgSearch from './OrgSearch';
-import { dummyOrgs, dummyCauses, dummyTags } from '../dummyData';
+import { dummyOrgs, dummyCauses } from '../dummyData';
 import VolunteerContext from '../VolunteerContext';
 
 describe('OrgSearch Component', () => {
@@ -20,8 +20,7 @@ describe('OrgSearch Component', () => {
 
   it('renders the UI as expected', () => {
     const contextValue = {
-      causes: dummyCauses,
-      tags: dummyTags
+      causes: dummyCauses
     };
     render(
       <VolunteerContext.Provider value={contextValue}>
@@ -37,8 +36,7 @@ describe('OrgSearch Component', () => {
   it(`renders search results after clicking 'Search'`, () => {
     const contextValue = {
       orgs: dummyOrgs,
-      causes: [],
-      tags: []
+      causes: []
     };
     render(
       <VolunteerContext.Provider value={contextValue}>
@@ -55,8 +53,7 @@ describe('OrgSearch Component', () => {
   it('renders search results that match the search term', () => {
     const contextValue = {
       orgs: dummyOrgs,
-      causes: [],
-      tags: []
+      causes: []
     };
     render(
       <VolunteerContext.Provider value={contextValue}>
@@ -74,8 +71,7 @@ describe('OrgSearch Component', () => {
   it('renders search results that have the selected causes', () => {
     const contextValue = {
       orgs: dummyOrgs,
-      causes: dummyCauses.slice(0, 1),
-      tags: []
+      causes: dummyCauses.slice(0, 1)
     };
     render(
       <VolunteerContext.Provider value={contextValue}>
@@ -86,25 +82,6 @@ describe('OrgSearch Component', () => {
     );
 
     userEvent.click(screen.getByLabelText('Youth'));
-    userEvent.click(screen.getByRole('button', { name: 'Search' }));
-    expect(document.body).toMatchSnapshot();
-  });
-
-  it('renders search results that have the selected tags', () => {
-    const contextValue = {
-      orgs: dummyOrgs,
-      causes: [],
-      tags: dummyTags.slice(0, 1)
-    };
-    render(
-      <VolunteerContext.Provider value={contextValue}>
-        <BrowserRouter>
-          <OrgSearch pageLimit={10} />
-        </BrowserRouter>
-      </VolunteerContext.Provider>
-    );
-
-    userEvent.click(screen.getByLabelText('virtual'));
     userEvent.click(screen.getByRole('button', { name: 'Search' }));
     expect(document.body).toMatchSnapshot();
   });

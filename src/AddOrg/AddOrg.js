@@ -10,7 +10,7 @@ import './AddOrg.css';
 class AddOrg extends Component {
   static contextType = VolunteerContext;
 
-  // Only causes and tags that are checked are kept in the state
+  // Only causes that are checked are kept in the state
   state = {
     name: {
       touched: false,
@@ -37,9 +37,6 @@ class AddOrg extends Component {
       value: ''
     },
     causes: {
-
-    },
-    tags: {
 
     },
     error: null
@@ -111,8 +108,8 @@ class AddOrg extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const { name, website, phone, email, address, description, causes, tags } = this.state;
-    const { user, addOrg } = this.context;
+    const { name, website, phone, email, address, description, causes } = this.state;
+    const { addOrg } = this.context;
 
     if (this.orgExists()) {
       this.setState({
@@ -127,9 +124,7 @@ class AddOrg extends Component {
         email.value,
         address.value,
         description.value,
-        Object.entries(causes).map(([cause, __]) => cause), // Converts causes into an array
-        Object.entries(tags).map(([tag, __]) => tag),
-        user.username
+        Object.entries(causes).map(([cause, __]) => cause) // Converts causes into an array
       );
 
       this.props.history.push(`/org/${newId}`);
@@ -137,7 +132,7 @@ class AddOrg extends Component {
   }
 
   render() {
-    const { causes, tags } = this.context;
+    const { causes } = this.context;
     const { name, website, phone, email, address, description, error } = this.state;
 
     return (
@@ -245,19 +240,6 @@ class AddOrg extends Component {
                   handleClick={setCheckboxValue('causes', this)} 
                   type="causes"
                   legend="Causes"
-                />
-              </>
-            )}
-
-            {tags && tags.length > 0 && (
-              <>
-                <br />
-
-                <EntityCheckboxes 
-                  entities={tags} 
-                  handleClick={setCheckboxValue('tags', this)} 
-                  type="tags"
-                  legend="Tags"
                 />
               </>
             )}

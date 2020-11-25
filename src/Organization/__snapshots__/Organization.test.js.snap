@@ -76,26 +76,6 @@ exports[`Organization Component renders the UI as expected 1`] = `
             </li>
           </ul>
         </section>
-        <section>
-          <header>
-            <h2>
-              Tags
-            </h2>
-          </header>
-          <p
-            class="Organization__tags"
-          >
-            in-person, weekends, weekdays, group
-          </p>
-        </section>
-        <p>
-          Created By: 
-          <a
-            href="/user/1"
-          >
-            user1
-          </a>
-        </p>
       </main>
     </div>
   </div>

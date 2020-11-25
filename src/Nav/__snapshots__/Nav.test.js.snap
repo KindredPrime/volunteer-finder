@@ -32,11 +32,6 @@ exports[`Nav Component expands and closes nav menu when 'Menu' is clicked 1`] = 
         >
           Add Organization
         </a>
-        <a
-          href="/account"
-        >
-          Account
-        </a>
       </div>
     </nav>
   </div>
