@@ -36,3 +36,19 @@ fieldset {
 legend {
   font-weight: bold;
 }
+
+p.error {
+  color: red;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: black;
+}

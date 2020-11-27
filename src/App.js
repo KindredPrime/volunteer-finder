@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import { dummyOrgs, dummyCauses } from './dummyData';
+import { API_ENDPOINT } from './config';
+import { fetchJson } from './util';
 import VolunteerContext from './VolunteerContext';
 import Home from './Home/Home';
 import Organization from './Organization/Organization';
@@ -12,29 +13,42 @@ class App extends Component {
   static contextType = VolunteerContext;
 
   state = {
-    orgs: dummyOrgs,
-    causes: dummyCauses
+    orgs: [],
+    causes: []
   };
 
-  addOrg = (name, website, phone, email, address, description, causes) => {
+  addOrg = (org) => {
     const { orgs } = this.state;
-    const id = orgs.length + 1;
-    const org = {
-      id,
-      name,
-      website: website || 'Not Available',
-      phone: phone || 'Not Available',
-      email: email || 'Not Available',
-      address: address || 'Not Available',
-      description,
-      causes
-    };
 
     this.setState({
-      orgs: [...orgs, org]
+      orgs: [...orgs, {
+        id: org.id,
+        org_name: org.org_name,
+        website: org.website || 'Not Available',
+        phone: org.phone || 'Not Available',
+        email: org.email || 'Not Available',
+        org_address: org.org_address || 'Not Available',
+        org_desc: org.org_desc,
+        causes: org.causes
+      }]
     });
+  };
 
-    return id;
+  deleteOrg = (id) => {
+    const { orgs } = this.state;
+
+    const newOrgs = orgs.filter((org) => org.id !== id);
+
+    this.setState({
+      orgs: newOrgs
+    });
+  };
+
+  componentDidMount() {
+    return fetchJson(`${API_ENDPOINT}/api/orgs`)
+      .then((orgs) => this.setState({ orgs }))
+      .then(() => fetchJson(`${API_ENDPOINT}/api/causes`))
+      .then((causes) => this.setState({ causes }));
   }
 
   render() {
@@ -42,7 +56,8 @@ class App extends Component {
     const contextValue = {
       orgs,
       causes,
-      addOrg: this.addOrg
+      addOrg: this.addOrg,
+      deleteOrg: this.deleteOrg
     };
 
     return (

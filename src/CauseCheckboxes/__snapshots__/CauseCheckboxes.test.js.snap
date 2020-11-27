@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EntityCheckboxes Component renders the UI as expected 1`] = `
+exports[`CauseCheckboxes Component renders the UI as expected 1`] = `
 <body>
   <div>
     <fieldset
-      class="EntityCheckboxes"
+      class="CauseCheckboxes"
     >
       <legend>
         Causes

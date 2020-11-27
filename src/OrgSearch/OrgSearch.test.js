@@ -1,9 +1,9 @@
 import ReactDOM from 'react-dom';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
 import OrgSearch from './OrgSearch';
-import { dummyOrgs, dummyCauses } from '../dummyData';
+import { dummyCauses } from '../dummyData';
 import VolunteerContext from '../VolunteerContext';
 
 describe('OrgSearch Component', () => {
@@ -33,10 +33,9 @@ describe('OrgSearch Component', () => {
     expect(document.body).toMatchSnapshot();
   });
 
-  it(`renders search results after clicking 'Search'`, () => {
+  it(`renders search results after clicking 'Search'`, async () => {
     const contextValue = {
-      orgs: dummyOrgs,
-      causes: []
+      causes: dummyCauses.slice(0, 1)
     };
     render(
       <VolunteerContext.Provider value={contextValue}>
@@ -46,43 +45,8 @@ describe('OrgSearch Component', () => {
       </VolunteerContext.Provider>
     );
 
+    userEvent.click(screen.getByLabelText(dummyCauses[0].cause_name));
     userEvent.click(screen.getByRole('button', { name: 'Search' }));
-    expect(document.body).toMatchSnapshot();
-  });
-
-  it('renders search results that match the search term', () => {
-    const contextValue = {
-      orgs: dummyOrgs,
-      causes: []
-    };
-    render(
-      <VolunteerContext.Provider value={contextValue}>
-        <BrowserRouter>
-          <OrgSearch pageLimit={10} />
-        </BrowserRouter>
-      </VolunteerContext.Provider>
-    );
-
-    userEvent.type(screen.getByLabelText('Search Term'), 'YMCA');
-    userEvent.click(screen.getByRole('button', { name: 'Search' }));
-    expect(document.body).toMatchSnapshot();
-  });
-
-  it('renders search results that have the selected causes', () => {
-    const contextValue = {
-      orgs: dummyOrgs,
-      causes: dummyCauses.slice(0, 1)
-    };
-    render(
-      <VolunteerContext.Provider value={contextValue}>
-        <BrowserRouter>
-          <OrgSearch pageLimit={10} />
-        </BrowserRouter>
-      </VolunteerContext.Provider>
-    );
-
-    userEvent.click(screen.getByLabelText('Youth'));
-    userEvent.click(screen.getByRole('button', { name: 'Search' }));
-    expect(document.body).toMatchSnapshot();
+    await waitFor(() => expect(screen.getByText('Results')).toBeInTheDocument());
   });
 });

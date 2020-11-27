@@ -20,30 +20,33 @@ function formatDate(date) {
   When checked, add the checkbox value to causes in the state
   When unchecked, remove the checkbox value from causes in the state
 */
-const setCheckboxValue = (fieldName, componentInstance) => (checkboxName) => {
-  const origFieldValues = componentInstance.state[fieldName];
-  const origCheckboxValue = origFieldValues[checkboxName];
+const checkCause = (componentInstance) => (checkboxName) => {
+  let checkedCauses = componentInstance.state.checkedCauses;
+  const isChecked = checkedCauses[checkboxName];
 
-  if (origCheckboxValue) {
-    const newCheckboxValues = componentInstance.state[fieldName];
-    delete newCheckboxValues[checkboxName];
-
-    componentInstance.setState({
-      [fieldName]: newCheckboxValues
-    });
+  if (isChecked) {
+    delete checkedCauses[checkboxName];
   } else {
-    componentInstance.setState({
-      [fieldName]: {
-        ...origFieldValues,
-        [checkboxName]: true
-      }
-    });
+    checkedCauses = {
+      ...checkedCauses,
+      [checkboxName]: true
+    };
   }
+
+  componentInstance.setState({
+    checkedCauses
+  });
+}
+
+const fetchJson = (url, options={}) => {
+  return fetch(url, options)
+  .then((response) => response.json());
 }
 
 export {
   updateField,
   todayDate,
   formatDate,
-  setCheckboxValue
+  checkCause,
+  fetchJson
 };

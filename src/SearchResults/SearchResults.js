@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-/*
-  Props:
-    - results: the search results to render from
-    - pageLimit: how many results can be displayed at once
-*/
+/**
+ * Renders a list of organizations search results
+ * 
+ * Props:
+ *   results: the search results to render from
+ *   pageLimit: how many results can be displayed at once
+ */
 class SearchResults extends Component {
   static defaultProps = {
     pageLimit: 10
@@ -48,7 +50,7 @@ class SearchResults extends Component {
 
         <ul>
           {pageResults.map((result) => {
-            const { id, name } = result;
+            const { id, org_name } = result;
 
             return (
               <li key={`result-${id}`}>
@@ -61,7 +63,7 @@ class SearchResults extends Component {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {name}
+                  {org_name}
                 </a>
               </li>
             );

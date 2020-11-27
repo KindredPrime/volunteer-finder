@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { fetchJson } from '../util';
+import { API_ENDPOINT } from '../config';
 import VolunteerContext from '../VolunteerContext';
 import Nav from '../Nav/Nav';
-import EntityCheckboxes from '../EntityCheckboxes/EntityCheckboxes';
-import { setCheckboxValue } from '../util';
+import CauseCheckboxes from '../CauseCheckboxes/CauseCheckboxes';
+import { checkCause } from '../util';
 import ValidationError from '../ValidationError/ValidationError';
 import './AddOrg.css';
 
@@ -36,8 +38,8 @@ class AddOrg extends Component {
       touched: false,
       value: ''
     },
-    causes: {
-
+    checkedCauses: {
+      
     },
     error: null
   };
@@ -71,13 +73,21 @@ class AddOrg extends Component {
       }
   }
 
+  validateCheckedCauses = () => {
+    const { checkedCauses } = this.state;
+
+    if (Object.keys(checkedCauses).length === 0) {
+      return `You must check at least one cause`;
+    }
+  }
+
   orgExists = () => {
     const { name, website, phone, email, address } = this.state;
     const { orgs } = this.context;
 
     return orgs.find((org) => {
       const nameEx = new RegExp(`^${name.value.trim()}$`, 'i');
-      if (nameEx.test(org.name)) {
+      if (nameEx.test(org.org_name)) {
         return true;
       }
       
@@ -97,7 +107,7 @@ class AddOrg extends Component {
       }
 
       const addressEx = new RegExp(`^${address.value.trim()}$`, 'i');
-      if (addressEx.test(org.address)) {
+      if (addressEx.test(org.org_address)) {
         return true;
       }
 
@@ -108,8 +118,17 @@ class AddOrg extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const { name, website, phone, email, address, description, causes } = this.state;
-    const { addOrg } = this.context;
+    const { addOrg, causes } = this.context;
+    const { name, website, phone, email, address, description, checkedCauses } = this.state;
+    const newOrg = { 
+      org_name: name.value,
+      website: website.value,
+      phone: phone.value,
+      email: email.value,
+      org_address: address.value,
+      org_desc: description.value,
+      causes: causes.filter((cause) => Object.keys(checkedCauses).find((checkedCause) => checkedCause === cause.cause_name))
+    };
 
     if (this.orgExists()) {
       this.setState({
@@ -117,17 +136,26 @@ class AddOrg extends Component {
       });
     }
     else {
-      const newId = addOrg(
-        name.value,
-        website.value,
-        phone.value,
-        email.value,
-        address.value,
-        description.value,
-        Object.entries(causes).map(([cause, __]) => cause) // Converts causes into an array
-      );
-
-      this.props.history.push(`/org/${newId}`);
+      return fetchJson(`${API_ENDPOINT}/api/orgs`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newOrg)
+      })
+        .then((org) => {
+          const { id } = org;
+          addOrg({
+            id,
+            ...newOrg
+          });
+          this.props.history.push(`/org/${org.id}`);
+        })
+        .catch((error) => {
+          this.setState({
+            error
+          });
+        });
     }
   }
 
@@ -160,7 +188,7 @@ class AddOrg extends Component {
             <br />
 
             <fieldset>
-              <legend>Contact Info</legend>
+              <legend>Contact Info (enter at least one)</legend>
 
               <div>
                 <label htmlFor="website">Website</label>
@@ -220,7 +248,7 @@ class AddOrg extends Component {
 
             <br />
 
-            <div>
+            <div className="AddOrg__description">
               <label htmlFor="description">Description*</label>
               <textarea
                 id="description"
@@ -231,33 +259,33 @@ class AddOrg extends Component {
               {description.touched && <ValidationError message={this.validateRequiredInput('description')} />}
             </div>
 
+            <br />
+
             {causes && causes.length > 0 && (
               <>
-                <br />
-
-                <EntityCheckboxes 
-                  entities={causes} 
-                  handleClick={setCheckboxValue('causes', this)} 
-                  type="causes"
-                  legend="Causes"
+                <CauseCheckboxes 
+                  causes={causes} 
+                  handleClick={checkCause(this)}
+                  legend="Causes* (select at least one)"
                 />
+
+                <br />
               </>
             )}
-
-            <br />
 
             <button
               type="submit"
               disabled={
                 this.validateRequiredInput('name')
                 || this.validateRequiredInput('description')
-                || this.validateContactInfo()}
+                || this.validateContactInfo()
+                || this.validateCheckedCauses()}
             >
               Add Organization
             </button>
           </form>
 
-          {error && <p className="AddOrg__error">{error.message}</p>}
+          {error && <p className="error">{error.message}</p>}
         </main>
       </div>
     );

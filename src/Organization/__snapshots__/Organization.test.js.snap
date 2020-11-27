@@ -76,6 +76,11 @@ exports[`Organization Component renders the UI as expected 1`] = `
             </li>
           </ul>
         </section>
+        <button
+          type="button"
+        >
+          Delete Organization
+        </button>
       </main>
     </div>
   </div>

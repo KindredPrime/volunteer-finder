@@ -1,12 +1,13 @@
 import ReactDOM from 'react-dom';
 import { BrowserRouter, MemoryRouter } from 'react-router-dom';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import AddOrg from './AddOrg';
-import { dummyOrgs } from '../dummyData';
+import { dummyOrgs, dummyCauses } from '../dummyData';
 import App from '../App';
+import VolunteerContext from '../VolunteerContext';
 
-describe('AddOrg Component', () => {
+describe.only('AddOrg Component', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
@@ -18,43 +19,63 @@ describe('AddOrg Component', () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  /**
-   * You can rely on the App's context for this test because the completed app will connect to the
-   * API based on an environment variable, meaning it will only add to a test database.  I'll 
-   * just need to delete the organizations from the test environment's database after I'm done 
-   * testing
-   */
-  it('goes to org page after successful add', () => {    
+  it('goes to org page after successful add', async () => {
     render(
       <MemoryRouter initialEntries={['/add-org']}>
         <App />
       </MemoryRouter>
     );
 
-    userEvent.type(screen.getByLabelText('Name*'), 'New Org');
-    userEvent.type(screen.getByLabelText('Website'), 'http://www.new-org.com');
-    userEvent.type(screen.getByLabelText('Phone'), '1-800-555-5555');
-    userEvent.type(screen.getByLabelText('Email'), 'contact@new-org.com');
-    userEvent.type(screen.getByLabelText('Address'), 'White House, D.C');
-    userEvent.type(screen.getByLabelText('Description*'), 'New org description');
-    userEvent.click(screen.getByLabelText('Human Rights'));
+    const causesLegend = 'Causes* (select at least one)';
+    await waitFor(() => expect(screen.getByText(causesLegend)).toBeInTheDocument());
+
+    const name = 'New Org';
+    const website = 'http://www.new-org.com';
+    const phone = '1-800-555-5555';
+    const email = 'contact@new-org.com';
+    const address = 'White House, D.C.';
+    const description = 'New Org description';
+
+    userEvent.type(screen.getByLabelText('Name*'), name);
+    userEvent.type(screen.getByLabelText('Website'), website);
+    userEvent.type(screen.getByLabelText('Phone'), phone);
+    userEvent.type(screen.getByLabelText('Email'), email);
+    userEvent.type(screen.getByLabelText('Address'), address);
+    userEvent.type(screen.getByLabelText('Description*'), description);
+    // Click the first checkbox in the Causes fieldset
+    userEvent.click(screen.getByText(causesLegend).nextSibling.lastChild);
     userEvent.click(screen.getByRole('button', { name: 'Add Organization' }));
 
-    expect(document.body).toMatchSnapshot();
+    await waitFor(() => expect(screen.getByText(name)).toBeInTheDocument());
+    expect(screen.getByText(website)).toBeInTheDocument();
+    expect(screen.getByText(`Phone: ${phone}`)).toBeInTheDocument();
+    expect(screen.getByText(`Email: ${email}`)).toBeInTheDocument();
+    expect(screen.getByText(`Address: ${address}`)).toBeInTheDocument();
+    expect(screen.getByText(description)).toBeInTheDocument();
+
+    userEvent.click(screen.getByRole('button', { name: 'Delete Organization' }));
+    await waitFor(() => expect(screen.getByText('Search for Organizations')).toBeInTheDocument());
   });
 
   it('renders error when org already exists', () => {
-    const org = dummyOrgs[0];
+    const contextValue = {
+      orgs: dummyOrgs,
+      causes: dummyCauses.slice(0, 1)
+    };
     
     render(
-      <MemoryRouter initialEntries={['/add-org']}>
-        <App />
-      </MemoryRouter>
+      <BrowserRouter>
+        <VolunteerContext.Provider value={contextValue}>
+          <AddOrg history={{}} />
+        </VolunteerContext.Provider>
+      </BrowserRouter>
     );
 
-    userEvent.type(screen.getByLabelText('Name*'), org.name);
+    const org = dummyOrgs[0];
+    userEvent.type(screen.getByLabelText('Name*'), org.org_name);
     userEvent.type(screen.getByLabelText('Website'), org.website);
-    userEvent.type(screen.getByLabelText('Description*'), org.description);
+    userEvent.type(screen.getByLabelText('Description*'), org.org_desc);
+    userEvent.click(screen.getByLabelText(dummyCauses[0].cause_name));
     userEvent.click(screen.getByRole('button', { name: 'Add Organization' }));
 
     expect(screen.getByText('The organization already exists')).toBeInTheDocument();

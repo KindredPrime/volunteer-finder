@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { updateField, setCheckboxValue } from '../util';
+import { updateField, checkCause, fetchJson } from '../util';
+import { API_ENDPOINT } from '../config';
 import VolunteerContext from '../VolunteerContext';
 import Nav from '../Nav/Nav';
-import EntityCheckboxes from '../EntityCheckboxes/EntityCheckboxes';
+import CauseCheckboxes from '../CauseCheckboxes/CauseCheckboxes';
 import SearchResults from '../SearchResults/SearchResults';
 
 class OrgSearch extends Component {
@@ -15,47 +16,55 @@ class OrgSearch extends Component {
 
   // Only causes that are true are kept in the state
   state = {
-    searchTerm: '',
-    causes: {
+    term: '',
+    checkedCauses: {
 
     },
     searchResults: [],
     page: 1,
-    searched: false
+    searched: false,
+    error: null
   };
+
+  validateCheckedCauses = () => {
+    const { checkedCauses } = this.state;
+
+    if (Object.keys(checkedCauses).length === 0) {
+      return `You must check at least one cause`;
+    }
+  }
 
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const { searchTerm } = this.state;
-    const searchCauses = Object.entries(this.state.causes);
-    
-    const allOrgs = this.context.orgs;
+    const term = this.state.term || '';
+    const causes = Object.keys(this.state.checkedCauses);
 
-    const searchResults = allOrgs
-      .filter((org) => {
-        const { name, address, description } = org;
-        const orgCauses = org.causes;
-        const regEx = new RegExp(searchTerm, 'i');
+    const baseURL = `${API_ENDPOINT}/api/orgs`;
+    const queryParams = `term=${term}&causes=${causes.join(',')}`;
+    const url = `${baseURL}?${queryParams}`;
 
-        return (regEx.test(name) || regEx.test(address) || regEx.test(description))
-          && (searchCauses.length === 0 || orgCauses
-            .find((orgCause) => searchCauses.find(([cause, __]) => (
-              cause === orgCause
-            ))));
+    return fetchJson(url)
+      .then((orgs) => {
+        this.setState({
+          searched: true,
+          searchResults: orgs,
+          error: null
+        })
+      })
+      .catch((error) => {
+        this.setState({
+          searched: false,
+          error
+        });
       });
-
-    this.setState({
-      searchResults,
-      searched: true
-    });
   }
 
   render() {
     // Every time the component is rendered, it grabs the current context for the app's causes
     // to render dynamically on the page.
     const { causes } = this.context;
-    const { searchResults, searched } = this.state;
+    const { searchResults, searched, error } = this.state;
     const { pageLimit } = this.props;
 
     return (
@@ -73,7 +82,7 @@ class OrgSearch extends Component {
               <input 
                 type="text"
                 id="search-term"
-                onChange={(e) => updateField('searchTerm', e.target.value, this)}
+                onChange={(e) => updateField('term', e.target.value, this)}
               />
             </div>
 
@@ -81,11 +90,10 @@ class OrgSearch extends Component {
 
             {causes && causes.length > 0 && (
               <>
-                <EntityCheckboxes 
-                  entities={causes}
-                  handleClick={setCheckboxValue('causes', this)} 
-                  type="causes"
-                  legend="Causes (all are selected by default)"
+                <CauseCheckboxes 
+                  causes={causes}
+                  handleClick={checkCause(this)}
+                  legend="Causes (select at least one)"
                 />
 
                 <br />
@@ -94,13 +102,16 @@ class OrgSearch extends Component {
 
             <button
               type="submit"
+              disabled={this.validateCheckedCauses()}
             >
               Search
             </button>
           </form>
 
+          {error && <p className="error">{error.message}</p>}
+
           {searched && (
-            <SearchResults results={searchResults} pageLimit={pageLimit} resultType='org' />
+            <SearchResults results={searchResults} pageLimit={pageLimit} />
           )}
         </main>
       </div>

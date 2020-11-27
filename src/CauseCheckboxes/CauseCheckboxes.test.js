@@ -1,16 +1,15 @@
 import ReactDOM from 'react-dom';
 import { render } from '@testing-library/react';
-import EntityCheckboxes from './EntityCheckboxes';
+import CauseCheckboxes from './CauseCheckboxes';
 import { dummyCauses } from '../dummyData';
 
-describe('EntityCheckboxes Component', () => {
+describe('CauseCheckboxes Component', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-      <EntityCheckboxes 
-        entities={[]}
+      <CauseCheckboxes 
+        causes={[]}
         handleClick={() => {}}
-        type="causes"
         legend="Legend"
       />,
       div
@@ -20,10 +19,9 @@ describe('EntityCheckboxes Component', () => {
 
   it('renders the UI as expected', () => {
     render(
-      <EntityCheckboxes
-        entities={dummyCauses}
+      <CauseCheckboxes
+        causes={dummyCauses}
         handleClick={() => {}}
-        type="causes"
         legend="Causes"
       />
     );

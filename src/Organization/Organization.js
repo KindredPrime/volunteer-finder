@@ -1,72 +1,105 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import VolunteerContext from '../VolunteerContext';
+import { API_ENDPOINT } from '../config';
 import Nav from '../Nav/Nav';
+import './Organization.css';
 
-function Organization(props) {
-  const orgId = props.match.params.id;
+class Organization extends Component {
+  static contextType = VolunteerContext;
 
-  return (
-    <VolunteerContext.Consumer>
-      {(value) => {
-        const { orgs } = value;
-        const org = orgs.find((elem) => elem.id === parseInt(orgId));
+  state = {
+    error: null
+  };
 
-        if (org) {
-          const { name, website, phone, email, address, description, causes } = org;
+  handleDelete(orgId) {
+    const { deleteOrg } = this.context;
 
-          return (
-            <div className="Organization">
-            <Nav />
+    return fetch(`${API_ENDPOINT}/api/orgs/${orgId}`, {
+      method: 'DELETE'
+    })
+      .then(() => {
+        deleteOrg(parseInt(orgId));
+        this.props.history.push('/org-search');
+      })
+      .catch((error) => {
+        this.setState({
+          error
+        });
+      });
+  }
+
+  render() {
+    const orgId = this.props.match.params.id;
     
-            <main>
+    const { orgs } = this.context;
+    const org = orgs.find((elem) => elem.id === parseInt(orgId));
+
+    const { error } = this.state;
+    const renderedError = error && <p className="error">{error.message}</p>;
+
+    if (org) {
+      const { org_name, website, phone, email, org_address, org_desc, causes } = org;
+
+      return (
+        <div className="Organization">
+          <Nav />
+
+          <main>
+            <header>
+              <h1>{org_name}</h1>
+            </header>
+
+            {renderedError}
+
+            <section>
               <header>
-                <h1>{name}</h1>
+                <h2>Contact Info</h2>
               </header>
 
-              <section>
-                <header>
-                  <h2>Contact Info</h2>
-                </header>
+              <p>Website: <a href={website} target="_blank" rel="noreferrer">{website}</a></p>
+              <p>Phone: {phone}</p>
+              <p>Email: {email}</p>
+              <p>Address: {org_address}</p>
+              <p>{org_desc}</p>
+            </section>
 
-                <p>Website: <a href={website} target="_blank" rel="noreferrer">{website}</a></p>
-                <p>Phone: {phone}</p>
-                <p>Email: {email}</p>
-                <p>Address: {address}</p>
-                <p>{description}</p>
-              </section>
+            <section>
+              <header>
+                <h2>Causes</h2>
+              </header>
+              
+              <ul className="Organization__causes">
+                {causes.map((cause, index) => (
+                  <li key={index}>
+                    {cause.cause_name}
+                  </li>
+                ))}
+              </ul>
+            </section>
 
-              <section>
-                <header>
-                  <h2>Causes</h2>
-                </header>
-                
-                <ul className="Organization__causes">
-                  {causes.map((cause, index) => (
-                    <li key={index}>
-                      {cause}
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            </main>
-          </div>
-          );
-        }
+            <button
+              type="button"
+              onClick={() => this.handleDelete(orgId)}
+            >
+              Delete Organization
+            </button>
+          </main>
+        </div>
+      );
+    }
 
-        return (
-          <div className="Organization">
-            <Nav />
+    return (
+      <div className="Organization">
+        <Nav />
 
-            <main>
-              <p>No organization found</p>
-            </main>
-          </div>
-        )
-      }}
-    </VolunteerContext.Consumer>
-  );
+        <main>
+          {renderedError}
+          <p>No organization found</p>
+        </main>
+      </div>
+    );
+  }
 }
 
 Organization.propTypes = {
