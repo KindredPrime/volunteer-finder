@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { fetchJson } from '../util';
-import { API_ENDPOINT } from '../config';
+import { fetchApiJson } from '../util';
 import VolunteerContext from '../VolunteerContext';
 import Nav from '../Nav/Nav';
 import CauseCheckboxes from '../CauseCheckboxes/CauseCheckboxes';
@@ -136,7 +135,7 @@ class AddOrg extends Component {
       });
     }
     else {
-      return fetchJson(`${API_ENDPOINT}/api/orgs`, {
+      return fetchApiJson(`/api/orgs`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

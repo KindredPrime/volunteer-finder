@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import VolunteerContext from '../VolunteerContext';
-import { API_ENDPOINT } from '../config';
+import { fetchApi } from '../util';
 import Nav from '../Nav/Nav';
 import './Organization.css';
 
@@ -15,7 +15,7 @@ class Organization extends Component {
   handleDelete(orgId) {
     const { deleteOrg } = this.context;
 
-    return fetch(`${API_ENDPOINT}/api/orgs/${orgId}`, {
+    return fetchApi(`/api/orgs/${orgId}`, {
       method: 'DELETE'
     })
       .then(() => {

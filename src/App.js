@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import { API_ENDPOINT } from './config';
-import { fetchJson } from './util';
+import { fetchApiJson } from './util';
 import VolunteerContext from './VolunteerContext';
 import Home from './Home/Home';
 import Organization from './Organization/Organization';
@@ -45,9 +44,9 @@ class App extends Component {
   };
 
   componentDidMount() {
-    return fetchJson(`${API_ENDPOINT}/api/orgs`)
+    return fetchApiJson('/api/orgs')
       .then((orgs) => this.setState({ orgs }))
-      .then(() => fetchJson(`${API_ENDPOINT}/api/causes`))
+      .then(() => fetchApiJson(`/api/causes`))
       .then((causes) => this.setState({ causes }));
   }
 

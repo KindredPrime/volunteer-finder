@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { updateField, checkCause, fetchJson } from '../util';
-import { API_ENDPOINT } from '../config';
+import { updateField, checkCause, fetchApiJson } from '../util';
 import VolunteerContext from '../VolunteerContext';
 import Nav from '../Nav/Nav';
 import CauseCheckboxes from '../CauseCheckboxes/CauseCheckboxes';
@@ -40,11 +39,10 @@ class OrgSearch extends Component {
     const term = this.state.term || '';
     const causes = Object.keys(this.state.checkedCauses);
 
-    const baseURL = `${API_ENDPOINT}/api/orgs`;
+    const route = `/api/orgs`;
     const queryParams = `term=${term}&causes=${causes.join(',')}`;
-    const url = `${baseURL}?${queryParams}`;
 
-    return fetchJson(url)
+    return fetchApiJson(`${route}?${queryParams}`)
       .then((orgs) => {
         this.setState({
           searched: true,
