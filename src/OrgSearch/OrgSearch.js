@@ -91,7 +91,7 @@ class OrgSearch extends Component {
                 <CauseCheckboxes 
                   causes={causes}
                   handleClick={checkCause(this)}
-                  legend="Causes (select at least one)"
+                  legend="Causes* (select at least one)"
                 />
 
                 <br />

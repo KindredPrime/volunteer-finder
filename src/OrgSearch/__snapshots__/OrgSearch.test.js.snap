@@ -39,7 +39,7 @@ exports[`OrgSearch Component renders the UI as expected 1`] = `
             class="CauseCheckboxes"
           >
             <legend>
-              Causes (select at least one)
+              Causes* (select at least one)
             </legend>
             <div>
               <label
