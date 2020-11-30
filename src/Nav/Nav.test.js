@@ -1,12 +1,13 @@
-import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import userEvent from "@testing-library/user-event";
-import { render, screen } from "@testing-library/react";
-import Nav from "./Nav";
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import userEvent from '@testing-library/user-event';
+import { render, screen } from '@testing-library/react';
+import Nav from './Nav';
+import App from '../App';
 
-describe("Nav Component", () => {
-  it("renders without crashing", () => {
-    const div = document.createElement("div");
+describe('Nav Component', () => {
+  it('renders without crashing', () => {
+    const div = document.createElement('div');
     ReactDOM.render(
       <BrowserRouter>
         <Nav />
@@ -16,10 +17,10 @@ describe("Nav Component", () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it("expands and closes nav menu when 'Menu' is clicked", () => {
+  it(`expands and closes nav menu when 'Menu' is clicked`, () => {
     render(
       <BrowserRouter>
-        <Nav />
+        <App />
       </BrowserRouter>
     );
 

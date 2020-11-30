@@ -15,10 +15,20 @@ describe('SearchResults Component', () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it('renders the UI as expected', () => {
+  it('renders the UI as expected when results', () => {
     render(
       <BrowserRouter>
         <SearchResults results={dummyOrgs} pageLimit={10} />
+      </BrowserRouter>
+    );
+
+    expect(document.body).toMatchSnapshot();
+  });
+
+  it('renders the UI as expected when no results', () => {
+    render(
+      <BrowserRouter>
+        <SearchResults results={[]} pageLimit={10} />
       </BrowserRouter>
     );
 
@@ -47,5 +57,4 @@ describe('SearchResults Component', () => {
     userEvent.click(screen.getByRole('button', { name: 'Previous' }));
     expect(document.body).toMatchSnapshot();
   });
-  //Check previous and next buttons
 });

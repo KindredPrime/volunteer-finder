@@ -3,6 +3,10 @@
   text-align: center;
 }
 
+.App.expanded {
+  margin-top: 138px;
+}
+
 section {
   padding: 10px;
   background-color: #D7D7D7;

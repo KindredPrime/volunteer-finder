@@ -1,6 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchResults Component renders the UI as expected 1`] = `
+exports[`SearchResults Component renders the UI as expected when no results 1`] = `
+<body>
+  <div>
+    <section
+      class="SearchResults"
+    >
+      <header>
+        <h2>
+          Results
+        </h2>
+      </header>
+      <ul>
+        <p>
+          No organizations found
+        </p>
+      </ul>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`SearchResults Component renders the UI as expected when results 1`] = `
 <body>
   <div>
     <section

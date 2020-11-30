@@ -3,198 +3,186 @@
 exports[`OrgSearch Component renders the UI as expected 1`] = `
 <body>
   <div>
-    <div
+    <main
       class="OrgSearch"
     >
-      <nav
-        class="Nav"
-      >
-        <button
-          class="Nav__expander"
-          type="button"
+      <header>
+        <h1>
+          Search for Organizations
+        </h1>
+      </header>
+      <form>
+        <div>
+          <label
+            for="search-term"
+          >
+            Search Term
+          </label>
+          <input
+            id="search-term"
+            type="text"
+          />
+        </div>
+        <br />
+        <fieldset
+          class="CauseCheckboxes"
         >
-          Menu
-        </button>
-      </nav>
-      <main>
-        <header>
-          <h1>
-            Search for Organizations
-          </h1>
-        </header>
-        <form>
+          <legend>
+            Causes* (select at least one)
+          </legend>
           <div>
             <label
-              for="search-term"
+              for="causes-1"
             >
-              Search Term
+              Youth
             </label>
             <input
-              id="search-term"
-              type="text"
+              id="causes-1"
+              name="causes"
+              type="checkbox"
+              value="Youth"
             />
           </div>
-          <br />
-          <fieldset
-            class="CauseCheckboxes"
-          >
-            <legend>
-              Causes* (select at least one)
-            </legend>
-            <div>
-              <label
-                for="causes-1"
-              >
-                Youth
-              </label>
-              <input
-                id="causes-1"
-                name="causes"
-                type="checkbox"
-                value="Youth"
-              />
-            </div>
-            <div>
-              <label
-                for="causes-2"
-              >
-                Health
-              </label>
-              <input
-                id="causes-2"
-                name="causes"
-                type="checkbox"
-                value="Health"
-              />
-            </div>
-            <div>
-              <label
-                for="causes-3"
-              >
-                Disaster Response
-              </label>
-              <input
-                id="causes-3"
-                name="causes"
-                type="checkbox"
-                value="Disaster Response"
-              />
-            </div>
-            <div>
-              <label
-                for="causes-4"
-              >
-                Animals
-              </label>
-              <input
-                id="causes-4"
-                name="causes"
-                type="checkbox"
-                value="Animals"
-              />
-            </div>
-            <div>
-              <label
-                for="causes-5"
-              >
-                History
-              </label>
-              <input
-                id="causes-5"
-                name="causes"
-                type="checkbox"
-                value="History"
-              />
-            </div>
-            <div>
-              <label
-                for="causes-6"
-              >
-                Education
-              </label>
-              <input
-                id="causes-6"
-                name="causes"
-                type="checkbox"
-                value="Education"
-              />
-            </div>
-            <div>
-              <label
-                for="causes-7"
-              >
-                Human Rights
-              </label>
-              <input
-                id="causes-7"
-                name="causes"
-                type="checkbox"
-                value="Human Rights"
-              />
-            </div>
-            <div>
-              <label
-                for="causes-8"
-              >
-                Arts
-              </label>
-              <input
-                id="causes-8"
-                name="causes"
-                type="checkbox"
-                value="Arts"
-              />
-            </div>
-            <div>
-              <label
-                for="causes-9"
-              >
-                Wildlife and Environment
-              </label>
-              <input
-                id="causes-9"
-                name="causes"
-                type="checkbox"
-                value="Wildlife and Environment"
-              />
-            </div>
-            <div>
-              <label
-                for="causes-10"
-              >
-                Elderly
-              </label>
-              <input
-                id="causes-10"
-                name="causes"
-                type="checkbox"
-                value="Elderly"
-              />
-            </div>
-            <div>
-              <label
-                for="causes-11"
-              >
-                Poverty
-              </label>
-              <input
-                id="causes-11"
-                name="causes"
-                type="checkbox"
-                value="Poverty"
-              />
-            </div>
-          </fieldset>
-          <br />
-          <button
-            disabled=""
-            type="submit"
-          >
-            Search
-          </button>
-        </form>
-      </main>
-    </div>
+          <div>
+            <label
+              for="causes-2"
+            >
+              Health
+            </label>
+            <input
+              id="causes-2"
+              name="causes"
+              type="checkbox"
+              value="Health"
+            />
+          </div>
+          <div>
+            <label
+              for="causes-3"
+            >
+              Disaster Response
+            </label>
+            <input
+              id="causes-3"
+              name="causes"
+              type="checkbox"
+              value="Disaster Response"
+            />
+          </div>
+          <div>
+            <label
+              for="causes-4"
+            >
+              Animals
+            </label>
+            <input
+              id="causes-4"
+              name="causes"
+              type="checkbox"
+              value="Animals"
+            />
+          </div>
+          <div>
+            <label
+              for="causes-5"
+            >
+              History
+            </label>
+            <input
+              id="causes-5"
+              name="causes"
+              type="checkbox"
+              value="History"
+            />
+          </div>
+          <div>
+            <label
+              for="causes-6"
+            >
+              Education
+            </label>
+            <input
+              id="causes-6"
+              name="causes"
+              type="checkbox"
+              value="Education"
+            />
+          </div>
+          <div>
+            <label
+              for="causes-7"
+            >
+              Human Rights
+            </label>
+            <input
+              id="causes-7"
+              name="causes"
+              type="checkbox"
+              value="Human Rights"
+            />
+          </div>
+          <div>
+            <label
+              for="causes-8"
+            >
+              Arts
+            </label>
+            <input
+              id="causes-8"
+              name="causes"
+              type="checkbox"
+              value="Arts"
+            />
+          </div>
+          <div>
+            <label
+              for="causes-9"
+            >
+              Wildlife and Environment
+            </label>
+            <input
+              id="causes-9"
+              name="causes"
+              type="checkbox"
+              value="Wildlife and Environment"
+            />
+          </div>
+          <div>
+            <label
+              for="causes-10"
+            >
+              Elderly
+            </label>
+            <input
+              id="causes-10"
+              name="causes"
+              type="checkbox"
+              value="Elderly"
+            />
+          </div>
+          <div>
+            <label
+              for="causes-11"
+            >
+              Poverty
+            </label>
+            <input
+              id="causes-11"
+              name="causes"
+              type="checkbox"
+              value="Poverty"
+            />
+          </div>
+        </fieldset>
+        <br />
+        <button
+          disabled=""
+          type="submit"
+        >
+          Search
+        </button>
+      </form>
+    </main>
   </div>
 </body>
 `;

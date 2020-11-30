@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import VolunteerContext from '../VolunteerContext';
 import { fetchApi } from '../util';
-import Nav from '../Nav/Nav';
 import './Organization.css';
 
 class Organization extends Component {
@@ -42,62 +41,54 @@ class Organization extends Component {
       const { org_name, website, phone, email, org_address, org_desc, causes } = org;
 
       return (
-        <div className="Organization">
-          <Nav />
+        <main className="Organization">
+          <header>
+            <h1>{org_name}</h1>
+          </header>
 
-          <main>
+          {renderedError}
+
+          <section>
             <header>
-              <h1>{org_name}</h1>
+              <h2>Contact Info</h2>
             </header>
 
-            {renderedError}
+            <p>Website: <a href={website} target="_blank" rel="noreferrer">{website}</a></p>
+            <p>Phone: {phone}</p>
+            <p>Email: {email}</p>
+            <p>Address: {org_address}</p>
+            <p>{org_desc}</p>
+          </section>
 
-            <section>
-              <header>
-                <h2>Contact Info</h2>
-              </header>
+          <section>
+            <header>
+              <h2>Causes</h2>
+            </header>
+            
+            <ul className="Organization__causes">
+              {causes.map((cause, index) => (
+                <li key={index}>
+                  {cause.cause_name}
+                </li>
+              ))}
+            </ul>
+          </section>
 
-              <p>Website: <a href={website} target="_blank" rel="noreferrer">{website}</a></p>
-              <p>Phone: {phone}</p>
-              <p>Email: {email}</p>
-              <p>Address: {org_address}</p>
-              <p>{org_desc}</p>
-            </section>
-
-            <section>
-              <header>
-                <h2>Causes</h2>
-              </header>
-              
-              <ul className="Organization__causes">
-                {causes.map((cause, index) => (
-                  <li key={index}>
-                    {cause.cause_name}
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            <button
-              type="button"
-              onClick={() => this.handleDelete(orgId)}
-            >
-              Delete Organization
-            </button>
-          </main>
-        </div>
+          <button
+            type="button"
+            onClick={() => this.handleDelete(orgId)}
+          >
+            Delete Organization
+          </button>
+        </main>
       );
     }
 
     return (
-      <div className="Organization">
-        <Nav />
-
-        <main>
-          {renderedError}
-          <p>No organization found</p>
-        </main>
-      </div>
+      <main className="Organization">
+        {renderedError}
+        <p>No organization found</p>
+      </main>
     );
   }
 }

@@ -3,37 +3,83 @@
 exports[`Nav Component expands and closes nav menu when 'Menu' is clicked 1`] = `
 <body>
   <div>
-    <nav
-      class="Nav"
+    <div
+      class="App expanded"
     >
-      <button
-        class="Nav__expander"
-        type="button"
+      <nav
+        class="Nav"
       >
-        Menu
-      </button>
-      <div
-        class="Nav__expanded"
+        <button
+          class="Nav__expander"
+          type="button"
+        >
+          Menu
+        </button>
+        <div
+          class="Nav__expanded"
+        >
+          <a
+            aria-current="page"
+            class="active"
+            href="/"
+          >
+            Home
+          </a>
+          <a
+            href="/org-search"
+          >
+            Search Organizations
+          </a>
+          <a
+            href="/add-org"
+          >
+            Add Organization
+          </a>
+        </div>
+      </nav>
+      <main
+        class="Home"
       >
-        <a
-          aria-current="page"
-          class="active"
-          href="/"
+        <header
+          class="page-title"
         >
-          Home
-        </a>
-        <a
-          href="/org-search"
+          <h1>
+            Welcome to VolunteerFinder
+          </h1>
+        </header>
+        <p
+          class="Home__statement"
         >
-          Search Organizations
-        </a>
-        <a
-          href="/add-org"
-        >
-          Add Organization
-        </a>
-      </div>
-    </nav>
+          Looking to volunteer in the DC metropolitan area for causes you beleive in, but you're having trouble finding volunteer opportunities? VolunteerFinder can help you!
+        </p>
+        <section>
+          <h2>
+            <a
+              class="Home__header-link"
+              href="/org-search"
+            >
+              Find Volunteer Organizations
+            </a>
+          </h2>
+          <p>
+            Search for organizations by name, address, description, and cause(s).
+          </p>
+        </section>
+        <section>
+          <h2>
+            <a
+              class="Home__header-link"
+              href="/add-org"
+            >
+              Add Organizations
+            </a>
+          </h2>
+          <p>
+            Know of a great organization for volunteering, but you don't see it here? You can add it yourself!  To help make sure people can find it, give as much info as you can so it will easily show up in searches.
+          </p>
+        </section>
+      </main>
+    </div>
   </div>
 </body>
 `;
@@ -41,16 +87,62 @@ exports[`Nav Component expands and closes nav menu when 'Menu' is clicked 1`] = 
 exports[`Nav Component expands and closes nav menu when 'Menu' is clicked 2`] = `
 <body>
   <div>
-    <nav
-      class="Nav"
+    <div
+      class="App"
     >
-      <button
-        class="Nav__expander"
-        type="button"
+      <nav
+        class="Nav"
       >
-        Menu
-      </button>
-    </nav>
+        <button
+          class="Nav__expander"
+          type="button"
+        >
+          Menu
+        </button>
+      </nav>
+      <main
+        class="Home"
+      >
+        <header
+          class="page-title"
+        >
+          <h1>
+            Welcome to VolunteerFinder
+          </h1>
+        </header>
+        <p
+          class="Home__statement"
+        >
+          Looking to volunteer in the DC metropolitan area for causes you beleive in, but you're having trouble finding volunteer opportunities? VolunteerFinder can help you!
+        </p>
+        <section>
+          <h2>
+            <a
+              class="Home__header-link"
+              href="/org-search"
+            >
+              Find Volunteer Organizations
+            </a>
+          </h2>
+          <p>
+            Search for organizations by name, address, description, and cause(s).
+          </p>
+        </section>
+        <section>
+          <h2>
+            <a
+              class="Home__header-link"
+              href="/add-org"
+            >
+              Add Organizations
+            </a>
+          </h2>
+          <p>
+            Know of a great organization for volunteering, but you don't see it here? You can add it yourself!  To help make sure people can find it, give as much info as you can so it will easily show up in searches.
+          </p>
+        </section>
+      </main>
+    </div>
   </div>
 </body>
 `;

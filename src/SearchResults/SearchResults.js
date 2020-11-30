@@ -49,25 +49,28 @@ class SearchResults extends Component {
         </header>
 
         <ul>
-          {pageResults.map((result) => {
-            const { id, org_name } = result;
+          {pageResults.length > 0
+            ? pageResults.map((result) => {
+              const { id, org_name } = result;
 
-            return (
-              <li key={`result-${id}`}>
-                {/* 
-                  Open the link in a new tab, so the user doesn't lose all of their other search
-                  results
-                */}
-                <a 
-                  href={`${baseUrl}/org/${id}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {org_name}
-                </a>
-              </li>
-            );
-          })}
+              return (
+                <li key={`result-${id}`}>
+                  {/* 
+                    Open the link in a new tab, so the user doesn't lose all of their other search
+                    results
+                  */}
+                  <a 
+                    href={`${baseUrl}/org/${id}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {org_name}
+                  </a>
+                </li>
+              );
+            })
+            : <p>No organizations found</p>
+          }
         </ul>
 
         {results.length > pageLimit && (

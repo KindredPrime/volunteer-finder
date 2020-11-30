@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { fetchApiJson } from '../util';
 import VolunteerContext from '../VolunteerContext';
-import Nav from '../Nav/Nav';
 import CauseCheckboxes from '../CauseCheckboxes/CauseCheckboxes';
 import { checkCause } from '../util';
 import ValidationError from '../ValidationError/ValidationError';
@@ -163,130 +162,126 @@ class AddOrg extends Component {
     const { name, website, phone, email, address, description, error } = this.state;
 
     return (
-      <div className="AddOrg">
-        <Nav />
+      <main className="AddOrg">
+        <header>
+          <h1>Add an Organization</h1>
+        </header>
 
-        <main>
-          <header>
-            <h1>Add an Organization</h1>
-          </header>
+        <form id="AddOrg__form" onSubmit={this.handleSubmit}>
+          <div>
+            <label htmlFor="org-name">Name*</label>
+            <input 
+              type="text"
+              id="org-name"
+              name="org-name"
+              onChange={(e) => this.updateField('name', e.target.value)}
+              required
+            />
+            {name.touched && <ValidationError message={this.validateRequiredInput('name')} />}
+          </div>
 
-          <form id="AddOrg__form" onSubmit={this.handleSubmit}>
+          <br />
+
+          <fieldset>
+            <legend>Contact Info (enter at least one)</legend>
+
             <div>
-              <label htmlFor="org-name">Name*</label>
+              <label htmlFor="website">Website</label>
               <input 
                 type="text"
-                id="org-name"
-                name="org-name"
-                onChange={(e) => this.updateField('name', e.target.value)}
-                required
+                id="website"
+                name="website"
+                onChange={(e) => this.updateField('website', e.target.value)}
               />
-              {name.touched && <ValidationError message={this.validateRequiredInput('name')} />}
             </div>
 
             <br />
 
-            <fieldset>
-              <legend>Contact Info (enter at least one)</legend>
-
-              <div>
-                <label htmlFor="website">Website</label>
-                <input 
-                  type="text"
-                  id="website"
-                  name="website"
-                  onChange={(e) => this.updateField('website', e.target.value)}
-                />
-              </div>
-
-              <br />
-
-              <div>
-                <label htmlFor="phone">Phone</label>
-                <input 
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  onChange={(e) => this.updateField('phone', e.target.value)}
-                />
-              </div>
-
-              <br />
-
-              <div>
-                <label htmlFor="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  onChange={(e) => this.updateField('email', e.target.value)}
-                  onBlur={() => this.setState({
-                    email: {
-                      value: this.state.email.value,
-                      touched: true
-                    }
-                  })}
-                />
-              </div>
-
-              <br />
-
-              <div>
-                <label htmlFor="address">Address</label>
-                <input
-                  type="text"
-                  id="address"
-                  name="address"
-                  onChange={(e) => this.updateField('address', e.target.value)}
-                />
-              </div>
-
-              {(website.touched && phone.touched && email.touched && address.touched) && 
-                <ValidationError message={this.validateContactInfo()} />}
-            </fieldset>
-
-            <br />
-
-            <div className="AddOrg__description">
-              <label htmlFor="description">Description*</label>
-              <textarea
-                id="description"
-                name="description"
-                onChange={(e) => this.updateField('description', e.target.value)}
-                required
+            <div>
+              <label htmlFor="phone">Phone</label>
+              <input 
+                type="tel"
+                id="phone"
+                name="phone"
+                onChange={(e) => this.updateField('phone', e.target.value)}
               />
-              {description.touched && <ValidationError message={this.validateRequiredInput('description')} />}
             </div>
 
             <br />
 
-            {causes && causes.length > 0 && (
-              <>
-                <CauseCheckboxes 
-                  causes={causes} 
-                  handleClick={checkCause(this)}
-                  legend="Causes* (select at least one)"
-                />
+            <div>
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                onChange={(e) => this.updateField('email', e.target.value)}
+                onBlur={() => this.setState({
+                  email: {
+                    value: this.state.email.value,
+                    touched: true
+                  }
+                })}
+              />
+            </div>
 
-                <br />
-              </>
-            )}
+            <br />
 
-            <button
-              type="submit"
-              disabled={
-                this.validateRequiredInput('name')
-                || this.validateRequiredInput('description')
-                || this.validateContactInfo()
-                || this.validateCheckedCauses()}
-            >
-              Add Organization
-            </button>
-          </form>
+            <div>
+              <label htmlFor="address">Address</label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                onChange={(e) => this.updateField('address', e.target.value)}
+              />
+            </div>
 
-          {error && <p className="error">{error.message}</p>}
-        </main>
-      </div>
+            {(website.touched && phone.touched && email.touched && address.touched) && 
+              <ValidationError message={this.validateContactInfo()} />}
+          </fieldset>
+
+          <br />
+
+          <div className="AddOrg__description">
+            <label htmlFor="description">Description*</label>
+            <textarea
+              id="description"
+              name="description"
+              onChange={(e) => this.updateField('description', e.target.value)}
+              required
+            />
+            {description.touched && <ValidationError message={this.validateRequiredInput('description')} />}
+          </div>
+
+          <br />
+
+          {causes && causes.length > 0 && (
+            <>
+              <CauseCheckboxes 
+                causes={causes} 
+                handleClick={checkCause(this)}
+                legend="Causes* (select at least one)"
+              />
+
+              <br />
+            </>
+          )}
+
+          <button
+            type="submit"
+            disabled={
+              this.validateRequiredInput('name')
+              || this.validateRequiredInput('description')
+              || this.validateContactInfo()
+              || this.validateCheckedCauses()}
+          >
+            Add Organization
+          </button>
+        </form>
+
+        {error && <p className="error">{error.message}</p>}
+      </main>
     );
   }
 }

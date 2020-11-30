@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { updateField, checkCause, fetchApiJson } from '../util';
 import VolunteerContext from '../VolunteerContext';
-import Nav from '../Nav/Nav';
 import CauseCheckboxes from '../CauseCheckboxes/CauseCheckboxes';
 import SearchResults from '../SearchResults/SearchResults';
 
@@ -66,53 +65,49 @@ class OrgSearch extends Component {
     const { pageLimit } = this.props;
 
     return (
-      <div className="OrgSearch">
-        <Nav />
-        
-        <main>
-          <header>
-            <h1>Search for Organizations</h1>
-          </header>
+      <main className="OrgSearch">
+        <header>
+          <h1>Search for Organizations</h1>
+        </header>
 
-          <form onSubmit={this.handleSubmit}>
-            <div>
-              <label htmlFor="search-term">Search Term</label>
-              <input 
-                type="text"
-                id="search-term"
-                onChange={(e) => updateField('term', e.target.value, this)}
+        <form onSubmit={this.handleSubmit}>
+          <div>
+            <label htmlFor="search-term">Search Term</label>
+            <input 
+              type="text"
+              id="search-term"
+              onChange={(e) => updateField('term', e.target.value, this)}
+            />
+          </div>
+
+          <br />
+
+          {causes && causes.length > 0 && (
+            <>
+              <CauseCheckboxes 
+                causes={causes}
+                handleClick={checkCause(this)}
+                legend="Causes* (select at least one)"
               />
-            </div>
 
-            <br />
-
-            {causes && causes.length > 0 && (
-              <>
-                <CauseCheckboxes 
-                  causes={causes}
-                  handleClick={checkCause(this)}
-                  legend="Causes* (select at least one)"
-                />
-
-                <br />
-              </>
-            )}
-
-            <button
-              type="submit"
-              disabled={this.validateCheckedCauses()}
-            >
-              Search
-            </button>
-          </form>
-
-          {error && <p className="error">{error.message}</p>}
-
-          {searched && (
-            <SearchResults results={searchResults} pageLimit={pageLimit} />
+              <br />
+            </>
           )}
-        </main>
-      </div>
+
+          <button
+            type="submit"
+            disabled={this.validateCheckedCauses()}
+          >
+            Search
+          </button>
+        </form>
+
+        {error && <p className="error">{error.message}</p>}
+
+        {searched && (
+          <SearchResults results={searchResults} pageLimit={pageLimit} />
+        )}
+      </main>
     );
   }
 }
