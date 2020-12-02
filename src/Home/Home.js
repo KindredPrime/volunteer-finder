@@ -10,7 +10,7 @@ function Home() {
       </header>
 
       <p className="Home__statement">
-        Looking to volunteer in the DC metropolitan area for causes you beleive in, but you're 
+        Looking to volunteer in the DC metropolitan area for causes you believe in, but you're 
         having trouble finding volunteer opportunities? VolunteerFinder can help you!
       </p>
 
