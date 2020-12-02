@@ -39,6 +39,7 @@ class AddOrg extends Component {
     checkedCauses: {
       
     },
+    adding: false,
     error: null
   };
 
@@ -118,6 +119,11 @@ class AddOrg extends Component {
 
     const { addOrg, causes } = this.context;
     const { name, website, phone, email, address, description, checkedCauses } = this.state;
+
+    this.setState({
+      adding: true
+    });
+
     const newOrg = { 
       org_name: name.value,
       website: website.value,
@@ -130,6 +136,7 @@ class AddOrg extends Component {
 
     if (this.orgExists()) {
       this.setState({
+        adding: false,
         error: new Error('The organization already exists')
       });
     }
@@ -151,6 +158,7 @@ class AddOrg extends Component {
         })
         .catch((error) => {
           this.setState({
+            adding: false,
             error
           });
         });
@@ -159,7 +167,7 @@ class AddOrg extends Component {
 
   render() {
     const { causes } = this.context;
-    const { name, website, phone, email, address, description, error } = this.state;
+    const { name, website, phone, email, address, description, adding, error } = this.state;
 
     return (
       <main className="AddOrg">
@@ -279,6 +287,8 @@ class AddOrg extends Component {
             Add Organization
           </button>
         </form>
+
+        {adding && <p>Adding...</p>}
 
         {error && <p className="error">{error.message}</p>}
       </main>

@@ -86,6 +86,30 @@ describe('AddOrg Component', () => {
     expect(screen.getByText(description)).toBeInTheDocument();
   });
 
+  it(`renders 'Adding...' while the new organization is being added`, () => {
+    const contextValue = {
+      orgs: [],
+      causes: dummyCauses.slice(0, 1)
+    };
+    
+    render(
+      <VolunteerContext.Provider value={contextValue}>
+        <BrowserRouter>
+          <AddOrg history={{}} />
+        </BrowserRouter>
+      </VolunteerContext.Provider>
+    );
+
+    const org = dummyOrgs[0];
+    userEvent.type(screen.getByLabelText('Name*'), org.org_name);
+    userEvent.type(screen.getByLabelText('Website'), org.website);
+    userEvent.type(screen.getByLabelText('Description*'), org.org_desc);
+    userEvent.click(screen.getByLabelText(dummyCauses[0].cause_name));
+    userEvent.click(screen.getByRole('button', { name: 'Add Organization' }));
+
+    expect(screen.getByText('Adding...')).toBeInTheDocument();
+  });
+
   it('renders error when org already exists', () => {
     const contextValue = {
       orgs: dummyOrgs,
