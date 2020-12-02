@@ -20,6 +20,7 @@ class OrgSearch extends Component {
     },
     searchResults: [],
     page: 1,
+    searching: false,
     searched: false,
     error: null
   };
@@ -35,6 +36,10 @@ class OrgSearch extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
+    this.setState({
+      searching: true
+    });
+
     const term = this.state.term || '';
     const causes = Object.keys(this.state.checkedCauses);
 
@@ -44,6 +49,7 @@ class OrgSearch extends Component {
     return fetchApiJson(`${route}?${queryParams}`)
       .then((orgs) => {
         this.setState({
+          searching: false,
           searched: true,
           searchResults: orgs,
           error: null
@@ -51,6 +57,7 @@ class OrgSearch extends Component {
       })
       .catch((error) => {
         this.setState({
+          searching: false,
           searched: false,
           error
         });
@@ -61,7 +68,7 @@ class OrgSearch extends Component {
     // Every time the component is rendered, it grabs the current context for the app's causes
     // to render dynamically on the page.
     const { causes } = this.context;
-    const { searchResults, searched, error } = this.state;
+    const { searchResults, searching, searched, error } = this.state;
     const { pageLimit } = this.props;
 
     return (
@@ -103,6 +110,8 @@ class OrgSearch extends Component {
         </form>
 
         {error && <p className="error">{error.message}</p>}
+
+        {searching && <p>Searching...</p>}
 
         {searched && (
           <SearchResults results={searchResults} pageLimit={pageLimit} />

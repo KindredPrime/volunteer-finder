@@ -3,10 +3,26 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
 import OrgSearch from './OrgSearch';
-import { dummyCauses } from '../dummyData';
+import { dummyOrgs, dummyCauses } from '../dummyData';
 import VolunteerContext from '../VolunteerContext';
 
 describe('OrgSearch Component', () => {
+  const origFetch = global.fetch;
+
+  // return a Promise that resolves to an object with a json function that returns a Promise that
+  // resolves to an array of organizations
+  beforeAll(() => {
+    global.fetch = () => Promise.resolve({
+      json: () => Promise.resolve([
+        dummyOrgs[0]
+      ])
+    });
+  });
+
+  afterAll(() => {
+    global.fetch = origFetch;
+  });
+
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
@@ -31,6 +47,23 @@ describe('OrgSearch Component', () => {
     );
 
     expect(document.body).toMatchSnapshot();
+  });
+
+  it(`Renders 'Searching...' while organizations are being searched`, () => {
+    const contextValue = {
+      causes: dummyCauses.slice(0, 1)
+    };
+    render(
+      <VolunteerContext.Provider value={contextValue}>
+        <BrowserRouter>
+          <OrgSearch pageLimit={7} />
+        </BrowserRouter>
+      </VolunteerContext.Provider>
+    );
+
+    userEvent.click(screen.getByLabelText(dummyCauses[0].cause_name));
+    userEvent.click(screen.getByRole('button', { name: 'Search' }));
+    expect(screen.getByText('Searching...')).toBeInTheDocument();
   });
 
   /**
