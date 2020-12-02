@@ -8,6 +8,39 @@ import App from '../App';
 import VolunteerContext from '../VolunteerContext';
 
 describe('AddOrg Component', () => {
+  const origFetch = global.fetch;
+
+  // Return a promise that resolves to an object with a json function that returns a promise that 
+  // resolves to one of the following: 
+  //   - a single organization
+  //   - an array of causes
+  //   - an empty array (to represent no organizations)
+  beforeAll(() => {
+    global.fetch = (route, options={}) => {
+      if (route.includes('orgs') && options.method === 'POST') {
+        return Promise.resolve({
+          json: () => Promise.resolve({
+            id: 1,
+            ...JSON.parse(options.body)
+          })
+        });
+      }
+      else if (route.includes('causes')) {
+        return Promise.resolve({
+          json: () => Promise.resolve(dummyCauses)
+        });
+      }
+
+      return Promise.resolve({
+        json: () => Promise.resolve([])
+      });
+    }
+  });
+
+  afterAll(() => {
+    global.fetch = origFetch;
+  });
+
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
@@ -19,11 +52,7 @@ describe('AddOrg Component', () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  /**
-   * This test doesn't work when deploying a build to Vercel.  During Vercel's build process,
-   * it doesn't have permission to connect to localhost, where the local API is running.
-   */
-  it.skip('goes to org page after successful add', async () => {
+  it('goes to org page after successful add', async () => {
     render(
       <MemoryRouter initialEntries={['/add-org']}>
         <App />
@@ -46,8 +75,7 @@ describe('AddOrg Component', () => {
     userEvent.type(screen.getByLabelText('Email'), email);
     userEvent.type(screen.getByLabelText('Address'), address);
     userEvent.type(screen.getByLabelText('Description*'), description);
-    // Click the first checkbox in the Causes fieldset
-    userEvent.click(screen.getByText(causesLegend).nextSibling.lastChild);
+    userEvent.click(screen.getByText(dummyCauses[0].cause_name));
     userEvent.click(screen.getByRole('button', { name: 'Add Organization' }));
 
     await waitFor(() => expect(screen.getByText(name)).toBeInTheDocument());
@@ -56,9 +84,6 @@ describe('AddOrg Component', () => {
     expect(screen.getByText(`Email: ${email}`)).toBeInTheDocument();
     expect(screen.getByText(`Address: ${address}`)).toBeInTheDocument();
     expect(screen.getByText(description)).toBeInTheDocument();
-
-    userEvent.click(screen.getByRole('button', { name: 'Delete Organization' }));
-    await waitFor(() => expect(screen.getByText('Search for Organizations')).toBeInTheDocument());
   });
 
   it('renders error when org already exists', () => {

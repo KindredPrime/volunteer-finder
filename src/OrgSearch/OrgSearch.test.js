@@ -66,11 +66,7 @@ describe('OrgSearch Component', () => {
     expect(screen.getByText('Searching...')).toBeInTheDocument();
   });
 
-  /**
-   * This test doesn't work when deploying a build to Vercel.  During Vercel's build process,
-   * it doesn't have permission to connect to localhost, where the local API is running.
-   */
-  it.skip(`renders search results after clicking 'Search'`, async () => {
+  it(`Renders search results after clicking 'Search'`, async () => {
     const contextValue = {
       causes: dummyCauses.slice(0, 1)
     };
