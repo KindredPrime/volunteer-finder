@@ -48,10 +48,6 @@ p {
   text-align: left;
 }
 
-.App.expanded {
-  margin-top: 138px;
-}
-
 section {
   border-top: 3px solid #747A82;
   margin: 20px 0px 20px 0px;
@@ -121,4 +117,14 @@ li {
 .App {
   margin-top: 75px;
   text-align: center;
+}
+
+.App.expanded {
+  margin-top: 138px;
+}
+
+@media screen and (min-width: 750px) {
+  .App.expanded {
+    margin-top: 75px;
+  }
 }

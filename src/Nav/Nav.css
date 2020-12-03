@@ -9,7 +9,7 @@
   text-align: right;
 }
 
-.Nav * {
+.Nav *, .Nav__expanded * {
   color: white;
 }
 
@@ -21,8 +21,11 @@
   cursor: pointer;
 }
 
-.Nav__expanded {
-  width: 100%;
+.Nav .links {
+  display: none;
+}
+
+.Nav.expanded .links {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -32,10 +35,27 @@
   font-size: 16px;
 }
 
-.Nav__expanded a {
+.Nav.expanded a {
   text-decoration: none;
 }
 
 a.active {
   color: #FF9100;
+}
+
+@media screen and (min-width: 750px) {
+  .Nav__expander {
+    display: none;
+  }
+
+  .Nav .links, .Nav.expanded .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .Nav .links a, .Nav.expanded .links a {
+    margin-left: 20px;
+  }
 }
