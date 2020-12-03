@@ -36,6 +36,7 @@ describe('OrgSearch Component', () => {
 
   it('renders the UI as expected', () => {
     const contextValue = {
+      orgs: dummyOrgs,
       causes: dummyCauses
     };
     render(
@@ -49,8 +50,9 @@ describe('OrgSearch Component', () => {
     expect(document.body).toMatchSnapshot();
   });
 
-  it(`Renders 'Searching...' while organizations are being searched`, () => {
+  it(`renders 'Searching...' while organizations are being searched`, () => {
     const contextValue = {
+      orgs: dummyOrgs,
       causes: dummyCauses.slice(0, 1)
     };
     render(
@@ -66,8 +68,9 @@ describe('OrgSearch Component', () => {
     expect(screen.getByText('Searching...')).toBeInTheDocument();
   });
 
-  it(`Renders search results after clicking 'Search'`, async () => {
+  it(`renders search results after clicking 'Search'`, async () => {
     const contextValue = {
+      orgs: dummyOrgs,
       causes: dummyCauses.slice(0, 1)
     };
     render(
@@ -81,5 +84,21 @@ describe('OrgSearch Component', () => {
     userEvent.click(screen.getByLabelText(dummyCauses[0].cause_name));
     userEvent.click(screen.getByRole('button', { name: 'Search' }));
     await waitFor(() => expect(screen.getByText('Results')).toBeInTheDocument());
+  });
+
+  it('renders link to add organizations page when no causes being used', () => {
+    const contextValue = {
+      orgs: [],
+      causes: dummyCauses
+    };
+    render(
+      <VolunteerContext.Provider value={contextValue}>
+        <BrowserRouter>
+          <OrgSearch pageLimit={7} />
+        </BrowserRouter>
+      </VolunteerContext.Provider>
+    );
+
+    expect(document.body).toMatchSnapshot();
   });
 });

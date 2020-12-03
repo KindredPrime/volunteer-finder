@@ -50,7 +50,7 @@ exports[`Nav Component expands and closes nav menu when 'Menu' is clicked 1`] = 
         <p
           class="Home__statement"
         >
-          Looking to volunteer in the DC metropolitan area for causes you beleive in, but you're having trouble finding volunteer opportunities? VolunteerFinder can help you!
+          Looking to volunteer in the DC metropolitan area for causes you believe in, but you're having trouble finding volunteer opportunities? VolunteerFinder can help you!
         </p>
         <section>
           <h2>
@@ -113,7 +113,7 @@ exports[`Nav Component expands and closes nav menu when 'Menu' is clicked 2`] = 
         <p
           class="Home__statement"
         >
-          Looking to volunteer in the DC metropolitan area for causes you beleive in, but you're having trouble finding volunteer opportunities? VolunteerFinder can help you!
+          Looking to volunteer in the DC metropolitan area for causes you believe in, but you're having trouble finding volunteer opportunities? VolunteerFinder can help you!
         </p>
         <section>
           <h2>

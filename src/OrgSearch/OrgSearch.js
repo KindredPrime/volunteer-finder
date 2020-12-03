@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { updateField, checkCause, fetchApiJson } from '../util';
 import VolunteerContext from '../VolunteerContext';
 import CauseCheckboxes from '../CauseCheckboxes/CauseCheckboxes';
@@ -65,9 +66,20 @@ class OrgSearch extends Component {
   }
 
   render() {
-    // Every time the component is rendered, it grabs the current context for the app's causes
-    // to render dynamically on the page.
-    const { causes } = this.context;
+    const { orgs, causes } = this.context;
+    const usedCauses = causes.filter((cause) => orgs.find((org) => {
+        return org.causes.find((elem) => elem.cause_name === cause.cause_name);
+      })
+    );
+
+    if (usedCauses.length === 0) {
+      return (
+        <main className="OrgSearch">
+          <p>There are no organizations. Feel free to <Link to="/add-org">add some</Link></p>
+        </main>
+      );
+    }
+
     const { searchResults, searching, searched, error } = this.state;
     const { pageLimit } = this.props;
 
@@ -89,17 +101,13 @@ class OrgSearch extends Component {
 
           <br />
 
-          {causes && causes.length > 0 && (
-            <>
-              <CauseCheckboxes 
-                causes={causes}
-                handleClick={checkCause(this)}
-                legend="Causes* (select at least one)"
-              />
+          <CauseCheckboxes 
+            causes={usedCauses}
+            handleClick={checkCause(this)}
+            legend="Causes (select at least one)"
+          />
 
-              <br />
-            </>
-          )}
+          <br />
 
           <button
             type="submit"

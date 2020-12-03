@@ -1,5 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`OrgSearch Component renders link to add organizations page when no causes being used 1`] = `
+<body>
+  <div>
+    <main
+      class="OrgSearch"
+    >
+      <p>
+        There are no organizations. Feel free to 
+        <a
+          href="/add-org"
+        >
+          add some
+        </a>
+      </p>
+    </main>
+  </div>
+</body>
+`;
+
 exports[`OrgSearch Component renders the UI as expected 1`] = `
 <body>
   <div>
@@ -28,7 +47,7 @@ exports[`OrgSearch Component renders the UI as expected 1`] = `
           class="CauseCheckboxes"
         >
           <legend>
-            Causes* (select at least one)
+            Causes (select at least one)
           </legend>
           <div>
             <label
@@ -106,45 +125,6 @@ exports[`OrgSearch Component renders the UI as expected 1`] = `
               name="causes"
               type="checkbox"
               value="Education"
-            />
-          </div>
-          <div>
-            <label
-              for="causes-7"
-            >
-              Human Rights
-            </label>
-            <input
-              id="causes-7"
-              name="causes"
-              type="checkbox"
-              value="Human Rights"
-            />
-          </div>
-          <div>
-            <label
-              for="causes-8"
-            >
-              Arts
-            </label>
-            <input
-              id="causes-8"
-              name="causes"
-              type="checkbox"
-              value="Arts"
-            />
-          </div>
-          <div>
-            <label
-              for="causes-9"
-            >
-              Wildlife and Environment
-            </label>
-            <input
-              id="causes-9"
-              name="causes"
-              type="checkbox"
-              value="Wildlife and Environment"
             />
           </div>
           <div>
