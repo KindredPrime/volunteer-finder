@@ -1,6 +1,51 @@
-.App {
-  margin-top: 75px;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Karla&family=Sura&family=Varela+Round&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1A4161;
+  color: white;
+  margin-bottom: 20px;
+}
+
+h1 {
+  text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+  font-size: 34px;
+  line-height: 48px;
+}
+
+h2 {
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  font-size: 26px;
+  line-height: 36px;
+}
+
+p, legend {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+h1, h2, legend {
+  font-family: 'Varela Round', sans-serif;
+}
+
+legend {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+p, label {
+  font-family: 'Karla', sans-serif;
+}
+
+p, label {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+p {
+  text-align: left;
 }
 
 .App.expanded {
@@ -8,12 +53,32 @@
 }
 
 section {
-  padding: 10px;
-  background-color: #D7D7D7;
+  border-top: 3px solid #747A82;
+  margin: 20px 0px 20px 0px;
 }
 
-section:nth-child(even) {
-  background-color: #A2A2A2;
+section > * {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+button {
+  background-color: #FF9100;
+  color: black;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #747A82;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a, button {
+  font-family: 'Sura', serif;
 }
 
 form {
@@ -42,7 +107,7 @@ legend {
 }
 
 p.error {
-  color: red;
+  color: #FF9100;
 }
 
 ul {
@@ -53,6 +118,7 @@ li {
   list-style: none;
 }
 
-a {
-  color: black;
+.App {
+  margin-top: 75px;
+  text-align: center;
 }

@@ -167,7 +167,7 @@ class AddOrg extends Component {
 
   render() {
     const { causes } = this.context;
-    const { name, website, phone, email, address, description, adding, error } = this.state;
+    const { name, website, phone, email, address, description, checkedCauses, adding, error } = this.state;
 
     return (
       <main className="AddOrg">
@@ -267,7 +267,8 @@ class AddOrg extends Component {
           {causes && causes.length > 0 && (
             <>
               <CauseCheckboxes 
-                causes={causes} 
+                causes={causes}
+                checkedCauses={checkedCauses}
                 handleClick={checkCause(this)}
                 legend="Causes* (select at least one)"
               />

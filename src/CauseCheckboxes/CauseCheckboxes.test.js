@@ -9,6 +9,7 @@ describe('CauseCheckboxes Component', () => {
     ReactDOM.render(
       <CauseCheckboxes 
         causes={[]}
+        checkedCauses={[]}
         handleClick={() => {}}
         legend="Legend"
       />,
@@ -21,6 +22,10 @@ describe('CauseCheckboxes Component', () => {
     render(
       <CauseCheckboxes
         causes={dummyCauses}
+        checkedCauses={[{
+          [dummyCauses[0]]: true,
+          [dummyCauses[1]]: true
+        }]}
         handleClick={() => {}}
         legend="Causes"
       />

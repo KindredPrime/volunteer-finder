@@ -9,12 +9,33 @@ exports[`CauseCheckboxes Component renders the UI as expected 1`] = `
       <legend>
         Causes
       </legend>
-      <div>
+      <div
+        class="CauseCheckboxes__cause-wrapper"
+      >
         <label
           for="causes-1"
         >
           Youth
         </label>
+        <div
+          class="CauseCheckboxes__custom-checkbox"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-check fa-w-16 CauseCheckboxes__checkmark"
+            data-icon="check"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
         <input
           id="causes-1"
           name="causes"
@@ -22,12 +43,33 @@ exports[`CauseCheckboxes Component renders the UI as expected 1`] = `
           value="Youth"
         />
       </div>
-      <div>
+      <div
+        class="CauseCheckboxes__cause-wrapper"
+      >
         <label
           for="causes-2"
         >
           Health
         </label>
+        <div
+          class="CauseCheckboxes__custom-checkbox"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-check fa-w-16 CauseCheckboxes__checkmark"
+            data-icon="check"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
         <input
           id="causes-2"
           name="causes"
@@ -35,12 +77,33 @@ exports[`CauseCheckboxes Component renders the UI as expected 1`] = `
           value="Health"
         />
       </div>
-      <div>
+      <div
+        class="CauseCheckboxes__cause-wrapper"
+      >
         <label
           for="causes-3"
         >
           Disaster Response
         </label>
+        <div
+          class="CauseCheckboxes__custom-checkbox"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-check fa-w-16 CauseCheckboxes__checkmark"
+            data-icon="check"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
         <input
           id="causes-3"
           name="causes"
@@ -48,12 +111,33 @@ exports[`CauseCheckboxes Component renders the UI as expected 1`] = `
           value="Disaster Response"
         />
       </div>
-      <div>
+      <div
+        class="CauseCheckboxes__cause-wrapper"
+      >
         <label
           for="causes-4"
         >
           Animals
         </label>
+        <div
+          class="CauseCheckboxes__custom-checkbox"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-check fa-w-16 CauseCheckboxes__checkmark"
+            data-icon="check"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
         <input
           id="causes-4"
           name="causes"
@@ -61,12 +145,33 @@ exports[`CauseCheckboxes Component renders the UI as expected 1`] = `
           value="Animals"
         />
       </div>
-      <div>
+      <div
+        class="CauseCheckboxes__cause-wrapper"
+      >
         <label
           for="causes-5"
         >
           History
         </label>
+        <div
+          class="CauseCheckboxes__custom-checkbox"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-check fa-w-16 CauseCheckboxes__checkmark"
+            data-icon="check"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
         <input
           id="causes-5"
           name="causes"
@@ -74,12 +179,33 @@ exports[`CauseCheckboxes Component renders the UI as expected 1`] = `
           value="History"
         />
       </div>
-      <div>
+      <div
+        class="CauseCheckboxes__cause-wrapper"
+      >
         <label
           for="causes-6"
         >
           Education
         </label>
+        <div
+          class="CauseCheckboxes__custom-checkbox"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-check fa-w-16 CauseCheckboxes__checkmark"
+            data-icon="check"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
         <input
           id="causes-6"
           name="causes"
@@ -87,12 +213,33 @@ exports[`CauseCheckboxes Component renders the UI as expected 1`] = `
           value="Education"
         />
       </div>
-      <div>
+      <div
+        class="CauseCheckboxes__cause-wrapper"
+      >
         <label
           for="causes-7"
         >
           Human Rights
         </label>
+        <div
+          class="CauseCheckboxes__custom-checkbox"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-check fa-w-16 CauseCheckboxes__checkmark"
+            data-icon="check"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
         <input
           id="causes-7"
           name="causes"
@@ -100,12 +247,33 @@ exports[`CauseCheckboxes Component renders the UI as expected 1`] = `
           value="Human Rights"
         />
       </div>
-      <div>
+      <div
+        class="CauseCheckboxes__cause-wrapper"
+      >
         <label
           for="causes-8"
         >
           Arts
         </label>
+        <div
+          class="CauseCheckboxes__custom-checkbox"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-check fa-w-16 CauseCheckboxes__checkmark"
+            data-icon="check"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
         <input
           id="causes-8"
           name="causes"
@@ -113,12 +281,33 @@ exports[`CauseCheckboxes Component renders the UI as expected 1`] = `
           value="Arts"
         />
       </div>
-      <div>
+      <div
+        class="CauseCheckboxes__cause-wrapper"
+      >
         <label
           for="causes-9"
         >
           Wildlife and Environment
         </label>
+        <div
+          class="CauseCheckboxes__custom-checkbox"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-check fa-w-16 CauseCheckboxes__checkmark"
+            data-icon="check"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
         <input
           id="causes-9"
           name="causes"
@@ -126,12 +315,33 @@ exports[`CauseCheckboxes Component renders the UI as expected 1`] = `
           value="Wildlife and Environment"
         />
       </div>
-      <div>
+      <div
+        class="CauseCheckboxes__cause-wrapper"
+      >
         <label
           for="causes-10"
         >
           Elderly
         </label>
+        <div
+          class="CauseCheckboxes__custom-checkbox"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-check fa-w-16 CauseCheckboxes__checkmark"
+            data-icon="check"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
         <input
           id="causes-10"
           name="causes"
@@ -139,12 +349,33 @@ exports[`CauseCheckboxes Component renders the UI as expected 1`] = `
           value="Elderly"
         />
       </div>
-      <div>
+      <div
+        class="CauseCheckboxes__cause-wrapper"
+      >
         <label
           for="causes-11"
         >
           Poverty
         </label>
+        <div
+          class="CauseCheckboxes__custom-checkbox"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-check fa-w-16 CauseCheckboxes__checkmark"
+            data-icon="check"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
         <input
           id="causes-11"
           name="causes"

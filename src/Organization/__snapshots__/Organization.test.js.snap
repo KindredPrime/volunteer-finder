@@ -11,7 +11,9 @@ exports[`Organization Component renders the UI as expected 1`] = `
           YMCA DC
         </h1>
       </header>
-      <section>
+      <section
+        class="Organization__contact-info"
+      >
         <header>
           <h2>
             Contact Info
@@ -39,20 +41,32 @@ exports[`Organization Component renders the UI as expected 1`] = `
           Address: 
           12196 Sunset Hills Road, Reston, VA 20190
         </p>
-        <p>
+      </section>
+      <section>
+        <header>
+          <h2>
+            About 
+            YMCA DC
+          </h2>
+        </header>
+        <p
+          class="Organization__description"
+        >
           Today, the Y engages more than 10,000 neighborhoods across the U.S. As the nation’s leading nonprofit committed to helping people and communities to learn, grow and thrive, our contributions are both far-reaching and intimate—from influencing our nation’s culture during times of profound social change to the individual support we provide an adult learning to read.
 
     By empowering young people to reach their full potential, improving individual and community well-being and giving back and inspiring action in our communities, the Y ensures that everyone has the opportunity to become healthier, more confident, connected and secure.
         </p>
       </section>
-      <section>
+      <section
+        class="Organization__causes"
+      >
         <header>
           <h2>
             Causes
           </h2>
         </header>
         <ul
-          class="Organization__causes"
+          class="Organization__causes-list"
         >
           <li>
             Youth

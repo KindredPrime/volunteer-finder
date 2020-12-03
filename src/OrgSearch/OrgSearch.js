@@ -80,7 +80,7 @@ class OrgSearch extends Component {
       );
     }
 
-    const { searchResults, searching, searched, error } = this.state;
+    const { checkedCauses, searchResults, searching, searched, error } = this.state;
     const { pageLimit } = this.props;
 
     return (
@@ -103,6 +103,7 @@ class OrgSearch extends Component {
 
           <CauseCheckboxes 
             causes={usedCauses}
+            checkedCauses={checkedCauses}
             handleClick={checkCause(this)}
             legend="Causes (select at least one)"
           />

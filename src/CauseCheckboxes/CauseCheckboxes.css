@@ -1,0 +1,47 @@
+.CauseCheckboxes__cause-wrapper {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.CauseCheckboxes label {
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+
+.CauseCheckboxes input {
+  position: relative;
+  left: -5px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.CauseCheckboxes__custom-checkbox {
+  display: inline-block;
+  position: relative;
+  left: 12px;
+  top: 4px;
+  width: 13px;
+  height: 13px;
+  background-color: white;
+  border-radius: 2px;
+  opacity: 0.75;
+}
+
+.CauseCheckboxes__custom-checkbox.checked {
+  background-color: #FF9100;
+  opacity: 1;
+}
+
+.CauseCheckboxes__checkmark {
+  position: relative;
+  color: black;
+  top: -5px;
+  height: 15px;
+  font-size: 12px;
+  opacity: 0;
+}
+
+.CauseCheckboxes__checkmark.checked {
+  opacity: 1;
+}

@@ -1,3 +1,19 @@
-button {
+.Organization button {
   margin-top: 10px;
+}
+
+.Organization__contact-info p {
+  text-align: center;
+}
+
+.Organization__causes h2 {
+  margin-bottom: 10px;
+}
+
+.Organization__causes-list {
+  margin-top: 0px;
+}
+
+.Organization__causes-list > li {
+  margin-bottom: 5px;
 }

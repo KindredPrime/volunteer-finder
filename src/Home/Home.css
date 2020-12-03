@@ -1,3 +1,8 @@
 .Home__header-link {
   text-decoration: none;
 }
+
+.Home__statement {
+  margin-left: 5%;
+  margin-right: 5%;
+}
