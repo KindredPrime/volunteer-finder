@@ -128,3 +128,10 @@ li {
     margin-top: 75px;
   }
 }
+
+@media screen and (min-width: 1200px) {
+  .App, .App.expanded {
+    margin-top: 0px;
+    margin-left: 17%;
+  }
+}

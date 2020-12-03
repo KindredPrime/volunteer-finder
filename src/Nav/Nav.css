@@ -59,3 +59,24 @@ a.active {
     margin-left: 20px;
   }
 }
+
+@media screen and (min-width: 1200px) {
+  .Nav {
+    border-bottom: none;
+    border-right: 1px solid #747A82;
+    top: 0;
+    right: 83%;
+    bottom: 0;
+    left: 0;
+  }
+
+  .Nav .links, .Nav.expanded .links {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  .Nav .links a, .Nav.expanded .links a {
+    margin-left: 0px;
+  }
+}
