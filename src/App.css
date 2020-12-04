@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla&family=Sura&family=Varela+Round&display=swap');
 
+:root {
+  --border-color: #747A82;
+  --accent-color: #FF9100;
+  --main-color: #1A4161;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: #1A4161;
+  background-color: var(--main-color);
   color: white;
   margin-bottom: 20px;
 }
@@ -38,7 +44,7 @@ p, label, button {
   font-family: 'Karla', sans-serif;
 }
 
-p, label {
+p, label, li {
   font-size: 16px;
   line-height: 24px;
 }
@@ -48,8 +54,12 @@ p {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
+label, li {
+  text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+}
+
 section {
-  border-top: 3px solid #747A82;
+  border-top: 3px solid var(--border-color);
   margin: 20px 0px 20px 0px;
 }
 
@@ -59,7 +69,7 @@ section > * {
 }
 
 button {
-  background-color: #FF9100;
+  background-color: var(--accent-color);
   color: black;
   cursor: pointer;
   font-size: 16px;
@@ -69,7 +79,7 @@ button {
 }
 
 button:disabled {
-  background-color: #747A82;
+  background-color: var(--border-color);
 }
 
 a {
@@ -104,7 +114,7 @@ fieldset {
 }
 
 p.error {
-  color: #FF9100;
+  color: var(--accent-color);
 }
 
 ul {
@@ -132,9 +142,13 @@ li {
     margin-top: 79px;
   }
 
-  p, label {
+  p, label, li {
     font-size: 18px;
     line-height: 26px;
+  }
+
+  label, li {
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   }
 
   h1 {
@@ -164,8 +178,41 @@ li {
   Desktop PCs
 */
 @media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 42px;
+    line-height: 58px;
+    text-shadow: -3.5px 0 black, 0 3.5px black, 3.5px 0 black, 0 -3.5px black;
+  }
+  
+  h2 {
+    font-size: 30px;
+    line-height: 42px;
+    text-shadow: -2.5px 0 black, 0 2.5px black, 2.5px 0 black, 0 -2.5px black;
+  }
+
+  section {
+    margin: 40px 0px 40px 0px;
+    padding-top: 10px;
+  }
+
+  p, label, li {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  legend {
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 8px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 5px 9px 5px 9px;
+  }
+
   .App, .App.expanded {
-    margin-top: 0px;
-    margin-left: 17%;
+    margin-top: 50px;
+    margin-left: 15%;
   }
 }

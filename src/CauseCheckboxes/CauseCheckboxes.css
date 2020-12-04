@@ -29,7 +29,7 @@
 }
 
 .CauseCheckboxes__custom-checkbox.checked {
-  background-color: #FF9100;
+  background-color: var(--accent-color);
   opacity: 1;
 }
 

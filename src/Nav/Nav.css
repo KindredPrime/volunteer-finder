@@ -1,7 +1,7 @@
 .Nav {
   background-color: black;
   padding: 15px;
-  border-bottom: 1px solid #747A82;
+  border-bottom: 1px solid var(--border-color);
   position: fixed;
   top: 0;
   left: 0;
@@ -21,6 +21,9 @@
   cursor: pointer;
 }
 
+/*
+  For mobile devices, only display the nav links when the nav bar is expanded
+*/
 .Nav .links {
   display: none;
 }
@@ -31,6 +34,7 @@
   align-items: flex-end;
 }
 
+
 .Nav a {
   font-size: 16px;
 }
@@ -40,14 +44,20 @@
 }
 
 a.active {
-  color: #FF9100;
+  color: var(--accent-color);
 }
 
+/*
+  Tablets
+*/
 @media screen and (min-width: 750px) {
   .Nav__expander {
     display: none;
   }
 
+  /*
+    For tablets, there is no nav expander, so always display the nav links
+  */
   .Nav .links, .Nav.expanded .links {
     display: flex;
     flex-direction: row;
@@ -64,23 +74,32 @@ a.active {
   }
 }
 
+/*
+  Desktop
+*/
 @media screen and (min-width: 1200px) {
   .Nav {
     border-bottom: none;
-    border-right: 1px solid #747A82;
+    border-right: 1px solid var(--border-color);
     top: 0;
-    right: 83%;
+    right: 85%;
     bottom: 0;
     left: 0;
+    text-align: center;
+    padding: 25px;
   }
 
   .Nav .links, .Nav.expanded .links {
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-end;
   }
 
   .Nav .links a, .Nav.expanded .links a {
     margin-left: 0px;
+    margin-bottom: 35px;
+  }
+
+  .Nav a {
+    font-size: 20px;
   }
 }

@@ -6,3 +6,9 @@
   margin-left: 5%;
   margin-right: 5%;
 }
+
+@media screen and (min-width: 1200px) {  
+  .Home h2 {
+    text-align: left;
+  }
+}
