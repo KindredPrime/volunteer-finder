@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import './Nav.css';
 
 class Nav extends Component {
@@ -9,11 +11,11 @@ class Nav extends Component {
     return (
       <nav className={expanded ? "Nav expanded" : "Nav"} >
         <button 
-          className="Nav__expander"
+          className={expanded ? "Nav__expander expanded" : "Nav__expander"}
           type="button"
           onClick={() => handleExpander()}
         >
-          Menu
+          <FontAwesomeIcon icon={faBars} />
         </button>
 
         <div className="links">
