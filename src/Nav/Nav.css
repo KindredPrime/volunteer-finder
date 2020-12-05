@@ -27,6 +27,10 @@
   color: var(--accent-color);
 }
 
+.Nav__expander.expanded path {
+  color: var(--accent-color);
+}
+
 /*
   For mobile devices, only display the nav links when the nav bar is expanded
 */
