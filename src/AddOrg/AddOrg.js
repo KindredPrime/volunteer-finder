@@ -252,13 +252,15 @@ class AddOrg extends Component {
           <br />
 
           <div className="AddOrg__description">
-            <label htmlFor="description">Description*</label>
-            <textarea
-              id="description"
-              name="description"
-              onChange={(e) => this.updateField('description', e.target.value)}
-              required
-            />
+            <div className="AddOrg__description-form-elements">
+              <label htmlFor="description">Description*</label>
+              <textarea
+                id="description"
+                name="description"
+                onChange={(e) => this.updateField('description', e.target.value)}
+                required
+              />
+            </div>
             {description.touched && <ValidationError message={this.validateRequiredInput('description')} />}
           </div>
 

@@ -1,8 +1,11 @@
 .AddOrg__description {
+  margin: 10px 0px 10px 0px;
+}
+
+.AddOrg__description-form-elements {
   display: flex;
   align-items: top;
   justify-content: center;
-  margin: 10px 0px 10px 0px;
 }
 
 @media screen and (min-width: 1200px) {

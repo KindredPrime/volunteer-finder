@@ -116,7 +116,9 @@ fieldset {
 }
 
 p.error {
+  text-align: center;
   color: var(--accent-color);
+  margin: 10px 0px 0px 0px;
 }
 
 ul {
