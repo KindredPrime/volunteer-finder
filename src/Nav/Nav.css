@@ -1,6 +1,7 @@
 .Nav {
-  background-color: grey;
+  background-color: black;
   padding: 15px;
+  border-bottom: 1px solid var(--border-color);
   position: fixed;
   top: 0;
   left: 0;
@@ -8,7 +9,12 @@
   text-align: right;
 }
 
+.Nav * {
+  color: white;
+}
+
 .Nav__expander {
+  font-weight: normal;
   border: none;
   background: none;
   padding: 0;
@@ -16,18 +22,90 @@
   cursor: pointer;
 }
 
-.Nav__expanded {
-  width: 100%;
+.Nav__expander:hover, .Nav__expander:focus {
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+/*
+  For mobile devices, only display the nav links when the nav bar is expanded
+*/
+.Nav .links {
+  display: none;
+}
+
+.Nav.expanded .links {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.Nav__expanded a {
+
+.Nav a {
+  font-size: 16px;
+}
+
+.Nav.expanded a {
   text-decoration: none;
-  color: black;
 }
 
 a.active {
-  color: white;
+  color: var(--accent-color);
+}
+
+/*
+  Tablets
+*/
+@media screen and (min-width: 750px) {
+  .Nav__expander {
+    display: none;
+  }
+
+  /*
+    For tablets, there is no nav expander, so always display the nav links
+  */
+  .Nav .links, .Nav.expanded .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .Nav .links a, .Nav.expanded .links a {
+    margin-left: 30px;
+  }
+
+  .Nav a {
+    font-size: 18px;
+  }
+}
+
+/*
+  Desktop
+*/
+@media screen and (min-width: 1200px) {
+  .Nav {
+    border-bottom: none;
+    border-right: 1px solid var(--border-color);
+    top: 0;
+    right: 85%;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    padding: 25px;
+  }
+
+  .Nav .links, .Nav.expanded .links {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .Nav .links a, .Nav.expanded .links a {
+    margin-left: 0px;
+    margin-bottom: 35px;
+  }
+
+  .Nav a {
+    font-size: 20px;
+  }
 }

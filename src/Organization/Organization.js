@@ -48,7 +48,7 @@ class Organization extends Component {
 
           {renderedError}
 
-          <section>
+          <section className="Organization__contact-info">
             <header>
               <h2>Contact Info</h2>
             </header>
@@ -57,15 +57,22 @@ class Organization extends Component {
             <p>Phone: {phone}</p>
             <p>Email: {email}</p>
             <p>Address: {org_address}</p>
-            <p>{org_desc}</p>
           </section>
 
           <section>
             <header>
+              <h2>About {org_name}</h2>
+            </header>
+
+            <p className="Organization__description">{org_desc}</p>
+          </section>
+
+          <section className="Organization__causes">
+            <header>
               <h2>Causes</h2>
             </header>
             
-            <ul className="Organization__causes">
+            <ul className="Organization__causes-list">
               {causes.map((cause, index) => (
                 <li key={index}>
                   {cause.cause_name}

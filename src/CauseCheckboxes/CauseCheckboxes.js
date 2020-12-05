@@ -1,19 +1,50 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import './CauseCheckboxes.css';
 
 /*
   Used to render checkboxes for causes
 */
 function CauseCheckboxes(props) {
-  const { causes, handleClick, legend } = props;
+  const { causes, checkedCauses, handleClick, legend } = props;
+  const customCheckboxClass = 'CauseCheckboxes__custom-checkbox';
+  const checkmarkClass = 'CauseCheckboxes__checkmark';
+
+  const causesWithChecks = causes.map((cause) => {
+    return checkedCauses[cause.cause_name] 
+      ? {
+        ...cause,
+        checked: true
+      }
+      : {
+        ...cause,
+        checked: false
+      };
+  })
 
   return (
     <fieldset className="CauseCheckboxes">
       <legend>{legend}</legend>
 
-      {causes.map((cause) => (
-        <div key={cause.id}>
-          <label htmlFor={`causes-${cause.id}`}>{cause.cause_name}</label>
+      {causesWithChecks.map((cause) => (
+        <div className="CauseCheckboxes__cause-wrapper" key={cause.id}>
+          <label htmlFor={`causes-${cause.id}`}>
+            {cause.cause_name}
+          </label>
+          <div 
+            className={!cause.checked 
+              ? customCheckboxClass 
+              : `${customCheckboxClass} checked`}
+          >
+            <FontAwesomeIcon 
+              className={!cause.checked
+                ? checkmarkClass
+                : `${checkmarkClass} checked`}
+              icon={faCheck}
+            />
+          </div>
           <input 
             type="checkbox"
             id={`causes-${cause.id}`}

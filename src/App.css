@@ -1,19 +1,96 @@
-.App {
-  margin-top: 75px;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Karla&family=Sura&family=Varela+Round&display=swap');
+
+:root {
+  --border-color: #747A82;
+  --accent-color: #FF9100;
+  --main-color: #1A4161;
 }
 
-.App.expanded {
-  margin-top: 138px;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--main-color);
+  color: white;
+  margin-bottom: 20px;
+}
+
+h1 {
+  text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+  font-size: 30px;
+  line-height: 42px;
+}
+
+h2 {
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  font-size: 22px;
+  line-height: 32px;
+}
+
+h1, h2, legend {
+  font-family: 'Varela Round', sans-serif;
+}
+
+legend {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 24px;
+  margin-bottom: 5px;
+  text-shadow: -1.7px 0 black, 0 1.7px black, 1.7px 0 black, 0 -1.7px black;
+}
+
+p, label, button {
+  font-family: 'Karla', sans-serif;
+}
+
+p, label, li {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+p {
+  text-align: left;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+label, li {
+  text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
 }
 
 section {
-  padding: 10px;
-  background-color: #D7D7D7;
+  border-top: 3px solid var(--border-color);
+  margin: 20px 0px 20px 0px;
 }
 
-section:nth-child(even) {
-  background-color: #A2A2A2;
+section > * {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+button {
+  background-color: var(--accent-color);
+  color: black;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 4px 6px 4px 6px;
+}
+
+button:disabled {
+  background-color: var(--border-color);
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Sura', serif;
+}
+
+a:hover, a:focus {
+  font-weight: bold;
+  color: var(--accent-color);
 }
 
 form {
@@ -35,14 +112,13 @@ form button {
 
 fieldset {
   border: none;
-}
-
-legend {
-  font-weight: bold;
+  margin-top: 10px;
 }
 
 p.error {
-  color: red;
+  text-align: center;
+  color: var(--accent-color);
+  margin: 10px 0px 0px 0px;
 }
 
 ul {
@@ -53,6 +129,94 @@ li {
   list-style: none;
 }
 
-a {
-  color: black;
+.App {
+  margin-top: 75px;
+  text-align: center;
+}
+
+.App.expanded {
+  margin-top: 138px;
+}
+
+/*
+  Tablets
+*/
+@media screen and (min-width: 750px) {
+  .App, .App.expanded {
+    margin-top: 79px;
+  }
+
+  p, label, li {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  label, li {
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+
+  h1 {
+    font-size: 34px;
+    line-height: 48px;
+  }
+  
+  h2 {
+    font-size: 26px;
+    line-height: 36px;
+    text-shadow: -2.5px 0 black, 0 2.5px black, 2.5px 0 black, 0 -2.5px black;
+  }
+
+  fieldset {
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  legend {
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 7px;
+  }
+}
+
+/*
+  Desktop PCs
+*/
+@media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 42px;
+    line-height: 58px;
+    text-shadow: -3.5px 0 black, 0 3.5px black, 3.5px 0 black, 0 -3.5px black;
+  }
+  
+  h2 {
+    font-size: 30px;
+    line-height: 42px;
+    text-shadow: -2.5px 0 black, 0 2.5px black, 2.5px 0 black, 0 -2.5px black;
+  }
+
+  section {
+    margin: 40px 0px 40px 0px;
+    padding-top: 10px;
+  }
+
+  p, label, li {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  legend {
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 8px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 5px 9px 5px 9px;
+  }
+
+  .App, .App.expanded {
+    margin-top: 50px;
+    margin-left: 15%;
+  }
 }

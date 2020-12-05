@@ -167,7 +167,7 @@ class AddOrg extends Component {
 
   render() {
     const { causes } = this.context;
-    const { name, website, phone, email, address, description, adding, error } = this.state;
+    const { name, website, phone, email, address, description, checkedCauses, adding, error } = this.state;
 
     return (
       <main className="AddOrg">
@@ -252,13 +252,15 @@ class AddOrg extends Component {
           <br />
 
           <div className="AddOrg__description">
-            <label htmlFor="description">Description*</label>
-            <textarea
-              id="description"
-              name="description"
-              onChange={(e) => this.updateField('description', e.target.value)}
-              required
-            />
+            <div className="AddOrg__description-form-elements">
+              <label htmlFor="description">Description*</label>
+              <textarea
+                id="description"
+                name="description"
+                onChange={(e) => this.updateField('description', e.target.value)}
+                required
+              />
+            </div>
             {description.touched && <ValidationError message={this.validateRequiredInput('description')} />}
           </div>
 
@@ -267,7 +269,8 @@ class AddOrg extends Component {
           {causes && causes.length > 0 && (
             <>
               <CauseCheckboxes 
-                causes={causes} 
+                causes={causes}
+                checkedCauses={checkedCauses}
                 handleClick={checkCause(this)}
                 legend="Causes* (select at least one)"
               />

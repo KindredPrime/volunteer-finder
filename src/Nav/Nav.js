@@ -7,7 +7,7 @@ class Nav extends Component {
     const { expanded, handleExpander } = this.props;
 
     return (
-      <nav className="Nav">
+      <nav className={expanded ? "Nav expanded" : "Nav"} >
         <button 
           className="Nav__expander"
           type="button"
@@ -16,29 +16,29 @@ class Nav extends Component {
           Menu
         </button>
 
-        {expanded && (
-          <div className="Nav__expanded">
-            <NavLink
-              exact
-              to="/"
-              onClick={() => handleExpander()}
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/org-search"
-              onClick={() => handleExpander()}
-            >
-              Search Organizations
-            </NavLink>
-            <NavLink
-              to="/add-org"
-              onClick={() => handleExpander()}
-            >
-              Add Organization
-            </NavLink>
-          </div>
-        )}
+        <div className="links">
+          <NavLink
+            exact
+            to="/"
+            onClick={() => handleExpander()}
+          >
+            Home
+          </NavLink>
+
+          <NavLink
+            to="/org-search"
+            onClick={() => handleExpander()}
+          >
+            Search Organizations
+          </NavLink>
+
+          <NavLink
+            to="/add-org"
+            onClick={() => handleExpander()}
+          >
+            Add Organization
+          </NavLink>
+        </div>
       </nav>
     );
   }
