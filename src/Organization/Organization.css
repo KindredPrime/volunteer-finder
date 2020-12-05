@@ -1,3 +1,7 @@
+.Organization a {
+  color: var(--accent-color);
+}
+
 .Organization button {
   margin-top: 10px;
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './SearchResults.css';
 
 /**
  * Renders a list of organizations search results

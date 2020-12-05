@@ -5,6 +5,7 @@ import { updateField, checkCause, fetchApiJson } from '../util';
 import VolunteerContext from '../VolunteerContext';
 import CauseCheckboxes from '../CauseCheckboxes/CauseCheckboxes';
 import SearchResults from '../SearchResults/SearchResults';
+import './OrgSearch.css';
 
 class OrgSearch extends Component {
   static contextType = VolunteerContext;
@@ -74,7 +75,7 @@ class OrgSearch extends Component {
 
     if (usedCauses.length === 0) {
       return (
-        <main className="OrgSearch">
+        <main className="OrgSearch no-orgs">
           <p>There are no organizations. Feel free to <Link to="/add-org">add some</Link></p>
         </main>
       );

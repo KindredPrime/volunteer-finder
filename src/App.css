@@ -85,10 +85,12 @@ button:disabled {
 a {
   text-decoration: none;
   color: white;
+  font-family: 'Sura', serif;
 }
 
-a {
-  font-family: 'Sura', serif;
+a:hover, a:focus {
+  font-weight: bold;
+  color: var(--accent-color);
 }
 
 form {

@@ -9,16 +9,22 @@
   text-align: right;
 }
 
-.Nav *, .Nav__expanded * {
+.Nav * {
   color: white;
 }
 
 .Nav__expander {
+  font-weight: normal;
   border: none;
   background: none;
   padding: 0;
   font-size: medium;
   cursor: pointer;
+}
+
+.Nav__expander:hover, .Nav__expander:focus {
+  font-weight: bold;
+  color: var(--accent-color);
 }
 
 /*
