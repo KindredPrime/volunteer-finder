@@ -8,7 +8,7 @@ class Organization extends Component {
   static contextType = VolunteerContext;
 
   state = {
-    error: null
+    orgError: null
   };
 
   handleDelete(orgId) {
@@ -21,21 +21,45 @@ class Organization extends Component {
         deleteOrg(parseInt(orgId));
         this.props.history.push('/org-search');
       })
-      .catch((error) => {
+      .catch((orgError) => {
         this.setState({
-          error
+          orgError
         });
       });
   }
 
   render() {
     const orgId = this.props.match.params.id;
-    
-    const { orgs } = this.context;
+    const { orgs, appError, fetching } = this.context;
+
+    /*
+      If the app is waiting for the API to respond with data, only display the fetching message
+    */
+    if (fetching) {
+      return (
+        <main className="Organization">
+          <p>Fetching data from the API...</p>
+        </main>
+      )
+    }
+
+    /*
+      If there's an error across the app, only display content for that error
+    */
+    if (appError) {
+      return (
+        <main className="Organization">
+          <p className="error">
+            An error occurred while fetching organizations and causes: {appError.message}. Try refreshing the page.
+          </p>
+        </main>
+      );
+    }
+
     const org = orgs.find((elem) => elem.id === parseInt(orgId));
 
-    const { error } = this.state;
-    const renderedError = error && <p className="error">{error.message}</p>;
+    const { orgError } = this.state;
+    const renderedError = orgError && <p className="error">{orgError.message}</p>;
 
     if (org) {
       const { org_name, website, phone, email, org_address, org_desc, causes } = org;

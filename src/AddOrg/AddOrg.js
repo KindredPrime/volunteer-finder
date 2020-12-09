@@ -40,7 +40,7 @@ class AddOrg extends Component {
       
     },
     adding: false,
-    error: null
+    addError: null
   };
 
   updateField = (fieldName, fieldValue) => {
@@ -137,7 +137,7 @@ class AddOrg extends Component {
     if (this.orgAlreadyExists()) {
       this.setState({
         adding: false,
-        error: new Error('The organization already exists')
+        addError: new Error('The organization already exists')
       });
     }
     else {
@@ -156,18 +156,30 @@ class AddOrg extends Component {
           });
           this.props.history.push(`/org/${org.id}`);
         })
-        .catch((error) => {
+        .catch((addError) => {
           this.setState({
             adding: false,
-            error
+            addError
           });
         });
     }
   }
 
   render() {
-    const { causes } = this.context;
-    const { name, website, phone, email, address, description, checkedCauses, adding, error } = this.state;
+    const { causes, appError, fetching } = this.context;
+    const {
+      name,
+      website,
+      phone,
+      email,
+      address,
+      description,
+      checkedCauses,
+      adding,
+      addError
+    } = this.state;
+
+
 
     return (
       <main className="AddOrg">
@@ -175,125 +187,142 @@ class AddOrg extends Component {
           <h1>Add an Organization</h1>
         </header>
 
-        <form id="AddOrg__form" onSubmit={this.handleSubmit}>
-          <div>
-            <label htmlFor="org-name">Name*</label>
-            <input 
-              type="text"
-              id="org-name"
-              name="org-name"
-              onChange={(e) => this.updateField('name', e.target.value)}
-              required
-            />
-            {name.touched && <ValidationError message={this.validateRequiredInput('name')} />}
-          </div>
+        {fetching
+          /*
+            If the app is waiting for data from the API, only render the fetching message
+          */
+          ? <p>Fetching causes from the API...</p>
+          : appError
+            /*
+              Else if there's an error with the app, only render content for the error message
+            */
+            ? <p className="error">
+              An error occurred while fetching organizations and causes: {appError.message}. Try refreshing the page.
+            </p>
+            /*
+              Otherwise, render the content for adding an organization
+            */
+            : <>
+              <form id="AddOrg__form" onSubmit={this.handleSubmit}>
+                <div>
+                  <label htmlFor="org-name">Name*</label>
+                  <input 
+                    type="text"
+                    id="org-name"
+                    name="org-name"
+                    onChange={(e) => this.updateField('name', e.target.value)}
+                    required
+                  />
+                  {name.touched && <ValidationError message={this.validateRequiredInput('name')} />}
+                </div>
 
-          <br />
+                <br />
 
-          <fieldset>
-            <legend>Contact Info (enter at least one)</legend>
+                <fieldset>
+                  <legend>Contact Info (enter at least one)</legend>
 
-            <div>
-              <label htmlFor="website">Website</label>
-              <input 
-                type="text"
-                id="website"
-                name="website"
-                onChange={(e) => this.updateField('website', e.target.value)}
-              />
-            </div>
+                  <div>
+                    <label htmlFor="website">Website</label>
+                    <input 
+                      type="text"
+                      id="website"
+                      name="website"
+                      onChange={(e) => this.updateField('website', e.target.value)}
+                    />
+                  </div>
 
-            <br />
+                  <br />
 
-            <div>
-              <label htmlFor="phone">Phone</label>
-              <input 
-                type="tel"
-                id="phone"
-                name="phone"
-                onChange={(e) => this.updateField('phone', e.target.value)}
-              />
-            </div>
+                  <div>
+                    <label htmlFor="phone">Phone</label>
+                    <input 
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      onChange={(e) => this.updateField('phone', e.target.value)}
+                    />
+                  </div>
 
-            <br />
+                  <br />
 
-            <div>
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                onChange={(e) => this.updateField('email', e.target.value)}
-                onBlur={() => this.setState({
-                  email: {
-                    value: this.state.email.value,
-                    touched: true
-                  }
-                })}
-              />
-            </div>
+                  <div>
+                    <label htmlFor="email">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      onChange={(e) => this.updateField('email', e.target.value)}
+                      onBlur={() => this.setState({
+                        email: {
+                          value: this.state.email.value,
+                          touched: true
+                        }
+                      })}
+                    />
+                  </div>
 
-            <br />
+                  <br />
 
-            <div>
-              <label htmlFor="address">Address</label>
-              <input
-                type="text"
-                id="address"
-                name="address"
-                onChange={(e) => this.updateField('address', e.target.value)}
-              />
-            </div>
+                  <div>
+                    <label htmlFor="address">Address</label>
+                    <input
+                      type="text"
+                      id="address"
+                      name="address"
+                      onChange={(e) => this.updateField('address', e.target.value)}
+                    />
+                  </div>
 
-            {(website.touched && phone.touched && email.touched && address.touched) && 
-              <ValidationError message={this.validateContactInfo()} />}
-          </fieldset>
+                  {(website.touched && phone.touched && email.touched && address.touched) && 
+                    <ValidationError message={this.validateContactInfo()} />}
+                </fieldset>
 
-          <br />
+                <br />
 
-          <div className="AddOrg__description">
-            <div className="AddOrg__description-form-elements">
-              <label htmlFor="description">Description*</label>
-              <textarea
-                id="description"
-                name="description"
-                onChange={(e) => this.updateField('description', e.target.value)}
-                required
-              />
-            </div>
-            {description.touched && <ValidationError message={this.validateRequiredInput('description')} />}
-          </div>
+                <div className="AddOrg__description">
+                  <div className="AddOrg__description-form-elements">
+                    <label htmlFor="description">Description*</label>
+                    <textarea
+                      id="description"
+                      name="description"
+                      onChange={(e) => this.updateField('description', e.target.value)}
+                      required
+                    />
+                  </div>
+                  {description.touched && <ValidationError message={this.validateRequiredInput('description')} />}
+                </div>
 
-          <br />
+                <br />
 
-          {causes && causes.length > 0 && (
-            <>
-              <CauseCheckboxes 
-                causes={causes}
-                checkedCauses={checkedCauses}
-                handleClick={checkCause(this)}
-                legend="Causes* (select at least one)"
-              />
+                {causes && causes.length > 0 && (
+                  <>
+                    <CauseCheckboxes 
+                      causes={causes}
+                      checkedCauses={checkedCauses}
+                      handleClick={checkCause(this)}
+                      legend="Causes* (select at least one)"
+                    />
 
-              <br />
-            </>
-          )}
+                    <br />
+                  </>
+                )}
 
-          <button
-            type="submit"
-            disabled={
-              this.validateRequiredInput('name')
-              || this.validateRequiredInput('description')
-              || this.validateContactInfo()
-              || this.validateCheckedCauses()}
-          >
-            Add Organization
-          </button>
-        </form>
+                <button
+                  type="submit"
+                  disabled={
+                    this.validateRequiredInput('name')
+                    || this.validateRequiredInput('description')
+                    || this.validateContactInfo()
+                    || this.validateCheckedCauses()}
+                >
+                  Add Organization
+                </button>
+              </form>
 
-        {adding && <p>Adding...</p>}
+              {adding && <p>Adding...</p>}
 
-        {error && <p className="error">{error.message}</p>}
+              {addError && <p className="error">{addError.message}</p>}
+            </>}
       </main>
     );
   }

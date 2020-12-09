@@ -4,10 +4,15 @@ exports[`OrgSearch Component renders link to add organizations page when no caus
 <body>
   <div>
     <main
-      class="OrgSearch no-orgs"
+      class="OrgSearch"
     >
+      <header>
+        <h1>
+          Search for Organizations
+        </h1>
+      </header>
       <p>
-        There are no organizations. Feel free to 
+        There aren't any organizations. Feel free to 
         <a
           href="/add-org"
         >

@@ -15,7 +15,10 @@ class App extends Component {
   state = {
     orgs: [],
     causes: [],
-    navExpanded: false
+    navExpanded: false,
+    error: null,
+    // Is the app fetching data from the API?
+    fetching: false
   };
 
   addOrg = (org) => {
@@ -57,19 +60,33 @@ class App extends Component {
   };
 
   componentDidMount() {
+    this.setState({
+      fetching: true
+    });
+
     return fetchApiJson('/api/orgs')
       .then((orgs) => this.setState({ orgs }))
       .then(() => fetchApiJson(`/api/causes`))
-      .then((causes) => this.setState({ causes }));
+      .then((causes) => this.setState({ 
+          causes,
+          error: null,
+          fetching: false
+        }))
+      .catch((error) => this.setState({
+        error,
+        fetching: false
+      }));
   }
 
   render() {
-    const { orgs, causes, navExpanded } = this.state;
+    const { orgs, causes, navExpanded, error, fetching } = this.state;
     const contextValue = {
       orgs,
       causes,
       addOrg: this.addOrg,
-      deleteOrg: this.deleteOrg
+      deleteOrg: this.deleteOrg,
+      appError: error,
+      fetching
     };
 
     return (

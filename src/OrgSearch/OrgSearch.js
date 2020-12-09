@@ -73,21 +73,14 @@ class OrgSearch extends Component {
   }
 
   render() {
-    const { orgs, causes } = this.context;
+    const { orgs, causes, appError, fetching } = this.context;
     const usedCauses = causes.filter((cause) => orgs.find((org) => {
         return org.causes.find((elem) => elem.cause_name === cause.cause_name);
       })
     );
 
-    if (usedCauses.length === 0) {
-      return (
-        <main className="OrgSearch no-orgs">
-          <p>There are no organizations. Feel free to <Link to="/add-org">add some</Link></p>
-        </main>
-      );
-    }
-
-    const { checkedCauses, searchResults, searching, searched, error } = this.state;
+    const { checkedCauses, searchResults, searching, searched } = this.state;
+    const searchError = this.state.error;
     const { pageLimit } = this.props;
 
     return (
@@ -96,42 +89,68 @@ class OrgSearch extends Component {
           <h1>Search for Organizations</h1>
         </header>
 
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <label htmlFor="search-term">Search Term</label>
-            <input 
-              type="text"
-              id="search-term"
-              onChange={(e) => this.updateField('term', e.target.value)}
-            />
-          </div>
+        {fetching
+          /*
+            If the app is waiting for data from the API, only render the fetching message
+          */
+          ? <p>Fetching data from the API...</p>
+          : appError
+            /*
+              Else if there's an error with the app, only render content for the error message
+            */
+            ? <p className="error">
+              An error occurred while fetching organizations and causes: {appError.message}. Try refreshing the page.
+            </p>
+            : usedCauses.length === 0
+              /*
+                If there aren't any causes being used by any organizations, then assume there aren't 
+                any organizations in the database, and only render content directing the user how to 
+                create some organizations.
+              */
+              ? <p>
+                There aren't any organizations. Feel free to <Link to="/add-org">add some</Link>
+              </p>
+              /*
+                Otherwise, render the content for searching for organizations
+              */
+              : <>
+                <form onSubmit={this.handleSubmit}>
+                  <div>
+                    <label htmlFor="search-term">Search Term</label>
+                    <input 
+                      type="text"
+                      id="search-term"
+                      onChange={(e) => this.updateField('term', e.target.value)}
+                    />
+                  </div>
 
-          <br />
+                  <br />
 
-          <CauseCheckboxes 
-            causes={usedCauses}
-            checkedCauses={checkedCauses}
-            handleClick={checkCause(this)}
-            legend="Causes (select at least one)"
-          />
+                  <CauseCheckboxes 
+                    causes={usedCauses}
+                    checkedCauses={checkedCauses}
+                    handleClick={checkCause(this)}
+                    legend="Causes (select at least one)"
+                  />
 
-          <br />
+                  <br />
 
-          <button
-            type="submit"
-            disabled={this.validateCheckedCauses()}
-          >
-            Search
-          </button>
-        </form>
+                  <button
+                    type="submit"
+                    disabled={this.validateCheckedCauses()}
+                  >
+                    Search
+                  </button>
+                </form>
 
-        {error && <p className="error">{error.message}</p>}
+                {searchError && <p className="error">{searchError.message}</p>}
 
-        {searching && <p>Searching...</p>}
+                {searching && <p>Searching...</p>}
 
-        {searched && (
-          <SearchResults results={searchResults} pageLimit={pageLimit} />
-        )}
+                {searched && (
+                  <SearchResults results={searchResults} pageLimit={pageLimit} />
+                )}
+              </>}
       </main>
     );
   }

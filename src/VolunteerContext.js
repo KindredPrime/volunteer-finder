@@ -4,7 +4,10 @@ const VolunteerContext = React.createContext({
   orgs: [],
   causes: [],
   addOrg: () => {},
-  deleteOrg: () => {}
+  deleteOrg: () => {},
+  appError: null,
+  // Is the app fetching data from the API?
+  fetching: false
 });
 
 export default VolunteerContext;
