@@ -1,7 +1,7 @@
 import { API_ENDPOINT } from './config';
 
-function updateField(fieldName, fieldValue, component) {
-  component.setState({
+function updateField(fieldName, fieldValue, componentInstance) {
+  componentInstance.setState({
     [fieldName]: fieldValue
   });
 }
@@ -41,9 +41,10 @@ const checkCause = (componentInstance) => (checkboxName) => {
 }
 
 /**
+ * Send a request to the API and return the JSONified response
  * 
- * @param {*} route - The API route to add to the end of the base endpoint
- * @param {*} options 
+ * @param {*} route - The route (and query parameters) to add to the end of the API's base endpoint
+ * @param {*} options - Options for the fetch request
  */
 function fetchApiJson(route, options={}) {
   return fetch(`${API_ENDPOINT}${route}`, options)
@@ -51,8 +52,9 @@ function fetchApiJson(route, options={}) {
 }
 
 /**
+ * Send a request to the API
  * 
- * @param {*} route - The API route to add to the end of the base endpoint
+ * @param {*} route - The route (and query parameters) to add to the end of the API's base endpoint
  * @param {*} options 
  */
 function fetchApi(route, options={}) {

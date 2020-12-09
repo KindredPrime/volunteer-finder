@@ -10,11 +10,13 @@ import VolunteerContext from '../VolunteerContext';
 describe('AddOrg Component', () => {
   const origFetch = global.fetch;
 
-  // Return a promise that resolves to an object with a json function that returns a promise that 
-  // resolves to one of the following: 
-  //   - a single organization
-  //   - an array of causes
-  //   - an empty array (to represent no organizations)
+  /**
+   * Return a promise that resolves to an object with a json function that returns a promise that 
+   * resolves to one of the following: 
+   *   - a single organization
+   *   - an array of causes
+   *   - an empty array (to represent no organizations currently in the database)
+   */ 
   beforeAll(() => {
     global.fetch = (route, options={}) => {
       if (route.includes('orgs') && options.method === 'POST') {
@@ -59,6 +61,7 @@ describe('AddOrg Component', () => {
       </MemoryRouter>
     );
 
+    // Wait for fetch requests to resolve with causes
     const causesLegend = 'Causes* (select at least one)';
     await waitFor(() => expect(screen.getByText(causesLegend)).toBeInTheDocument());
 
@@ -78,7 +81,9 @@ describe('AddOrg Component', () => {
     userEvent.click(screen.getByText(dummyCauses[0].cause_name));
     userEvent.click(screen.getByRole('button', { name: 'Add Organization' }));
 
+    // Wait for the fetch POST request to resolve and for the organization page to load
     await waitFor(() => expect(screen.getByText(name)).toBeInTheDocument());
+    
     expect(screen.getByText(website)).toBeInTheDocument();
     expect(screen.getByText(`Phone: ${phone}`)).toBeInTheDocument();
     expect(screen.getByText(`Email: ${email}`)).toBeInTheDocument();

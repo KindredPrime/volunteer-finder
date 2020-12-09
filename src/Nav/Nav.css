@@ -27,6 +27,9 @@
   color: var(--accent-color);
 }
 
+/*
+  Set the color for the FontAwesome icon
+*/
 .Nav__expander.expanded path {
   color: var(--accent-color);
 }
@@ -66,7 +69,7 @@ a.active {
   }
 
   /*
-    For tablets, there is no nav expander, so always display the nav links
+    For tablets and larger devices, there is no nav expander, so nav links are always "expanded"
   */
   .Nav .links, .Nav.expanded .links {
     display: flex;

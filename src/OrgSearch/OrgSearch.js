@@ -14,9 +14,9 @@ class OrgSearch extends Component {
     pageLimit: 10
   };
 
-  // Only causes that are true are kept in the state
   state = {
     term: '',
+    // Only causes that are checked are kept in the state
     checkedCauses: {
 
     },

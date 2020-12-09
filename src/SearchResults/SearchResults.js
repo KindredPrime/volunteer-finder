@@ -39,7 +39,7 @@ class SearchResults extends Component {
 
     const pageResults = this.getPageResults();
 
-    // Grab the full URL, minus the pathname
+    // Grab the URL of the page the Search Results are being rendered on, minus the React Route path
     const endOfBaseUrl = window.location.href.lastIndexOf(window.location.pathname);
     const baseUrl = window.location.href.substring(0, endOfBaseUrl);
 

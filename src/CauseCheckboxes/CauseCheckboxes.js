@@ -5,13 +5,16 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import './CauseCheckboxes.css';
 
 /*
-  Used to render checkboxes for causes
+  Render checkbox inputs for causes
 */
 function CauseCheckboxes(props) {
+  // checkedCauses is an object where the keys are the names of causes that have been checked, and
+  // the values are all set to 'true'
   const { causes, checkedCauses, handleClick, legend } = props;
-  const customCheckboxClass = 'CauseCheckboxes__custom-checkbox';
-  const checkmarkClass = 'CauseCheckboxes__checkmark';
 
+  const customCheckboxClass = 'CauseCheckboxes__custom-checkbox';
+
+  // Add the checked status to the list of all causes
   const causesWithChecks = causes.map((cause) => {
     return checkedCauses[cause.cause_name] 
       ? {
@@ -39,9 +42,7 @@ function CauseCheckboxes(props) {
               : `${customCheckboxClass} checked`}
           >
             <FontAwesomeIcon 
-              className={!cause.checked
-                ? checkmarkClass
-                : `${checkmarkClass} checked`}
+              className="CauseCheckboxes__checkmark"
               icon={faCheck}
             />
           </div>

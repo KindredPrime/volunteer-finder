@@ -12,10 +12,14 @@
 .CauseCheckboxes input {
   position: relative;
   left: -5px;
+  /* Hides the default checkbox input */
   opacity: 0;
   cursor: pointer;
 }
 
+/*
+  Overlays a custom checkbox input on top of the default one
+*/
 .CauseCheckboxes__custom-checkbox {
   display: inline-block;
   position: relative;
@@ -33,6 +37,9 @@
   opacity: 1;
 }
 
+/*
+  Custom checkmark, hidden by default
+*/
 .CauseCheckboxes__checkmark {
   position: relative;
   color: black;
@@ -42,6 +49,9 @@
   opacity: 0;
 }
 
-.CauseCheckboxes__checkmark.checked {
+/*
+  When the custom checkbox is checked, show the custom checkmark
+*/
+.CauseCheckboxes__custom-checkbox.checked .CauseCheckboxes__checkmark {
   opacity: 1;
 }

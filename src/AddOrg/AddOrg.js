@@ -10,7 +10,6 @@ import './AddOrg.css';
 class AddOrg extends Component {
   static contextType = VolunteerContext;
 
-  // Only causes that are checked are kept in the state
   state = {
     name: {
       touched: false,
@@ -36,6 +35,7 @@ class AddOrg extends Component {
       touched: false,
       value: ''
     },
+    // Only causes that are checked are kept in the state
     checkedCauses: {
       
     },
@@ -80,7 +80,7 @@ class AddOrg extends Component {
     }
   }
 
-  orgExists = () => {
+  orgAlreadyExists = () => {
     const { name, website, phone, email, address } = this.state;
     const { orgs } = this.context;
 
@@ -134,7 +134,7 @@ class AddOrg extends Component {
       causes: causes.filter((cause) => Object.keys(checkedCauses).find((checkedCause) => checkedCause === cause.cause_name))
     };
 
-    if (this.orgExists()) {
+    if (this.orgAlreadyExists()) {
       this.setState({
         adding: false,
         error: new Error('The organization already exists')

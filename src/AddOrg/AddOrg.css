@@ -2,12 +2,18 @@
   margin: 10px 0px 10px 0px;
 }
 
+/*
+  Apply these styles to the label and the textarea within the .AddOrg__description div tag
+*/
 .AddOrg__description-form-elements {
   display: flex;
   align-items: top;
   justify-content: center;
 }
 
+/*
+  Desktop
+*/
 @media screen and (min-width: 1200px) {
   .AddOrg__description {
     margin: 15px 0px 15px 0px;

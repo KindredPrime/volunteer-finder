@@ -9,8 +9,10 @@ import VolunteerContext from '../VolunteerContext';
 describe('OrgSearch Component', () => {
   const origFetch = global.fetch;
 
-  // return a Promise that resolves to an object with a json function that returns a Promise that
-  // resolves to an array of organizations
+  /*
+    Rewrite fetch to return a Promise that resolves to an object with a json function that returns 
+    a Promise that resolves to an array of organizations
+  */
   beforeAll(() => {
     global.fetch = () => Promise.resolve({
       json: () => Promise.resolve([

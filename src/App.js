@@ -45,6 +45,9 @@ class App extends Component {
     });
   };
 
+  /**
+   * Toggle the expanded nav bar (mobile screens only)
+   */
   expandCollapseNav = () => {
     const { navExpanded } = this.state;
 
