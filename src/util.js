@@ -6,18 +6,6 @@ function updateField(fieldName, fieldValue, componentInstance) {
   });
 }
 
-function todayDate() {
-  const now = new Date();
-  const todayString = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate().toString().padStart(2, '0')}T00:00:00`;
-  return new Date(todayString);
-}
-
-function formatDate(date) {
-  const dateComponents = date.split(' ');
-  const excludingTimestamp = dateComponents.filter((component) => !component.match(/[0-9]{2}:[0-9]{2}:[0-9]{2}/))
-  return excludingTimestamp.join(' ');
-}
-
 /*
   When checked, add the checkbox value to causes in the state
   When unchecked, remove the checkbox value from causes in the state
@@ -63,8 +51,6 @@ function fetchApi(route, options={}) {
 
 export {
   updateField,
-  todayDate,
-  formatDate,
   checkCause,
   fetchApiJson,
   fetchApi
