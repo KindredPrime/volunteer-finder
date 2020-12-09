@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { updateField, checkCause, fetchApiJson } from '../util';
+import { checkCause, fetchApiJson } from '../util';
 import VolunteerContext from '../VolunteerContext';
 import CauseCheckboxes from '../CauseCheckboxes/CauseCheckboxes';
 import SearchResults from '../SearchResults/SearchResults';
@@ -26,6 +26,12 @@ class OrgSearch extends Component {
     searched: false,
     error: null
   };
+
+  updateField = (fieldName, fieldValue) => {
+    this.setState({
+      [fieldName]: fieldValue
+    });
+  }
 
   validateCheckedCauses = () => {
     const { checkedCauses } = this.state;
@@ -96,7 +102,7 @@ class OrgSearch extends Component {
             <input 
               type="text"
               id="search-term"
-              onChange={(e) => updateField('term', e.target.value, this)}
+              onChange={(e) => this.updateField('term', e.target.value)}
             />
           </div>
 
