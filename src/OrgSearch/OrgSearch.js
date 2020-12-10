@@ -93,7 +93,7 @@ class OrgSearch extends Component {
           /*
             If the app is waiting for data from the API, only render the fetching message
           */
-          ? <p>Fetching data from the API...</p>
+          ? <p className="fetching">Fetching data from the API...</p>
           : appError
             /*
               Else if there's an error with the app, only render content for the error message
@@ -107,7 +107,7 @@ class OrgSearch extends Component {
                 any organizations in the database, and only render content directing the user how to 
                 create some organizations.
               */
-              ? <p>
+              ? <p className="OrgSearch__no-orgs">
                 There aren't any organizations. Feel free to <Link to="/add-org">add some</Link>
               </p>
               /*

@@ -191,7 +191,7 @@ class AddOrg extends Component {
           /*
             If the app is waiting for data from the API, only render the fetching message
           */
-          ? <p>Fetching causes from the API...</p>
+          ? <p className="fetching">Fetching causes from the API...</p>
           : appError
             /*
               Else if there's an error with the app, only render content for the error message

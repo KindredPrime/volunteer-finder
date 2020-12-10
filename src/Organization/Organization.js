@@ -38,7 +38,7 @@ class Organization extends Component {
     if (fetching) {
       return (
         <main className="Organization">
-          <p>Fetching data from the API...</p>
+          <p className="fetching">Fetching data from the API...</p>
         </main>
       )
     }
