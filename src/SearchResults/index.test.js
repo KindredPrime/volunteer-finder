@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
-import SearchResults from './SearchResults';
+import SearchResults from '.';
 import { dummyOrgs } from '../dummyData';
 
 describe('SearchResults Component', () => {

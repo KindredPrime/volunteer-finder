@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { render } from '@testing-library/react';
-import Organization from './Organization';
+import Organization from '.';
 import { dummyOrgs, dummyCauses } from '../dummyData';
 import VolunteerContext from '../VolunteerContext';
 

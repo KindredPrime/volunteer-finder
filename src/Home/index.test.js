@@ -1,13 +1,14 @@
 import ReactDOM from 'react-dom';
-import ValidationError from './ValidationError';
+import { BrowserRouter } from 'react-router-dom';
+import Home from '.';
 
-describe('ValidationError Component', () => {
+describe('Home Component', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-      <ValidationError />,
-      div
-    );
+      <BrowserRouter>
+        <Home />
+      </BrowserRouter>, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 });

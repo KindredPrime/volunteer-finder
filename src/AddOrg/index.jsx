@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { fetchApiJson } from '../util';
 import VolunteerContext from '../VolunteerContext';
-import CauseCheckboxes from '../CauseCheckboxes/CauseCheckboxes';
+import CauseCheckboxes from '../CauseCheckboxes';
 import { checkCause } from '../util';
-import ValidationError from '../ValidationError/ValidationError';
-import './AddOrg.css';
+import ValidationError from '../ValidationError';
+import './index.css';
 
 class AddOrg extends Component {
   static contextType = VolunteerContext;

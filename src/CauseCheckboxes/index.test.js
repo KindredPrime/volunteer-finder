@@ -1,13 +1,13 @@
 import ReactDOM from 'react-dom';
 import { render } from '@testing-library/react';
-import CauseCheckboxes from './CauseCheckboxes';
+import CauseCheckboxes from '.';
 import { dummyCauses } from '../dummyData';
 
 describe('CauseCheckboxes Component', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-      <CauseCheckboxes 
+      <CauseCheckboxes
         causes={[]}
         checkedCauses={[]}
         handleClick={() => {}}

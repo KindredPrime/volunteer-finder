@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { fetchApiJson } from './util';
 import VolunteerContext from './VolunteerContext';
-import Nav from './Nav/Nav';
-import Home from './Home/Home';
-import Organization from './Organization/Organization';
-import OrgSearch from './OrgSearch/OrgSearch';
-import AddOrg from './AddOrg/AddOrg';
+import Nav from './Nav';
+import Home from './Home';
+import Organization from './Organization';
+import OrgSearch from './OrgSearch';
+import AddOrg from './AddOrg';
 import './App.css';
 
 class App extends Component {
@@ -20,6 +20,25 @@ class App extends Component {
     // Is the app fetching data from the API?
     fetching: false
   };
+
+  componentDidMount() {
+    this.setState({
+      fetching: true
+    });
+
+    return fetchApiJson('/api/orgs')
+      .then((orgs) => this.setState({ orgs }))
+      .then(() => fetchApiJson(`/api/causes`))
+      .then((causes) => this.setState({
+          causes,
+          error: null,
+          fetching: false
+        }))
+      .catch((error) => this.setState({
+        error,
+        fetching: false
+      }));
+  }
 
   addOrg = (org) => {
     const { orgs } = this.state;
@@ -58,25 +77,6 @@ class App extends Component {
       navExpanded: !navExpanded
     });
   };
-
-  componentDidMount() {
-    this.setState({
-      fetching: true
-    });
-
-    return fetchApiJson('/api/orgs')
-      .then((orgs) => this.setState({ orgs }))
-      .then(() => fetchApiJson(`/api/causes`))
-      .then((causes) => this.setState({
-          causes,
-          error: null,
-          fetching: false
-        }))
-      .catch((error) => this.setState({
-        error,
-        fetching: false
-      }));
-  }
 
   render() {
     const { orgs, causes, navExpanded, error, fetching } = this.state;

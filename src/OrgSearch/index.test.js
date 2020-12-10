@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
-import OrgSearch from './OrgSearch';
+import OrgSearch from '.';
 import { dummyOrgs, dummyCauses } from '../dummyData';
 import VolunteerContext from '../VolunteerContext';
 
@@ -10,7 +10,7 @@ describe('OrgSearch Component', () => {
   const origFetch = global.fetch;
 
   /*
-    Rewrite fetch to return a Promise that resolves to an object with a json function that returns 
+    Rewrite fetch to return a Promise that resolves to an object with a json function that returns
     a Promise that resolves to an array of organizations
   */
   beforeAll(() => {
@@ -34,7 +34,7 @@ describe('OrgSearch Component', () => {
       div
     );
     ReactDOM.unmountComponentAtNode(div);
-  }); 
+  });
 
   it('renders the UI as expected', () => {
     const contextValue = {

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { checkCause, fetchApiJson } from '../util';
 import VolunteerContext from '../VolunteerContext';
-import CauseCheckboxes from '../CauseCheckboxes/CauseCheckboxes';
-import SearchResults from '../SearchResults/SearchResults';
-import './OrgSearch.css';
+import CauseCheckboxes from '../CauseCheckboxes';
+import SearchResults from '../SearchResults';
+import './index.css';
 
 class OrgSearch extends Component {
   static contextType = VolunteerContext;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import VolunteerContext from '../VolunteerContext';
 import { fetchApi } from '../util';
-import './Organization.css';
+import './index.css';
 
 class Organization extends Component {
   static contextType = VolunteerContext;
@@ -97,8 +97,8 @@ class Organization extends Component {
             </header>
 
             <ul className="Organization__causes-list">
-              {causes.map((cause, index) => (
-                <li key={index}>
+              {causes.map((cause) => (
+                <li key={cause.id}>
                   {cause.cause_name}
                 </li>
               ))}
