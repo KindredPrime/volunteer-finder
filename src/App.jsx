@@ -15,15 +15,16 @@ class App extends Component {
   state = {
     orgs: [],
     causes: [],
-    navExpanded: false,
+    hasNavExpanded: false,
     error: null,
+
     // Is the app fetching data from the API?
-    fetching: false
+    isFetching: false
   };
 
   componentDidMount() {
     this.setState({
-      fetching: true
+      isFetching: true
     });
 
     return fetchApiJson('/api/orgs')
@@ -32,11 +33,11 @@ class App extends Component {
       .then((causes) => this.setState({
           causes,
           error: null,
-          fetching: false
+          isFetching: false
         }))
       .catch((error) => this.setState({
         error,
-        fetching: false
+        isFetching: false
       }));
   }
 
@@ -67,35 +68,33 @@ class App extends Component {
     });
   };
 
-  /**
-   * Toggle the expanded nav bar (mobile screens only)
-   */
+  // Toggle the expanded nav bar (mobile screens only)
   expandCollapseNav = () => {
-    const { navExpanded } = this.state;
+    const { hasNavExpanded } = this.state;
 
     this.setState({
-      navExpanded: !navExpanded
+      hasNavExpanded: !hasNavExpanded
     });
   };
 
   render() {
-    const { orgs, causes, navExpanded, error, fetching } = this.state;
+    const { orgs, causes, hasNavExpanded, error, isFetching } = this.state;
     const contextValue = {
       orgs,
       causes,
       addOrg: this.addOrg,
       deleteOrg: this.deleteOrg,
       appError: error,
-      fetching
+      isFetching
     };
 
     return (
       <VolunteerContext.Provider value={contextValue}>
-        <div className={navExpanded
+        <div className={hasNavExpanded
           ? "App expanded"
           : "App"}
         >
-          <Nav expanded={navExpanded} handleExpander={this.expandCollapseNav} />
+          <Nav expanded={hasNavExpanded} handleExpander={this.expandCollapseNav} />
           <Route exact path="/" component={Home} />
           <Route path="/org/:id" component={Organization} />
           <Route path="/org-search" render={() => <OrgSearch pageLimit={10} />} />

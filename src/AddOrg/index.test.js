@@ -26,8 +26,7 @@ describe('AddOrg Component', () => {
             ...JSON.parse(options.body)
           })
         });
-      }
-      else if (route.includes('causes')) {
+      } else if (route.includes('causes')) {
         return Promise.resolve({
           json: () => Promise.resolve(dummyCauses)
         });

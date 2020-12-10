@@ -16,14 +16,15 @@ class OrgSearch extends Component {
 
   state = {
     term: '',
+
     // Only causes that are checked are kept in the state
     checkedCauses: {
 
     },
     searchResults: [],
     page: 1,
-    searching: false,
-    searched: false,
+    isSearching: false,
+    hasSearched: false,
     error: null
   };
 
@@ -45,7 +46,7 @@ class OrgSearch extends Component {
     e.preventDefault();
 
     this.setState({
-      searching: true
+      isSearching: true
     });
 
     const term = this.state.term || '';
@@ -57,29 +58,29 @@ class OrgSearch extends Component {
     return fetchApiJson(`${route}?${queryParams}`)
       .then((orgs) => {
         this.setState({
-          searching: false,
-          searched: true,
+          isSearching: false,
+          hasSearched: true,
           searchResults: orgs,
           error: null
         })
       })
       .catch((error) => {
         this.setState({
-          searching: false,
-          searched: false,
+          isSearching: false,
+          hasSearched: false,
           error
         });
       });
   }
 
   render() {
-    const { orgs, causes, appError, fetching } = this.context;
+    const { orgs, causes, appError, isFetching } = this.context;
     const usedCauses = causes.filter((cause) => orgs.find((org) => {
         return org.causes.find((elem) => elem.cause_name === cause.cause_name);
       })
     );
 
-    const { checkedCauses, searchResults, searching, searched } = this.state;
+    const { checkedCauses, searchResults, isSearching, hasSearched } = this.state;
     const searchError = this.state.error;
     const { pageLimit } = this.props;
 
@@ -89,27 +90,32 @@ class OrgSearch extends Component {
           <h1>Search for Organizations</h1>
         </header>
 
-        {fetching
+        {isFetching
+
           /*
             If the app is waiting for data from the API, only render the fetching message
           */
           ? <p className="fetching">Fetching data from the API...</p>
           : appError
+
             /*
               Else if there's an error with the app, only render content for the error message
             */
             ? <p className="error">
-              An error occurred while fetching organizations and causes: {appError.message}. Try refreshing the page.
+              {`An error occurred while fetching organizations and causes: ` +
+              `${appError.message}. Try refreshing the page.`}
             </p>
             : usedCauses.length === 0
+
               /*
-                If there aren't any causes being used by any organizations, then assume there aren't
-                any organizations in the database, and only render content directing the user how to
-                create some organizations.
+                If there aren't any causes being used by any organizations, then assume there
+                aren't any organizations in the database, and only render content directing the
+                user how to create some organizations.
               */
               ? <p className="OrgSearch__no-orgs">
                 There aren't any organizations. Feel free to <Link to="/add-org">add some</Link>
               </p>
+
               /*
                 Otherwise, render the content for searching for organizations
               */
@@ -145,9 +151,9 @@ class OrgSearch extends Component {
 
                 {searchError && <p className="error">{searchError.message}</p>}
 
-                {searching && <p>Searching...</p>}
+                {isSearching && <p>Searching...</p>}
 
-                {searched && (
+                {hasSearched && (
                   <SearchResults results={searchResults} pageLimit={pageLimit} />
                 )}
               </>}

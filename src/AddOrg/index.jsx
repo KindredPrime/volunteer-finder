@@ -35,11 +35,12 @@ class AddOrg extends Component {
       touched: false,
       value: ''
     },
+
     // Only causes that are checked are kept in the state
     checkedCauses: {
 
     },
-    adding: false,
+    isAdding: false,
     addError: null
   };
 
@@ -121,7 +122,7 @@ class AddOrg extends Component {
     const { name, website, phone, email, address, description, checkedCauses } = this.state;
 
     this.setState({
-      adding: true
+      isAdding: true
     });
 
     const newOrg = {
@@ -136,11 +137,10 @@ class AddOrg extends Component {
 
     if (this.orgAlreadyExists()) {
       this.setState({
-        adding: false,
+        isAdding: false,
         addError: new Error('The organization already exists')
       });
-    }
-    else {
+    } else {
       return fetchApiJson(`/api/orgs`, {
         method: 'POST',
         headers: {
@@ -158,7 +158,7 @@ class AddOrg extends Component {
         })
         .catch((addError) => {
           this.setState({
-            adding: false,
+            isAdding: false,
             addError
           });
         });
@@ -166,7 +166,7 @@ class AddOrg extends Component {
   }
 
   render() {
-    const { causes, appError, fetching } = this.context;
+    const { causes, appError, isFetching } = this.context;
     const {
       name,
       website,
@@ -175,7 +175,7 @@ class AddOrg extends Component {
       address,
       description,
       checkedCauses,
-      adding,
+      isAdding,
       addError
     } = this.state;
 
@@ -187,18 +187,22 @@ class AddOrg extends Component {
           <h1>Add an Organization</h1>
         </header>
 
-        {fetching
+        {isFetching
+
           /*
             If the app is waiting for data from the API, only render the fetching message
           */
           ? <p className="fetching">Fetching causes from the API...</p>
           : appError
+
             /*
               Else if there's an error with the app, only render content for the error message
             */
             ? <p className="error">
-              An error occurred while fetching organizations and causes: {appError.message}. Try refreshing the page.
+              {`An error occurred while fetching organizations and causes: ` +
+              `${appError.message}. Try refreshing the page.`}
             </p>
+
             /*
               Otherwise, render the content for adding an organization
             */
@@ -213,7 +217,8 @@ class AddOrg extends Component {
                     onChange={(e) => this.updateField('name', e.target.value)}
                     required
                   />
-                  {name.touched && <ValidationError message={this.validateRequiredInput('name')} />}
+                  {name.touched &&
+                    <ValidationError message={this.validateRequiredInput('name')} />}
                 </div>
 
                 <br />
@@ -319,7 +324,7 @@ class AddOrg extends Component {
                 </button>
               </form>
 
-              {adding && <p>Adding...</p>}
+              {isAdding && <p>Adding...</p>}
 
               {addError && <p className="error">{addError.message}</p>}
             </>}

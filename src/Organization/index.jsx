@@ -18,7 +18,7 @@ class Organization extends Component {
       method: 'DELETE'
     })
       .then(() => {
-        deleteOrg(parseInt(orgId));
+        deleteOrg(parseInt(orgId, 10));
         this.props.history.push('/org-search');
       })
       .catch((orgError) => {
@@ -30,12 +30,12 @@ class Organization extends Component {
 
   render() {
     const orgId = this.props.match.params.id;
-    const { orgs, appError, fetching } = this.context;
+    const { orgs, appError, isFetching } = this.context;
 
     /*
       If the app is waiting for the API to respond with data, only display the fetching message
     */
-    if (fetching) {
+    if (isFetching) {
       return (
         <main className="Organization">
           <p className="fetching">Fetching data from the API...</p>
@@ -50,13 +50,14 @@ class Organization extends Component {
       return (
         <main className="Organization">
           <p className="error">
-            An error occurred while fetching organizations and causes: {appError.message}. Try refreshing the page.
+            {`An error occurred while fetching organizations and causes: ${appError.message}. ` +
+            `Try refreshing the page.`}
           </p>
         </main>
       );
     }
 
-    const org = orgs.find((elem) => elem.id === parseInt(orgId));
+    const org = orgs.find((elem) => elem.id === parseInt(orgId, 10));
 
     const { orgError } = this.state;
     const renderedError = orgError && <p className="error">{orgError.message}</p>;

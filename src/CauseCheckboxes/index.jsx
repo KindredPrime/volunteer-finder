@@ -8,8 +8,11 @@ import './index.css';
   Render checkbox inputs for causes
 */
 function CauseCheckboxes(props) {
-  // checkedCauses is an object where the keys are the names of causes that have been checked, and
-  // the values are all set to 'true'
+
+  /*
+    checkedCauses is an object where the keys are the names of causes that have been checked, and
+    the values are all set to 'true'
+  */
   const { causes, checkedCauses, handleClick, legend } = props;
 
   const customCheckboxClass = 'CauseCheckboxes__custom-checkbox';

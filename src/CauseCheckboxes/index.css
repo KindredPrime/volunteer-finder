@@ -12,6 +12,7 @@
 .CauseCheckboxes input {
   position: relative;
   left: -5px;
+
   /* Hides the default checkbox input */
   opacity: 0;
   cursor: pointer;
