@@ -93,7 +93,7 @@ class OrgSearch extends Component {
           /*
             If the app is waiting for data from the API, only render the fetching message
           */
-          ? <p>Fetching data from the API...</p>
+          ? <p className="fetching">Fetching data from the API...</p>
           : appError
             /*
               Else if there's an error with the app, only render content for the error message

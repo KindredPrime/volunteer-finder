@@ -68,6 +68,11 @@ section > * {
   margin-right: 5%;
 }
 
+p.fetching {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
 button {
   background-color: var(--accent-color);
   color: black;
