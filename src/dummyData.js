@@ -13,7 +13,7 @@ const dummyOrgs = [
       {
         id: 1,
         cause_name: 'Youth'
-      }, 
+      },
       {
         id: 2,
         cause_name: 'Health'
@@ -68,7 +68,7 @@ const dummyOrgs = [
       {
         id: 5,
         cause_name: 'History'
-      }, 
+      },
       {
         id: 6,
         cause_name: 'Education'
@@ -87,11 +87,11 @@ const dummyOrgs = [
       {
         id: 1,
         cause_name: 'Youth'
-      }, 
+      },
       {
         id: 2,
         cause_name: 'Health'
-      }, 
+      },
       {
         id: 3,
         cause_name: 'Disaster Response'
@@ -125,7 +125,7 @@ const dummyOrgs = [
       {
         id: 1,
         cause_name: 'Youth'
-      }, 
+      },
       {
         id: 6,
         cause_name: 'Education'
@@ -172,30 +172,30 @@ const dummyOrgs = [
     email: 'facets@facetscares.org',
     org_address: '10700 Page Avenue, Building B, Fairfax VA 22030',
     org_desc: `FACETS opens doors by helping parents, their children and individuals who suffer the effects of poverty – so often unnoticed – in Fairfax County. We meet their emergency shelter, food, and medical needs, help them gain safe, sustainable and permanent housing and work with them to end the cycle of poverty through educational, life skills and career counseling programs. FACETS was founded in 1988 to respond to the diverse needs of people impacted by poverty in Fairfax, Virginia.
-    
+
     We began as an outreach project by our founder, Linda D. Wimpey, who, in partnership with several area churches, prepared and delivered hot meals to families who were homeless three nights a week. This program continues to this day, and we have since expanded from operating as an emergency food program to a full-time staff of professionals, an engaged board of directors and a range of programs that work to break the cycle of poverty and prevent and end homelessness in our community.
-    
+
     Countywide – FACETS operates across the entirety of Fairfax County.
-    
+
     Effective – The organization’s many individual success stories and group statistics demonstrate how FACETS’ work continues to reduce the effects of poverty and prevent and end homelessness in the lives of Fairfax County residents. An important reason that FACETS is so effective is that its programs are tailored to meet individual needs.
-    
+
     Full-Service – FACETS provides personalized and successful services that prevent and end homelessness and address poverty and its effects in Fairfax County.
-    
+
     Professional – FACETS’ is a professionally managed organization whose experienced, multi-disciplinary staff is specialized in housing, medical services, shelter, education and community development. Those who know FACETS firsthand recognize the staff for its creativity, resourcefulness and commitment to service.
-    
+
     Dedicated – Care and compassion are FACETS’ well-established values and characterize the way in which its staff and volunteers carry out its mission.
-    
+
     Respectful – FACETS respects the dignity of each person it assists, and serves people without regard to their beliefs, backgrounds or conditions.
-    
+
     Community Involving – FACETS attracts, motivates and manages more than 3,000 volunteers who are vital in carrying out its programs.
-    
+
     Collaborative – FACETS works closely with more than one hundred faith communities, businesses, fellow nonprofits, county government bodies and foundations to end the cycle of poverty in Fairfax County. In 2008, FACETS was an organizing partner in an alliance of groups committed to ending homelessness in Fairfax County by 2018.
     `,
     causes: [
       {
         id: 6,
         cause_name: 'Education'
-      }, 
+      },
       {
         id: 11,
         cause_name: 'Poverty'

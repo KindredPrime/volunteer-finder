@@ -10,7 +10,7 @@ class Nav extends Component {
 
     return (
       <nav className={expanded ? "Nav expanded" : "Nav"} >
-        <button 
+        <button
           className={expanded ? "Nav__expander expanded" : "Nav__expander"}
           type="button"
           onClick={() => handleExpander()}

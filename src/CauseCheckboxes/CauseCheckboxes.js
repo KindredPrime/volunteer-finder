@@ -16,7 +16,7 @@ function CauseCheckboxes(props) {
 
   // Add the checked status to the list of all causes
   const causesWithChecks = causes.map((cause) => {
-    return checkedCauses[cause.cause_name] 
+    return checkedCauses[cause.cause_name]
       ? {
         ...cause,
         checked: true
@@ -36,17 +36,17 @@ function CauseCheckboxes(props) {
           <label htmlFor={`causes-${cause.id}`}>
             {cause.cause_name}
           </label>
-          <div 
-            className={!cause.checked 
-              ? customCheckboxClass 
+          <div
+            className={!cause.checked
+              ? customCheckboxClass
               : `${customCheckboxClass} checked`}
           >
-            <FontAwesomeIcon 
+            <FontAwesomeIcon
               className="CauseCheckboxes__checkmark"
               icon={faCheck}
             />
           </div>
-          <input 
+          <input
             type="checkbox"
             id={`causes-${cause.id}`}
             name="causes"

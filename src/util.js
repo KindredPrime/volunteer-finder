@@ -24,9 +24,9 @@ const checkCause = (componentInstance) => (checkboxName) => {
 
 /**
  * Send a request to the API
- * 
+ *
  * @param {*} route - The route (and query parameters) to add to the end of the API's base endpoint
- * @param {*} options 
+ * @param {*} options
  */
 function fetchApi(route, options={}) {
   return fetch(`${API_ENDPOINT}${route}`, options);
@@ -34,7 +34,7 @@ function fetchApi(route, options={}) {
 
 /**
  * Send a request to the API and return the JSONified response
- * 
+ *
  * @param {*} route - The route (and query parameters) to add to the end of the API's base endpoint
  * @param {*} options - Options for the fetch request
  */

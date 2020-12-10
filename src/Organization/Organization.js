@@ -95,7 +95,7 @@ class Organization extends Component {
             <header>
               <h2>Causes</h2>
             </header>
-            
+
             <ul className="Organization__causes-list">
               {causes.map((cause, index) => (
                 <li key={index}>

@@ -4,7 +4,7 @@ import './SearchResults.css';
 
 /**
  * Renders a list of organizations search results
- * 
+ *
  * Props:
  *   results: the search results to render from
  *   pageLimit: how many results can be displayed at once
@@ -56,11 +56,11 @@ class SearchResults extends Component {
 
               return (
                 <li key={`result-${id}`}>
-                  {/* 
+                  {/*
                     Open the link in a new tab, so the user doesn't lose all of their other search
                     results
                   */}
-                  <a 
+                  <a
                     href={`${baseUrl}/org/${id}`}
                     target="_blank"
                     rel="noreferrer"

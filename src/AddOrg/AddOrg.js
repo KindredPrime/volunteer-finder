@@ -18,7 +18,7 @@ class AddOrg extends Component {
     website: {
       touched: false,
       value: ''
-    }, 
+    },
     phone: {
       touched: false,
       value: ''
@@ -37,7 +37,7 @@ class AddOrg extends Component {
     },
     // Only causes that are checked are kept in the state
     checkedCauses: {
-      
+
     },
     adding: false,
     addError: null
@@ -64,8 +64,8 @@ class AddOrg extends Component {
     const { website, phone, email, address } = this.state;
 
     if (
-      website.value.trim().length === 0 
-      && phone.value.trim().length === 0 
+      website.value.trim().length === 0
+      && phone.value.trim().length === 0
       && email.value.trim().length === 0
       && address.value.trim().length === 0) {
         return `You must fill out at least one contact info field`;
@@ -89,7 +89,7 @@ class AddOrg extends Component {
       if (nameEx.test(org.org_name)) {
         return true;
       }
-      
+
       const websiteEx = new RegExp(`^${website.value.trim()}/*$`, 'i');
       if (websiteEx.test(org.website)) {
         return true;
@@ -124,7 +124,7 @@ class AddOrg extends Component {
       adding: true
     });
 
-    const newOrg = { 
+    const newOrg = {
       org_name: name.value,
       website: website.value,
       phone: phone.value,
@@ -206,7 +206,7 @@ class AddOrg extends Component {
               <form id="AddOrg__form" onSubmit={this.handleSubmit}>
                 <div>
                   <label htmlFor="org-name">Name*</label>
-                  <input 
+                  <input
                     type="text"
                     id="org-name"
                     name="org-name"
@@ -223,7 +223,7 @@ class AddOrg extends Component {
 
                   <div>
                     <label htmlFor="website">Website</label>
-                    <input 
+                    <input
                       type="text"
                       id="website"
                       name="website"
@@ -235,7 +235,7 @@ class AddOrg extends Component {
 
                   <div>
                     <label htmlFor="phone">Phone</label>
-                    <input 
+                    <input
                       type="tel"
                       id="phone"
                       name="phone"
@@ -273,7 +273,7 @@ class AddOrg extends Component {
                     />
                   </div>
 
-                  {(website.touched && phone.touched && email.touched && address.touched) && 
+                  {(website.touched && phone.touched && email.touched && address.touched) &&
                     <ValidationError message={this.validateContactInfo()} />}
                 </fieldset>
 
@@ -296,7 +296,7 @@ class AddOrg extends Component {
 
                 {causes && causes.length > 0 && (
                   <>
-                    <CauseCheckboxes 
+                    <CauseCheckboxes
                       causes={causes}
                       checkedCauses={checkedCauses}
                       handleClick={checkCause(this)}

@@ -67,7 +67,7 @@ class App extends Component {
     return fetchApiJson('/api/orgs')
       .then((orgs) => this.setState({ orgs }))
       .then(() => fetchApiJson(`/api/causes`))
-      .then((causes) => this.setState({ 
+      .then((causes) => this.setState({
           causes,
           error: null,
           fetching: false
@@ -91,7 +91,7 @@ class App extends Component {
 
     return (
       <VolunteerContext.Provider value={contextValue}>
-        <div className={navExpanded 
+        <div className={navExpanded
           ? "App expanded"
           : "App"}
         >

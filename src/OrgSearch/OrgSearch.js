@@ -103,8 +103,8 @@ class OrgSearch extends Component {
             </p>
             : usedCauses.length === 0
               /*
-                If there aren't any causes being used by any organizations, then assume there aren't 
-                any organizations in the database, and only render content directing the user how to 
+                If there aren't any causes being used by any organizations, then assume there aren't
+                any organizations in the database, and only render content directing the user how to
                 create some organizations.
               */
               ? <p className="OrgSearch__no-orgs">
@@ -117,7 +117,7 @@ class OrgSearch extends Component {
                 <form onSubmit={this.handleSubmit}>
                   <div>
                     <label htmlFor="search-term">Search Term</label>
-                    <input 
+                    <input
                       type="text"
                       id="search-term"
                       onChange={(e) => this.updateField('term', e.target.value)}
@@ -126,7 +126,7 @@ class OrgSearch extends Component {
 
                   <br />
 
-                  <CauseCheckboxes 
+                  <CauseCheckboxes
                     causes={usedCauses}
                     checkedCauses={checkedCauses}
                     handleClick={checkCause(this)}
