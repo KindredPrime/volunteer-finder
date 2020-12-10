@@ -107,7 +107,7 @@ class OrgSearch extends Component {
                 any organizations in the database, and only render content directing the user how to 
                 create some organizations.
               */
-              ? <p>
+              ? <p className="OrgSearch__no-orgs">
                 There aren't any organizations. Feel free to <Link to="/add-org">add some</Link>
               </p>
               /*
