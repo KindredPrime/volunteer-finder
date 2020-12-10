@@ -21,3 +21,8 @@
 .Organization__causes-list > li {
   margin-bottom: 5px;
 }
+
+.Organization__no-org-found {
+  margin-left: 5%;
+  margin-right: 5%;
+}

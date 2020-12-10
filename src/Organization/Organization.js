@@ -118,7 +118,7 @@ class Organization extends Component {
     return (
       <main className="Organization">
         {renderedError}
-        <p>No organization found</p>
+        <p className="Organization__no-org-found">The organization with id {orgId} doesn't exist</p>
       </main>
     );
   }
