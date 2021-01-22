@@ -40,7 +40,9 @@ Or, if there's an organization that isn't listed in this app, it can be added wi
 * HTML5
 * CSS3
 * JavaScript ES6
-* React
+* React.js
+* Node.js
+* PostgreSQL
 
 ## Available Scripts
 
