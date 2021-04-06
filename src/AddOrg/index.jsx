@@ -92,22 +92,22 @@ class AddOrg extends Component {
       }
 
       const websiteEx = new RegExp(`^${website.value.trim()}/*$`, 'i');
-      if (websiteEx.test(org.website)) {
+      if (org.website !== '' && websiteEx.test(org.website)) {
         return true;
       }
 
       const phoneEx = new RegExp(`^${phone.value.trim()}$`);
-      if (phoneEx.test(org.phone)) {
+      if (org.phone !== '' && phoneEx.test(org.phone)) {
         return true;
       }
 
       const emailEx = new RegExp(`^${email.value.trim()}$`, 'i');
-      if (emailEx.test(org.email)) {
+      if (org.email !== '' && emailEx.test(org.email)) {
         return true;
       }
 
       const addressEx = new RegExp(`^${address.value.trim()}$`, 'i');
-      if (addressEx.test(org.org_address)) {
+      if (org.org_address !== '' && addressEx.test(org.org_address)) {
         return true;
       }
 
